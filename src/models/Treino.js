@@ -57,6 +57,28 @@ class Treino extends Model {
     }, { 
       sequelize, modelName: 'treino', tableName: 'treinos', timestamps: true,  })
   }
+
+  static associate(models) {
+    this.belongsTo(models.cliente, {
+      as: 'cliente',
+      foreignKey: {
+        name: 'clienteId',
+        allowNull: false,
+        validate: { notNull: { msg: 'O campo Cliente deve ter um valor válido!' } }
+      }
+    });
+  }
+
+  static associate(models) {
+    this.belongsTo(models.personalTrainer, {
+      as: 'personalTrainer',
+      foreignKey: {
+        name: 'personalTrainerId',
+        allowNull: false,
+        validate: { notNull: { msg: 'O campo Personal Trainer deve ter um valor válido!' } }
+      }
+    });
+  }
   
 }
 

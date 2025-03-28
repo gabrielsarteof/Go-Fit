@@ -40,7 +40,7 @@ class Assinatura extends Model {
       foreignKey: {
         name: 'clienteId',
         allowNull: false,
-        validate: { notNull: { msg: 'O campo plano deve ter um valor válido!' } }
+        validate: { notNull: { msg: 'O campo Cliente deve ter um valor válido!' } }
       }
     });
   }
@@ -51,7 +51,7 @@ class Assinatura extends Model {
       foreignKey: {
         name: 'planoId',
         allowNull: false,
-        validate: { notNull: { msg: 'O campo plano deve ter um valor válido!' } }
+        validate: { notNull: { msg: 'O campo Plano deve ter um valor válido!' } }
       }
     });
   }

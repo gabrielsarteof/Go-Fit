@@ -31,6 +31,28 @@ class Dieta extends Model {
     }, { 
       sequelize, modelName: 'dieta', tableName: 'dietas' });
   }
+  static associate(models) {
+    this.belongsTo(models.cliente, {
+      as: 'cliente',
+      foreignKey: {
+        name: 'clienteId',
+        allowNull: false,
+        validate: { notNull: { msg: 'O campo Cliente deve ter um valor válido!' } }
+      }
+    });
+  }
+
+  static associate(models) {
+    this.belongsTo(models.nutricionista, {
+      as: 'nutricionista',
+      foreignKey: {
+        name: 'nutricionistaId',
+        allowNull: false,
+        validate: { notNull: { msg: 'O campo Nutricionista deve ter um valor válido!' } }
+      }
+    });
+  }
+
 }
 
 export { Dieta };

@@ -15,8 +15,31 @@ class CheckIn extends Model {
       razaoBloqueio: {
         type: DataTypes.STRING,
       }
-    }, { 
-      sequelize, modelName: 'checkIn', tableName: 'checkins' });
+    }, {
+      sequelize, modelName: 'checkIn', tableName: 'checkins'
+    });
+  }
+
+  static associate(models) {
+    this.belongsTo(models.assinatura, {
+      as: 'assinatura',
+      foreignKey: {
+        name: 'assinaturaId',
+        allowNull: false,
+        validate: { notNull: { msg: 'O campo Assinatura deve ter um valor válido!' } }
+      }
+    });
+  }
+
+  static associate(models) {
+    this.belongsTo(models.administrador, {
+      as: 'administrador',
+      foreignKey: {
+        name: 'administradorId',
+        allowNull: false,
+        validate: { notNull: { msg: 'O campo Administrador deve ter um valor válido!' } }
+      }
+    });
   }
 }
 
