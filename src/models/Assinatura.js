@@ -40,7 +40,18 @@ class Assinatura extends Model {
       foreignKey: {
         name: 'clienteId',
         allowNull: false,
-        validate: { notNull: { msg: 'Cliente deve ser preenchido!' } }
+        validate: { notNull: { msg: 'O campo plano deve ter um valor válido!' } }
+      }
+    });
+  }
+
+  static associate(models) {
+    this.belongsTo(models.plano, {
+      as: 'plano',
+      foreignKey: {
+        name: 'planoId',
+        allowNull: false,
+        validate: { notNull: { msg: 'O campo plano deve ter um valor válido!' } }
       }
     });
   }
