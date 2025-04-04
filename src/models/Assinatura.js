@@ -43,9 +43,7 @@ class Assinatura extends Model {
         validate: { notNull: { msg: 'O campo Cliente deve ter um valor válido!' } }
       }
     });
-  }
-
-  static associate(models) {
+    
     this.belongsTo(models.plano, {
       as: 'plano',
       foreignKey: {
@@ -55,6 +53,7 @@ class Assinatura extends Model {
       }
     });
   }
+
 }
 
 export { Assinatura };

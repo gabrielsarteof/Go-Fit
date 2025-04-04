@@ -67,9 +67,6 @@ class Treino extends Model {
         validate: { notNull: { msg: 'O campo Cliente deve ter um valor válido!' } }
       }
     });
-  }
-
-  static associate(models) {
     this.belongsTo(models.personalTrainer, {
       as: 'personalTrainer',
       foreignKey: {
@@ -79,6 +76,7 @@ class Treino extends Model {
       }
     });
   }
+
   
 }
 

@@ -51,9 +51,6 @@ class Estado extends Model {
         validate: { notNull: { msg: 'O campo Cliente deve ter um valor válido!' } }
       }
     });
-  }
-
-  static associate(models) {
     this.belongsTo(models.nutricionista, {
       as: 'nutricionista',
       foreignKey: {
