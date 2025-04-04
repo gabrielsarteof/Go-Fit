@@ -1,3 +1,4 @@
+//Gabriel Sarte
 import { Cliente } from "../models/Cliente.js";
 import { Op } from "sequelize";
 

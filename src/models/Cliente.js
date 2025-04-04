@@ -1,3 +1,4 @@
+//Gabriel Sarte
 import { Model, DataTypes } from 'sequelize';
 
 class Cliente extends Model {

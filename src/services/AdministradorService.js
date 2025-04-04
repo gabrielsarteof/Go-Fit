@@ -1,3 +1,4 @@
+//Gabriel Sarte
 import { Administrador } from "../models/Administrador.js";
 import { Op } from "sequelize";
 

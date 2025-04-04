@@ -1,3 +1,4 @@
+//Gabriel Sarte
 import { Model, DataTypes } from 'sequelize';
 
 class Assinatura extends Model {
@@ -43,7 +44,7 @@ class Assinatura extends Model {
         validate: { notNull: { msg: 'O campo Cliente deve ter um valor válido!' } }
       }
     });
-    
+
     this.belongsTo(models.plano, {
       as: 'plano',
       foreignKey: {

@@ -1,3 +1,4 @@
+//Gabriel Sarte
 import { Assinatura } from "../models/Assinatura.js";
 import { Op } from "sequelize";
 
