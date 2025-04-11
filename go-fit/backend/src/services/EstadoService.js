@@ -15,9 +15,11 @@ class EstadoService {
     static async create(req) {
         const { peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, cliente, nutricionista } = req.body;
 
+        if (cliente == null) throw 'Cliente invalido!';
+        
         // Define o today pra checar se outro estado foi criado hoje, já retirando a hora
         const today = new Date().toISOString().split('T')[0];
-
+        
         // Busca de um registro no dia de hoje
         const existingToday = await Estado.findOne({
             where: {
@@ -29,8 +31,11 @@ class EstadoService {
         if (existingToday) {
             throw new Error('Já existe um Estado criado hoje.');
         }
+        
+        if (nutricionista == null) throw 'Nutricionista invalido!';
 
-        return await Estado.create({ peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, clienteId: cliente.id, nutricionistaId: nutricionista.id });
+        const obj = await Estado.create({ peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, clienteId: cliente.id, nutricionistaId: nutricionista.id });
+        return await Estado.findByPk(obj.id, { include: { all: true, nested: true } });
         
     }
 
