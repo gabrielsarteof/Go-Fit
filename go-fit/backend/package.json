@@ -1,7 +1,7 @@
 {
-  "name": "GO-FIT",
+  "name": "go-fit-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend do sistema GO-FIT",
   "main": "index.js",
   "type": "module",
   "scripts": {
