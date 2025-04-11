@@ -1,3 +1,4 @@
+//Arthur Oliveira
 import { TreinoService } from "../services/TreinoService.js";
 
 class TreinoController {
@@ -28,6 +29,18 @@ class TreinoController {
 
   static async delete(req, res) {
     TreinoService.delete(req)
+      .then(obj => res.json(obj))
+      .catch(err => res.status(400).json({ err: err.message }));
+  }
+
+  static async findByNivel(req, res) {
+    TreinoService.findByNivel(req)
+      .then(obj => res.json(obj))
+      .catch(err => res.status(400).json({ err: err.message }));
+  }
+
+  static async findByObjetivo(req, res) {
+    TreinoService.findByObjetivo(req)
       .then(obj => res.json(obj))
       .catch(err => res.status(400).json({ err: err.message }));
   }
