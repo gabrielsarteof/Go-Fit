@@ -2,8 +2,9 @@
 import { Cliente } from "../models/Cliente.js";
 import { Op } from "sequelize";
 
+
 class ClienteService {
-  
+
   static async findAll() {
     return await Cliente.findAll();
   }
@@ -26,12 +27,21 @@ class ClienteService {
       throw new Error("Já existe um cliente com este telefone");
     }
 
-    return await Cliente.create({ nome, email, telefone, dataNascimento, dataCadastro });
+    try {
+      return await Cliente.create({ nome, email, telefone, dataNascimento, dataCadastro });
+    } catch (error) {
+      if (error.name === 'SequelizeValidationError') {
+        throw new Error(error.errors.map(e => e.message).join(', '));
+      }
+      throw error; 
+    }
   }
 
   static async update(req) {
     const { id } = req.params;
     const { nome, email, telefone, dataNascimento, dataCadastro } = req.body;
+
+
     let obj = await Cliente.findOne({ where: { id } });
 
     if (!obj) {
@@ -48,8 +58,23 @@ class ClienteService {
       throw new Error("Já existe um cliente com este telefone");
     }
 
-    Object.assign(obj, { nome, email, telefone, dataNascimento, dataCadastro });
-    return await obj.save();
+    
+    Object.assign(obj, {
+        nome: nome !== undefined ? nome : obj.nome,
+        email: email !== undefined ? email : obj.email,
+        telefone: telefone !== undefined ? telefone : obj.telefone,
+        dataNascimento: dataNascimento !== undefined ? dataNascimento : obj.dataNascimento,
+        dataCadastro: dataCadastro !== undefined ? dataCadastro : obj.dataCadastro
+    });
+
+    try {
+      return await obj.save();
+    } catch (error) {
+      if (error.name === 'SequelizeValidationError') {
+        throw new Error(error.errors.map(e => e.message).join(', '));
+      }
+      throw error; 
+    }
   }
 
   static async delete(req) {

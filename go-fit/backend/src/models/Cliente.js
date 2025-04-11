@@ -8,30 +8,59 @@ class Cliente extends Model {
         type: DataTypes.STRING,
         validate: {
           notEmpty: { msg: "Nome do Cliente deve ser preenchido!" },
-          len: { args: [2, 50], msg: "Nome do Cliente deve ter entre 2 e 50 caracteres!" }
+          len: { args: [2, 50], msg: "Nome do Cliente deve ter entre 2 e 50 caracteres!" },
+          is: {
+            args: /^[A-Z][a-z]+(?:\s[A-Z][a-z]+)+$/,
+            msg: "Nome inválido. Deve ser composto e iniciar com maiúsculas (Ex: Nome Sobrenome)."
+          }
         }
       },
       email: {
         type: DataTypes.STRING,
+        allowNull: false,
+        unique: {
+          name: "unique_email",
+          msg: "Este e-mail já está em uso. Escolha outro."
+        },
         validate: {
-          notEmpty: { msg: "Email do Cliente deve ser preenchido!" },
-          isEmail: { msg: "Email do Cliente deve ser válido!" }
+          notEmpty: { msg: "E-mail do Administrador deve ser preenchido!" },
+          isEmail: { msg: "E-mail do Administrador deve ser válido!" },
         }
       },
       telefone: {
         type: DataTypes.STRING,
+        allowNull: false,
+        unique: {
+          name: "unique_telefone",
+          msg: "Este telefone já está em uso. Escolha outro."
+        },
         validate: {
-          notEmpty: { msg: "Telefone do Cliente deve ser preenchido!" },
-          len: { args: [10, 15], msg: "Telefone do Cliente deve ter entre 10 e 15 caracteres!" }
+          notEmpty: { msg: "Telefone do Administrador deve ser preenchido!" },
+          len: { args: [10, 15], msg: "Telefone do Administrador deve ter entre 10 e 15 caracteres!" }
         }
       },
       dataNascimento: {
         type: DataTypes.DATEONLY,
+        allowNull: false,
         validate: {
           notEmpty: { msg: "Data de Nascimento deve ser preenchida!" },
-          isDate: { msg: "Data de Nascimento deve ser uma data válida!" }
+          isDate: { msg: "Data de Nascimento deve ser uma data válida!" },
+          isOldEnough(value) {
+            const birthDate = new Date(value);
+            if (isNaN(birthDate.getTime())) {
+              throw new Error("Data de Nascimento inválida.");
+            }
+      
+            const today = new Date();
+            const minAgeDate = new Date(today.getFullYear() - 16, today.getMonth(), today.getDate());
+      
+            if (birthDate > minAgeDate) { 
+              throw new Error("O cliente deve ter pelo menos 16 anos.");
+            }
+          }
         }
       }
+      
     }, { sequelize, modelName: 'cliente', tableName: 'clientes' });
   }
 }

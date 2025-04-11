@@ -1,9 +1,9 @@
-//Gabriel Sarte
+//Gabriel Sartep067
 import { Administrador } from "../models/Administrador.js";
 import { Op } from "sequelize";
 
 class AdministradorService {
-  
+
   static async findAll() {
     return await Administrador.findAll();
   }
@@ -15,7 +15,8 @@ class AdministradorService {
 
   static async create(req) {
     const { nome, senha, email, telefone } = req.body;
-    
+
+
     const existingEmail = await Administrador.findOne({ where: { email } });
     if (existingEmail) {
       throw new Error("Já existe um administrador com este e-mail");
@@ -32,7 +33,12 @@ class AdministradorService {
   static async update(req) {
     const { id } = req.params;
     const { nome, senha, email, telefone } = req.body;
+
+
     let obj = await Administrador.findOne({ where: { id } });
+    if (!obj) {
+      throw new Error(`Administrador com ID ${id} não encontrado.`);
+    }
 
     const existingEmail = await Administrador.findOne({
       where: {
@@ -53,9 +59,23 @@ class AdministradorService {
     if (existingTelefone) {
       throw new Error("Já existe um administrador com este telefone");
     }
+
     
-    Object.assign(obj, { nome, senha, email, telefone });
-    return await obj.save();
+    Object.assign(obj, {
+      nome: nome !== undefined ? nome : obj.nome,
+      senha: senha !== undefined ? senha : obj.senha, 
+      email: email !== undefined ? email : obj.email,
+      telefone: telefone !== undefined ? telefone : obj.telefone
+    });
+
+    try {
+      return await obj.save();
+    } catch (error) {
+      if (error.name === 'SequelizeValidationError') {
+        throw new Error(error.errors.map(e => e.message).join(', '));
+      }
+      throw error; 
+    }
   }
 
   static async delete(req) {
