@@ -29,7 +29,7 @@ class EstadoService {
         
         // Faz a verificação em si
         if (existingToday) {
-            throw new Error('Já existe um Estado criado hoje.');
+            throw new Error('Já existe um Estado criado hoje!');
         }
         
         if (nutricionista == null) throw 'Nutricionista invalido!';
