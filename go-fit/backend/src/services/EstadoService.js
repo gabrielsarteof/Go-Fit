@@ -35,8 +35,7 @@ class EstadoService {
         if (nutricionista == null) throw 'Nutricionista invalido!';
 
         const obj = await Estado.create({ peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, clienteId: cliente.id, nutricionistaId: nutricionista.id });
-        return await Estado.findByPk(obj.id, { include: { all: true, nested: true } });
-        
+        return await Estado.findByPk(obj.id, { include: { all: true, nested: true } });   
     }
 
     static async update(req) {
