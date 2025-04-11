@@ -1,5 +1,5 @@
 //Arthur Oliveira
-import { TreinoService } from "../services/TreinoService.js";
+// import { TreinoService } from "../services/TreinoService.js";
 
 class TreinoController {
   

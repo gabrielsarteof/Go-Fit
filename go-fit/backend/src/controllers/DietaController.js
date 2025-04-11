@@ -1,5 +1,5 @@
 //Arthur Oliveira
-import { DietaService } from "../services/DietaService.js";
+// import { DietaService } from "../services/DietaService.js";
 
 class DietaController {
   

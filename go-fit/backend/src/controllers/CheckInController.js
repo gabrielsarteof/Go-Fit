@@ -1,4 +1,5 @@
-import { CheckInService } from "../services/CheckInService.js";
+//Arthur Oliveira
+// import CheckInService from "../services/CheckInService.js";
 
 class CheckInController {
   

@@ -16,13 +16,11 @@ class AdministradorService {
   static async create(req) {
     const { nome, senha, email, telefone } = req.body;
     
-    // Verifica se já existe um administrador com o mesmo email
     const existingEmail = await Administrador.findOne({ where: { email } });
     if (existingEmail) {
       throw new Error("Já existe um administrador com este e-mail");
     }
 
-    // Verifica se já existe um administrador com o mesmo telefone
     const existingTelefone = await Administrador.findOne({ where: { telefone } });
     if (existingTelefone) {
       throw new Error("Já existe um administrador com este telefone");
@@ -35,8 +33,7 @@ class AdministradorService {
     const { id } = req.params;
     const { nome, senha, email, telefone } = req.body;
     let obj = await Administrador.findOne({ where: { id } });
-    
-    // Verifica se o novo email já existe em outro administrador
+
     const existingEmail = await Administrador.findOne({
       where: {
         id: { [Op.ne]: id },
@@ -46,8 +43,7 @@ class AdministradorService {
     if (existingEmail) {
       throw new Error("Já existe um administrador com este e-mail");
     }
-
-    // Verifica se o novo telefone já existe em outro administrador
+    
     const existingTelefone = await Administrador.findOne({
       where: {
         id: { [Op.ne]: id },

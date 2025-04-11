@@ -16,13 +16,11 @@ class ClienteService {
   static async create(req) {
     const { nome, email, telefone, dataNascimento, dataCadastro } = req.body;
 
-    // Verifica se o email já está em uso
     const emailExistente = await Cliente.findOne({ where: { email } });
     if (emailExistente) {
       throw new Error("Já existe um cliente com este email");
     }
 
-    // Verifica se o telefone já está em uso
     const telefoneExistente = await Cliente.findOne({ where: { telefone } });
     if (telefoneExistente) {
       throw new Error("Já existe um cliente com este telefone");
@@ -40,13 +38,11 @@ class ClienteService {
       throw new Error("Cliente não encontrado");
     }
 
-    // Verifica se o email já está em uso por outro cliente
     const emailExistente = await Cliente.findOne({ where: { email, id: { [Op.ne]: id } } });
     if (emailExistente) {
       throw new Error("Já existe um cliente com este email");
     }
 
-    // Verifica se o telefone já está em uso por outro cliente
     const telefoneExistente = await Cliente.findOne({ where: { telefone, id: { [Op.ne]: id } } });
     if (telefoneExistente) {
       throw new Error("Já existe um cliente com este telefone");
