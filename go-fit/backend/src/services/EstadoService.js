@@ -1,6 +1,5 @@
-//Gabriel Sarte
+//Matheus Cardoso
 import { Estado } from "../models/Estado.js";
-import { Op } from "sequelize";
 
 class EstadoService {
 
@@ -19,7 +18,7 @@ class EstadoService {
         // Define o today pra checar se outro estado foi criado hoje, já retirando a hora
         const today = new Date().toISOString().split('T')[0];
 
-        // Busca um registro no dia de hoje
+        // Busca de um registro no dia de hoje
         const existingToday = await Estado.findOne({
             where: {
                 data: today,

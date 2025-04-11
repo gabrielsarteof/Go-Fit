@@ -1,4 +1,4 @@
-//Gabriel Sarte
+//Matheus Cardoso
 import { Nutricionista } from "../models/Nutricionista.js";
 import { Op } from "sequelize";
 
