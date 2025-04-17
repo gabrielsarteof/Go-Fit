@@ -10,8 +10,8 @@ class Cliente extends Model {
           notEmpty: { msg: "Nome do Cliente deve ser preenchido!" },
           len: { args: [2, 50], msg: "Nome do Cliente deve ter entre 2 e 50 caracteres!" },
           is: {
-            args: /^[A-Z][a-z]+(?:\s[A-Z][a-z]+)+$/,
-            msg: "Nome inválido. Deve ser composto e iniciar com maiúsculas (Ex: Nome Sobrenome)."
+            args: /^[A-ZÀ-Ý][a-zà-ÿ]+(?:\s(?:[a-zà-ÿ]+|[A-ZÀ-Ý][a-zà-ÿ]+))*$/,
+            msg: "Nome inválido. Deve ser composto por palavras iniciando com maiúsculas ou preposições em minúsculas."
           }
         }
       },

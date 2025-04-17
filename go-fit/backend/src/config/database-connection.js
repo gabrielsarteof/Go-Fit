@@ -123,28 +123,28 @@ function databaseInserts() {
 
         const admin1 = await Administrador.create({
             nome: "Carlos Silva",
-            senha: "admin123",
+            senha: "Admin@123",
             email: "carlos.admin@gofit.com",
             telefone: "(28) 98765-4321"
         });
 
         const admin2 = await Administrador.create({
             nome: "Ana Oliveira",
-            senha: "admin456",
+            senha: "Ana#4567",
             email: "ana.admin@gofit.com",
             telefone: "(28) 91234-5678"
         });
 
         const admin3 = await Administrador.create({
             nome: "Roberto Santos",
-            senha: "admin789",
+            senha: "Roberto$789",
             email: "roberto.admin@gofit.com",
             telefone: "(28) 99876-5432"
         });
 
         const admin4 = await Administrador.create({
             nome: "Juliana Costa",
-            senha: "admin101",
+            senha: "Costa!101",
             email: "juliana.admin@gofit.com",
             telefone: "(28) 95555-9999"
         });
@@ -242,28 +242,28 @@ function databaseInserts() {
 
 
         const cliente1 = await Cliente.create({
-            nome: "João Silva",
+            nome: "João da Silva",
             email: "joao.silva@email.com",
             telefone: "(11) 99999-8888",
             dataNascimento: "1990-05-15"
         });
 
         const cliente2 = await Cliente.create({
-            nome: "Maria Oliveira",
+            nome: "Maria de Oliveira",
             email: "maria.oliveira@email.com",
             telefone: "(11) 98888-9999",
             dataNascimento: "1985-10-20"
         });
 
         const cliente3 = await Cliente.create({
-            nome: "Pedro Santos",
+            nome: "Pedro dos Santos",
             email: "pedro.santos@email.com",
             telefone: "(11) 97777-6666",
             dataNascimento: "1995-03-25"
         });
 
         const cliente4 = await Cliente.create({
-            nome: "Ana Costa",
+            nome: "Ana da Costa",
             email: "ana.costa@email.com",
             telefone: "(11) 96666-7777",
             dataNascimento: "1988-12-10"
