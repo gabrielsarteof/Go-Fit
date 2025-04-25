@@ -1,5 +1,5 @@
-//Arthur Oliveira
-// import { TreinoService } from "../services/TreinoService.js";
+//Arthur
+import { TreinoService } from "../services/TreinoService.js";
 
 class TreinoController {
   
@@ -17,7 +17,7 @@ class TreinoController {
 
   static async create(req, res) {
     TreinoService.create(req)
-      .then(obj => res.json(obj))
+      .then(obj => res.status(201).json(obj))
       .catch(err => res.status(400).json({ err: err.message }));
   }
 
@@ -33,15 +33,21 @@ class TreinoController {
       .catch(err => res.status(400).json({ err: err.message }));
   }
 
-  static async findByNivel(req, res) {
-    TreinoService.findByNivel(req)
-      .then(obj => res.json(obj))
+  static async findByCliente(req, res) {
+    TreinoService.findByCliente(req)
+      .then(objs => res.json(objs))
       .catch(err => res.status(400).json({ err: err.message }));
   }
 
-  static async findByObjetivo(req, res) {
-    TreinoService.findByObjetivo(req)
-      .then(obj => res.json(obj))
+  static async findByPersonal(req, res) {
+    TreinoService.findByPersonal(req)
+      .then(objs => res.json(objs))
+      .catch(err => res.status(400).json({ err: err.message }));
+  }
+
+  static async findAtivos(req, res) {
+    TreinoService.findAtivos(req)
+      .then(objs => res.json(objs))
       .catch(err => res.status(400).json({ err: err.message }));
   }
 }

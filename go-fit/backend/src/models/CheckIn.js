@@ -1,46 +1,54 @@
+//Arthur
 import { Model, DataTypes } from 'sequelize';
 
 class CheckIn extends Model {
   static init(sequelize) {
     super.init({
       entrada: {
-        type: DataTypes.DATE,
+        type: DataTypes.TIME,
+        allowNull: false,
+        validate: {
+          notNull: { msg: 'Horário de entrada é obrigatório' },
+          notEmpty: { msg: 'Horário de entrada não pode ser vazio' }
+        }
       },
       saida: {
-        type: DataTypes.DATE,
+        type: DataTypes.TIME,
+        allowNull: true,
+        validate: {
+          notEmpty: { msg: 'Horário de saída não pode ser vazio' }
+        }
       },
-      acessoAutorizado: {
+      autorizado: {
         type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
       },
-      razaoBloqueio: {
+      razao: {
         type: DataTypes.STRING,
+        allowNull: true,
+        validate: {
+          notEmpty: { msg: 'Razão não pode ser vazia' }
+        }
       }
-    }, {
-      sequelize, modelName: 'checkIn', tableName: 'checkins'
+    }, { 
+      sequelize, 
+      modelName: 'checkin', 
+      tableName: 'checkins',
+      timestamps: false
     });
   }
 
   static associate(models) {
-    this.belongsTo(models.assinatura, {
-      as: 'assinatura',
+    this.belongsTo(models.cliente, {
+      as: 'cliente',
       foreignKey: {
-        name: 'assinaturaId',
+        name: 'clienteId',
         allowNull: false,
-        validate: { notNull: { msg: 'O campo Assinatura deve ter um valor válido!' } }
-      }
-    });
-  }
-
-  static associate(models) {
-    this.belongsTo(models.administrador, {
-      as: 'administrador',
-      foreignKey: {
-        name: 'administradorId',
-        allowNull: false,
-        validate: { notNull: { msg: 'O campo Administrador deve ter um valor válido!' } }
+        validate: { notNull: { msg: 'O campo Cliente deve ter um valor válido!' } }
       }
     });
   }
 }
 
-export { CheckIn };
+export default CheckIn;

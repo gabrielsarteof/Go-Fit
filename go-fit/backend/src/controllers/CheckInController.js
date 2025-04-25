@@ -1,5 +1,5 @@
-//Arthur Oliveira
-// import CheckInService from "../services/CheckInService.js";
+//Arthur
+import { CheckInService } from "../services/CheckInService.js";
 
 class CheckInController {
   
@@ -17,7 +17,7 @@ class CheckInController {
 
   static async create(req, res) {
     CheckInService.create(req)
-      .then(obj => res.json(obj))
+      .then(obj => res.status(201).json(obj))
       .catch(err => res.status(400).json({ err: err.message }));
   }
 
@@ -30,6 +30,18 @@ class CheckInController {
   static async delete(req, res) {
     CheckInService.delete(req)
       .then(obj => res.json(obj))
+      .catch(err => res.status(400).json({ err: err.message }));
+  }
+
+  static async findByCliente(req, res) {
+    CheckInService.findByCliente(req)
+      .then(objs => res.json(objs))
+      .catch(err => res.status(400).json({ err: err.message }));
+  }
+
+  static async findAutorizados(req, res) {
+    CheckInService.findAutorizados(req)
+      .then(objs => res.json(objs))
       .catch(err => res.status(400).json({ err: err.message }));
   }
 }

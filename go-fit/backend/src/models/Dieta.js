@@ -1,3 +1,4 @@
+//Arthur
 import { Model, DataTypes } from 'sequelize';
 
 class Dieta extends Model {

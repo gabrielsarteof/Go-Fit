@@ -1,5 +1,5 @@
-//Arthur Oliveira
-// import { DietaService } from "../services/DietaService.js";
+//Arthur 
+import { DietaService } from "../services/DietaService.js";
 
 class DietaController {
   
@@ -17,7 +17,7 @@ class DietaController {
 
   static async create(req, res) {
     DietaService.create(req)
-      .then(obj => res.json(obj))
+      .then(obj => res.status(201).json(obj))
       .catch(err => res.status(400).json({ err: err.message }));
   }
 
@@ -33,9 +33,15 @@ class DietaController {
       .catch(err => res.status(400).json({ err: err.message }));
   }
 
-  static async findByPeriodo(req, res) {
-    DietaService.findByPeriodo(req)
-      .then(obj => res.json(obj))
+  static async findByCliente(req, res) {
+    DietaService.findByCliente(req)
+      .then(objs => res.json(objs))
+      .catch(err => res.status(400).json({ err: err.message }));
+  }
+
+  static async findByNutricionista(req, res) {
+    DietaService.findByNutricionista(req)
+      .then(objs => res.json(objs))
       .catch(err => res.status(400).json({ err: err.message }));
   }
 }

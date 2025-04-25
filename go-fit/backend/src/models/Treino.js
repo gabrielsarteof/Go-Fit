@@ -1,14 +1,15 @@
+//Arthur
 import { Model, DataTypes } from 'sequelize';
 
-class Treino extends Model {
+class PlanoTreino extends Model {
   static init(sequelize) {
     super.init({
       nivel: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          notNull: { msg: 'O nível do treino é obrigatório' },
-          notEmpty: { msg: 'O nível não pode ser vazio' },
+          notNull: { msg: 'Nível é obrigatório' },
+          notEmpty: { msg: 'Nível não pode ser vazio' },
           isIn: {
             args: [['Iniciante', 'Intermediário', 'Avançado']],
             msg: 'Nível deve ser Iniciante, Intermediário ou Avançado'
@@ -19,30 +20,28 @@ class Treino extends Model {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          notNull: { msg: 'O objetivo do treino é obrigatório' },
-          notEmpty: { msg: 'O objetivo não pode ser vazio' },
+          notNull: { msg: 'Objetivo é obrigatório' },
+          notEmpty: { msg: 'Objetivo não pode ser vazio' },
           len: {
             args: [3, 100],
-            msg: 'O objetivo deve ter entre 3 e 100 caracteres'
+            msg: 'Objetivo deve ter entre 3 e 100 caracteres'
           }
         }
       },
       dataCriacao: {
-        type: DataTypes.DATEONLY,
+        type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: DataTypes.NOW,
-        validate: {
-          isDate: { msg: 'Informe uma data de criação válida' }
-        }
+        defaultValue: DataTypes.NOW
       },
       dataExpiracao: {
-        type: DataTypes.DATEONLY,
+        type: DataTypes.DATE,
+        allowNull: false,
         validate: {
-          isDate: { msg: 'Informe uma data de expiração válida' },
-          isAfterCreation(value) {
-            if (value && this.dataCriacao && new Date(value) <= new Date(this.dataCriacao)) {
-              throw new Error('A data de expiração deve ser após a data de criação');
-            }
+          notNull: { msg: 'Data de expiração é obrigatória' },
+          isDate: { msg: 'Data de expiração deve ser válida' },
+          isAfter: {
+            args: new Date().toISOString(),
+            msg: 'Data de expiração deve ser futura'
           }
         }
       },
@@ -50,12 +49,16 @@ class Treino extends Model {
         type: DataTypes.TEXT,
         allowNull: false,
         validate: {
-          notNull: { msg: 'A lista de exercícios é obrigatória' },
-          notEmpty: { msg: 'A lista de exercícios não pode ser vazia' }
+          notNull: { msg: 'Exercícios são obrigatórios' },
+          notEmpty: { msg: 'Exercícios não podem ser vazios' }
         }
       }
     }, { 
-      sequelize, modelName: 'treino', tableName: 'treinos', timestamps: true,  })
+      sequelize, 
+      modelName: 'planoTreino', 
+      tableName: 'planos_treino',
+      timestamps: false
+    });
   }
 
   static associate(models) {
@@ -64,20 +67,19 @@ class Treino extends Model {
       foreignKey: {
         name: 'clienteId',
         allowNull: false,
-        validate: { notNull: { msg: 'O campo Cliente deve ter um valor válido!' } }
+        validate: { notNull: { msg: 'Cliente é obrigatório' } }
       }
     });
+
     this.belongsTo(models.personalTrainer, {
-      as: 'personalTrainer',
+      as: 'personal',
       foreignKey: {
-        name: 'personalTrainerId',
+        name: 'personalId',
         allowNull: false,
-        validate: { notNull: { msg: 'O campo Personal Trainer deve ter um valor válido!' } }
+        validate: { notNull: { msg: 'Personal Trainer é obrigatório' } }
       }
     });
   }
-
-  
 }
 
-export { Treino };
+export default PlanoTreino;
