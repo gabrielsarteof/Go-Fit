@@ -1,7 +1,7 @@
 //Arthur
 import { Model, DataTypes } from 'sequelize';
 
-export class Treino extends Model {  
+ class Treino extends Model {  
   static init(sequelize) {
     super.init({
       nivel: {
