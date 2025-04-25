@@ -1,7 +1,7 @@
 //Arthur
 import { Model, DataTypes } from 'sequelize';
 
-class PlanoTreino extends Model {
+export class Treino extends Model {  
   static init(sequelize) {
     super.init({
       nivel: {
@@ -55,8 +55,8 @@ class PlanoTreino extends Model {
       }
     }, { 
       sequelize, 
-      modelName: 'planoTreino', 
-      tableName: 'planos_treino',
+      modelName: 'treino',  
+      tableName: 'treinos', 
       timestamps: false
     });
   }
@@ -82,4 +82,4 @@ class PlanoTreino extends Model {
   }
 }
 
-export { PlanoTreino };
+export { Treino }; 
