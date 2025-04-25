@@ -1,3 +1,4 @@
+//Matheus Cardoso
 import { Model, DataTypes } from 'sequelize';
 
 class PersonalTrainer extends Model {

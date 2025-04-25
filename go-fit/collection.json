@@ -1,0 +1,530 @@
+{
+	"info": {
+		"_postman_id": "9be234b9-45b3-45f0-a54b-bb1a35db3871",
+		"name": "Go-Fit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "43325999"
+	},
+	"item": [
+		{
+			"name": "administrador",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Gabriel Sarte\",\r\n    \"senha\": \"Gab@2025\",\r\n    \"email\": \"gabriel.admin@gofit.com\",\r\n    \"telefone\": \"(28) 99900-0000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3333/administradores"
+					},
+					"response": []
+				},
+				{
+					"name": "Create [Error]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"lucas sarte\",\r\n    \"senha\": \"1234\",\r\n    \"email\": \"lucas.com\",\r\n    \"telefone\": \"999999999\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3333/administradores"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "localhost:3333/administradores/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:3333/administradores/3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cliente",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3333/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3333/clientes/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Camila Gomes\",\r\n    \"email\": \"camila@gmail.com\",\r\n    \"telefone\": \"(28) 99999-9999\",\r\n    \"dataNascimento\": \"2003-05-13\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3333/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "Create [Error]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"bruna\",\r\n    \"email\": \"brunagmail.com\",\r\n    \"telefone\": \"99955443322\",\r\n    \"dataNascimento\": \"14 de março de 2000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3333/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "localhost:3333/clientes/4"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:3333/clientes/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "dieta",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3333/dietas"
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3333/dietas/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"descricao\": \"Dieta para emagrecimento\",\r\n  \"dataCriacao\": \"2025-04-25\",\r\n  \"dataExpiracao\": \"2025-06-25\",\r\n  \"instrucoes\": \"Consumir alimentos ricos em fibras e evitar açúcares.\",\r\n  \"clienteId\": 1,\r\n  \"nutricionistaId\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3333/dietas"
+					},
+					"response": []
+				},
+				{
+					"name": "Create [Error]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"descricao\": \"\",                  \r\n  \"dataCriacao\": \"data inválida\",   \r\n  \"dataExpiracao\": null,\r\n  \"instrucoes\": \"\",\r\n  \"clienteId\": null,\r\n  \"nutricionistaId\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3333/dietas"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "localhost:3333/dietas/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:3333/dietas/3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "nutricionista",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3333/nutricionistas"
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3333/nutricionistas/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Gabriel Sarte\",\r\n    \"senha\": \"Gab@2025\",\r\n    \"email\": \"gabriel.admin@gofit.com\",\r\n    \"telefone\": \"(28) 99900-0000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3333/administradores"
+					},
+					"response": []
+				},
+				{
+					"name": "Create [Error]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"\",                               \r\n  \"email\": \"\",                              \r\n  \"telefone\": \"12345\",                      \r\n  \"horarioAtendimento\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3333/nutricionistas"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "localhost:3333/nutricionistas/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:3333/nutricionistas/3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "profissionaltrainer",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3333/personaltrainers"
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3333/personaltrainers"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Matheus Cardoso\",\r\n  \"certificacao\": \"CREF123456\",\r\n  \"email\": \"matheus.personal@gmail.com\",\r\n  \"telefone\": \"(28) 98765-4321\",\r\n  \"horarioAtendimento\": \"Segunda a sexta, das 07h às 18h\",\r\n  \"especialidade\": \"Musculação e condicionamento físico\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3333/personaltrainers"
+					},
+					"response": []
+				},
+				{
+					"name": "Create [Error]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"\",\r\n  \"certificacao\": \"\",\r\n  \"email\": \"\",\r\n  \"telefone\": \"99999999\",\r\n  \"horarioAtendimento\": \"\",\r\n  \"especialidade\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3333/personaltrainers"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "localhost:3333/personaltrainers/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:3333/personaltrainers/3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "treinos",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3333/treinos"
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3333/treinos/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nivel\": \"Intermediário\",\r\n  \"objetivo\": \"Ganhar massa muscular\",\r\n  \"dataCriacao\": \"2025-04-25\",\r\n  \"dataExpiracao\": \"2025-06-01\",\r\n  \"exercicios\": \"Supino, agachamento, levantamento terra\",\r\n  \"clienteId\": 1,\r\n  \"personalId\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3333/treinos"
+					},
+					"response": []
+				},
+				{
+					"name": "Create [Error]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nivel\": \"Invalido\",\r\n  \"objetivo\": \"\",\r\n  \"dataCriacao\": \"2025-04-25\",\r\n  \"dataExpiracao\": \"2023-01-01\",\r\n  \"exercicios\": \"\",\r\n  \"clienteId\": null,\r\n  \"personalId\": null\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3333/treinos"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "localhost:3333/treinos/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:3333/treinos/3"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
