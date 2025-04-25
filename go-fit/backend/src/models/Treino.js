@@ -82,4 +82,4 @@ class PlanoTreino extends Model {
   }
 }
 
-export default PlanoTreino;
+export { PlanoTreino };

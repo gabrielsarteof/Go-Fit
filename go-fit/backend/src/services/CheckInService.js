@@ -1,5 +1,5 @@
 //Arthur
-import { CheckIn } from '../models/CheckIn.js';
+import {CheckIn } from '../models/CheckIn.js';
 
 class CheckInService {
   static async findAll() {

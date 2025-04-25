@@ -51,4 +51,4 @@ class CheckIn extends Model {
   }
 }
 
-export default CheckIn;
+export { CheckIn };  
