@@ -13,7 +13,8 @@
 					"name": "Get All",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "localhost:3333/administradores"
 					},
 					"response": []
 				},
@@ -33,7 +34,8 @@
 									"language": "json"
 								}
 							}
-						}
+						},
+						"url": "localhost:3333/administradores/1"
 					},
 					"response": []
 				},
@@ -78,6 +80,15 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Gabriel Sarte\",\r\n    \"senha\": \"Gab@2025\",\r\n    \"email\": \"gabriel.admin@gofit.com\",\r\n    \"telefone\": \"(28) 99900-0000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": "localhost:3333/administradores/2"
 					},
 					"response": []
@@ -155,6 +166,15 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Camila Gomes\",\r\n    \"email\": \"camila@gmail.com\",\r\n    \"telefone\": \"(28) 99999-9999\",\r\n    \"dataNascimento\": \"2003-05-13\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": "localhost:3333/clientes/4"
 					},
 					"response": []
@@ -244,6 +264,15 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"descricao\": \"Dieta para emagrecimento\",\r\n  \"dataCriacao\": \"2025-04-25\",\r\n  \"dataExpiracao\": \"2025-06-25\",\r\n  \"instrucoes\": \"Consumir alimentos ricos em fibras e evitar açúcares.\",\r\n  \"clienteId\": 1,\r\n  \"nutricionistaId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": "localhost:3333/dietas/2"
 					},
 					"response": []
@@ -299,14 +328,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Gabriel Sarte\",\r\n    \"senha\": \"Gab@2025\",\r\n    \"email\": \"gabriel.admin@gofit.com\",\r\n    \"telefone\": \"(28) 99900-0000\"\r\n}",
+							"raw": "{\r\n  \"nome\": \"Matheus Cardoso\",\r\n  \"email\": \"matheus.cardoso@gmail.com\",\r\n  \"telefone\": \"(28) 91234-5678\",\r\n  \"horarioAtendimento\": \"Segunda a sexta, das 08h às 17h\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "localhost:3333/administradores"
+						"url": "localhost:3333/nutricionistas"
 					},
 					"response": []
 				},
@@ -333,6 +362,15 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Matheus Cardoso\",\r\n  \"email\": \"matheus.cardoso@gmail.com\",\r\n  \"telefone\": \"(28) 91234-5678\",\r\n  \"horarioAtendimento\": \"Segunda a sexta, das 08h às 17h\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": "localhost:3333/nutricionistas/2"
 					},
 					"response": []
@@ -422,6 +460,15 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Matheus Cardoso\",\r\n  \"certificacao\": \"CREF123456\",\r\n  \"email\": \"matheus.personal@gmail.com\",\r\n  \"telefone\": \"(28) 98765-4321\",\r\n  \"horarioAtendimento\": \"Segunda a sexta, das 07h às 18h\",\r\n  \"especialidade\": \"Musculação e condicionamento físico\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": "localhost:3333/personaltrainers/2"
 					},
 					"response": []
@@ -511,6 +558,15 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nivel\": \"Intermediário\",\r\n  \"objetivo\": \"Ganhar massa muscular\",\r\n  \"dataCriacao\": \"2025-04-25\",\r\n  \"dataExpiracao\": \"2025-06-01\",\r\n  \"exercicios\": \"Supino, agachamento, levantamento terra\",\r\n  \"clienteId\": 1,\r\n  \"personalTrainerId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": "localhost:3333/treinos/2"
 					},
 					"response": []
