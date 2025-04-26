@@ -66,12 +66,6 @@ class Treino extends Model {
       modelName: 'treino',  
       tableName: 'treinos', 
       timestamps: false,
-      indexes: [
-        {
-          fields: ['clienteId', 'dataCriacao'],
-          unique: true
-        }
-      ],
       hooks: {
         beforeValidate: (treino) => {
           if (!treino.dataCriacao) {
@@ -97,7 +91,7 @@ class Treino extends Model {
     this.belongsTo(models.personalTrainer, {
       as: 'personal',
       foreignKey: {
-        name: 'personalId',
+        name: 'personalTrainerId',
         allowNull: false,
         validate: { 
           notNull: { msg: 'Personal Trainer é obrigatório' } 

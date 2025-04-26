@@ -1,4 +1,4 @@
-// import { NutricionistaService } from "../services/NutricionistaService.js";
+import { NutricionistaService } from "../services/NutricionistaService.js";
 
 class NutricionistaController {
   

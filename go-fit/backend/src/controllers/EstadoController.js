@@ -1,4 +1,4 @@
-// import { EstadoService } from "../services/EstadoService.js";
+import { EstadoService } from "../services/EstadoService.js";
 
 class EstadoController {
   

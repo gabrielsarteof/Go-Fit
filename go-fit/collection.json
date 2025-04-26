@@ -413,7 +413,7 @@
 								}
 							}
 						},
-						"url": "localhost:3333/personaltrainers"
+						"url": "localhost:3333/personaltrainers/2"
 					},
 					"response": []
 				},

@@ -36,11 +36,7 @@ class TreinoService {
   }
 
   static async create(req) {
-    const { nivel, objetivo, dataExpiracao, exercicios, clienteId, personalId } = req.body;
-    
-    if (!nivel || !objetivo || !dataExpiracao || !exercicios || !clienteId || !personalId) {
-      throw new Error('Todos os campos são obrigatórios');
-    }
+    const { nivel, objetivo, dataExpiracao, exercicios, clienteId, personalTrainerId } = req.body;
     
     try {
       const obj = await Treino.create({ 
@@ -49,7 +45,7 @@ class TreinoService {
         dataExpiracao,
         exercicios,
         clienteId,
-        personalId
+        personalTrainerId
       });
       return obj;
     } catch (err) {
@@ -59,7 +55,7 @@ class TreinoService {
 
   static async update(req) {
     const { id } = req.params;
-    const { nivel, objetivo, dataExpiracao, exercicios, clienteId, personalId } = req.body;
+    const { nivel, objetivo, dataExpiracao, exercicios, clienteId, personalTrainerId } = req.body;
     
     try {
       const obj = await Treino.findByPk(id);
@@ -73,7 +69,7 @@ class TreinoService {
         dataExpiracao: dataExpiracao !== undefined ? dataExpiracao : obj.dataExpiracao,
         exercicios: exercicios !== undefined ? exercicios : obj.exercicios,
         clienteId: clienteId !== undefined ? clienteId : obj.clienteId,
-        personalId: personalId !== undefined ? personalId : obj.personalId
+        personalTrainerId: personalTrainerId !== undefined ? personalTrainerId : obj.personalTrainerId
       });
       
       await obj.save();
@@ -114,10 +110,10 @@ class TreinoService {
   }
 
   static async findByPersonal(req) {
-    const { personalId } = req.params;
+    const { personalTrainerId } = req.params;
     try {
       const objs = await Treino.findAll({
-        where: { personalId },
+        where: { personalTrainerId },
         include: [
           { association: 'cliente', attributes: ['id', 'nome'] }
         ],

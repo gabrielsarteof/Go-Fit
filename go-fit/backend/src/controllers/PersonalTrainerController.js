@@ -1,4 +1,4 @@
-// import { PersonalTrainerService } from "../services/PersonalTrainerService.js";
+import { PersonalTrainerService } from "../services/PersonalTrainerService.js";
 
 class PersonalTrainerController {
   
