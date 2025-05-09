@@ -581,6 +581,106 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "assinatura",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3333/assinaturas"
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3333/assinaturas/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"dataExpiracao\": \"2025-04-10T00:00:00.000Z\",\r\n        \"desconto\": 0,\r\n        \"valor\": 39.9,\r\n        \"metodoPagamento\": \"Cartão de Crédito\",\r\n        \"createdAt\": \"2025-05-09T12:11:54.558Z\",\r\n        \"updatedAt\": \"2025-05-09T12:11:54.558Z\",\r\n        \"clienteId\": 1,\r\n        \"planoId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3333/assinaturas"
+					},
+					"response": []
+				},
+				{
+					"name": "Create [Error]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "localhost:3333/assinaturas"
+					},
+					"response": []
+				},
+				{
+					"name": "Create [Business Rule 1 Validator Error]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "localhost:3333/assinaturas"
+					},
+					"response": []
+				},
+				{
+					"name": "Create [Business Rule 2 Success] Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "localhost:3333/assinaturas"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "localhost:3333/assinaturas"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3333/assinaturas/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "estado",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3333/estados"
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

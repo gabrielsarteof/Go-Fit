@@ -4,13 +4,6 @@ import { Model, DataTypes } from 'sequelize';
 class Assinatura extends Model {
   static init(sequelize) {
     super.init({
-      dataExpiracao: {
-        type: DataTypes.DATE,
-        validate: {
-          notEmpty: { msg: "Data de Expiração deve ser preenchida!" },
-          isDate: { msg: "Data de Expiração deve ser uma data válida!" }
-        }
-      },
       desconto: {
         type: DataTypes.FLOAT,
         validate: {
@@ -31,8 +24,28 @@ class Assinatura extends Model {
           notEmpty: { msg: "Método de Pagamento deve ser preenchido!" },
           len: { args: [2, 50], msg: "Método de Pagamento deve ter entre 3 e 50 caracteres!" }
         }
+      },
+      expiresAt: {
+        type: DataTypes.DATE,
+        validate: {
+          notEmpty: { msg: "Data de Expiração deve ser preenchida!" },
+          isDate: { msg: "Data de Expiração deve ser uma data válida!" }
+        }
+      },
+    },  {
+      sequelize,
+      modelName: 'assinatura',
+      tableName: 'assinaturas',
+      hooks: {
+        beforeValidate: (assinatura) => {
+          if (!assinatura.expiresAt) {
+            const data = new Date();
+            data.setMonth(data.getMonth() + 1);
+            assinatura.expiresAt = data;
+          }
+        }
       }
-    }, { sequelize, modelName: 'assinatura', tableName: 'assinaturas' });
+    });
   }
 
   static associate(models) {

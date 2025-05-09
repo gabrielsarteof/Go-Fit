@@ -6,6 +6,7 @@ import { CheckIn } from '../models/CheckIn.js';
 import { Cliente } from '../models/Cliente.js';
 import { Dieta } from '../models/Dieta.js';
 import { Estado } from '../models/Estado.js';
+import { Fidelidade } from '../models/Fidelidade.js'
 import { Nutricionista } from '../models/Nutricionista.js';
 import { PersonalTrainer } from '../models/PersonalTrainer.js';
 import { Plano } from '../models/Plano.js';
@@ -19,6 +20,7 @@ CheckIn.init(sequelize);
 Cliente.init(sequelize);
 Dieta.init(sequelize);
 Estado.init(sequelize);
+Fidelidade.init(sequelize);
 Nutricionista.init(sequelize);
 PersonalTrainer.init(sequelize);
 Plano.init(sequelize);
@@ -84,6 +86,11 @@ const associateModels = (models) => {
 
         Estado.associate(models);
     }
+
+    if (Fidelidade.associate) {
+        Fidelidade.associate(models);
+      }
+      
 
     if (Nutricionista.associate) {
         Nutricionista.associate(models);
@@ -270,17 +277,27 @@ function databaseInserts() {
         });
 
 
-        const assinatura1 = await Assinatura.create({
-            dataExpiracao: "2025-04-10",
-            desconto: 0,
-            valor: 39.90,
-            metodoPagamento: "Cartão de Crédito",
-            clienteId: cliente1.id,
-            planoId: plano1.id
-        });
+        for (let i = 10; i >= 0; i--) {
+            const createdAt = new Date();
+            createdAt.setMonth(createdAt.getMonth() - (i + 1));
+          
+            const expiresAt = new Date(createdAt);
+            expiresAt.setMonth(expiresAt.getMonth() + 1);
+          
+            await Assinatura.create({
+              desconto: 0,
+              valor: 39.90,
+              metodoPagamento: "Cartão de Crédito",
+              clienteId: cliente1.id,
+              planoId: plano1.id,
+              createdAt: createdAt,
+              updatedAt: createdAt,
+              expiresAt: expiresAt
+            });
+          }          
+          
 
         const assinatura2 = await Assinatura.create({
-            dataExpiracao: "2025-04-15",
             desconto: 5,
             valor: 56.90,
             metodoPagamento: "Débito Automático",
@@ -289,7 +306,6 @@ function databaseInserts() {
         });
 
         const assinatura3 = await Assinatura.create({
-            dataExpiracao: "2025-05-01",
             desconto: 10,
             valor: 71.91,
             metodoPagamento: "Boleto Bancário",
@@ -298,7 +314,6 @@ function databaseInserts() {
         });
 
         const assinatura4 = await Assinatura.create({
-            dataExpiracao: "2025-05-10",
             desconto: 15,
             valor: 84.91,
             metodoPagamento: "PIX",
@@ -312,7 +327,7 @@ function databaseInserts() {
             saida: "2025-04-01 09:30:00",
             acessoAutorizado: true,
             razaoBloqueio: null,
-            assinaturaId: assinatura1.id,
+            assinaturaId: assinatura2.id,
             administradorId: admin1.id
         });
 
