@@ -6,7 +6,7 @@ class Estado extends Model {
       data: { 
         type: DataTypes.DATEONLY, 
         validate: {
-          isDate: { msg: "Data do Estado deve seguir o formato YYYY-MM-DD." }
+          isDate: { msg: "Data do Estado deve seguir o formato AAAA-MM-DD." }
         }
       },
       peso: { 

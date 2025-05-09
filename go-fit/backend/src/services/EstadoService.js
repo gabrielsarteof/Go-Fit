@@ -16,26 +16,13 @@ class EstadoService {
         const { peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, cliente, nutricionista } = req.body;
 
         if (cliente == null) throw 'Cliente invalido!';
-        
-        // Define o today pra checar se outro estado foi criado hoje, já retirando a hora
-        const today = new Date().toISOString().split('T')[0];
-        
-        // Busca de um registro no dia de hoje
-        const existingToday = await Estado.findOne({
-            where: {
-                data: today,
-            },
-        });
-        
-        // Faz a verificação em si
-        if (existingToday) {
-            throw new Error('Já existe um Estado criado hoje!');
-        }
-        
+
         if (nutricionista == null) throw 'Nutricionista invalido!';
 
-        const obj = await Estado.create({ peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, clienteId: cliente.id, nutricionistaId: nutricionista.id });
-        return await Estado.findByPk(obj.id, { include: { all: true, nested: true } });   
+        if (await this.verificarRegrasDeNegocio(req)) {
+            const obj = await Estado.create({ peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, clienteId: cliente.id, nutricionistaId: nutricionista.id });
+            return await Estado.findByPk(obj.id, { include: { all: true, nested: true } });
+        }
     }
 
     static async update(req) {
@@ -52,6 +39,50 @@ class EstadoService {
         let obj = await Estado.findByPk(id);
         return await obj.destroy();
     }
+
+    //Implementando as Regras de Negócio da Atualização de Estado
+    //RN 1: Não pode ter sido criada uma atualização de estado na mesma semana.
+    //RN 2: Limite de 3 atualizações de estado a cada 30 dias
+    static async verificarRegrasDeNegocio(req) {
+        const { cliente } = req.body;
+
+        const hoje = new Date();
+
+        // RN1: Verificar se já existe uma atualização na mesma semana
+        const ultimaSemana = new Date(hoje);
+        ultimaSemana.setDate(hoje.getDate() - 7);
+
+        const atualizacaoSemana = await Estado.findOne({
+            where: {
+                cliente,
+                data: {
+                    [Op.between]: [ultimaSemana.toISOString(), hoje.toISOString()],
+                },
+            },
+        });
+
+        if (atualizacaoSemana) {
+            throw new Error('Já existe uma atualização de estado nesta semana.');
+        }
+
+        // RN2: Verificar se existem mais de 3 atualizações nos últimos 30 dias
+        const trintaDiasAtras = new Date();
+        trintaDiasAtras.setDate(hoje.getDate() - 30);
+
+        const atualizacoesUltimos30Dias = await Estado.count({
+            where: {
+                cliente,
+                data: {
+                    [Op.between]: [trintaDiasAtras.toISOString(), hoje.toISOString()],
+                },
+            },
+        });
+
+        if (atualizacoesUltimos30Dias >= 3) {
+            throw new Error('Limite de 3 atualizações de estado nos últimos 30 dias atingido.');
+        }
+    }
+
 }
 
 export { EstadoService };
