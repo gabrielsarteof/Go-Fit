@@ -56,7 +56,7 @@ class EstadoService {
             where: {
                 cliente,
                 data: {
-                    [Op.between]: [ultimaSemana.toISOString(), hoje.toISOString()],
+                    [Op.between]: [ultimaSemana, hoje],
                 },
             },
         });
@@ -73,7 +73,7 @@ class EstadoService {
             where: {
                 cliente,
                 data: {
-                    [Op.between]: [trintaDiasAtras.toISOString(), hoje.toISOString()],
+                    [Op.between]: [trintaDiasAtras, hoje],
                 },
             },
         });
