@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "9be234b9-45b3-45f0-a54b-bb1a35db3871",
+		"_postman_id": "2c2f5bcf-ff73-49e9-9641-cb6389000482",
 		"name": "Go-Fit",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "43325999"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43986196",
+		"_collection_link": "https://matheusc-5227694.postman.co/workspace/Matheus-C's-Workspace~03680b1e-866b-4df4-829c-a99ee3c49358/collection/43986196-2c2f5bcf-ff73-49e9-9641-cb6389000482?action=share&source=collection_link&creator=43986196"
 	},
 	"item": [
 		{
@@ -14,7 +15,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "localhost:3333/administradores"
+						"url": {
+							"raw": "localhost:3333/administradores",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"administradores"
+							]
+						}
 					},
 					"response": []
 				},
@@ -35,7 +45,17 @@
 								}
 							}
 						},
-						"url": "localhost:3333/administradores/1"
+						"url": {
+							"raw": "localhost:3333/administradores/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"administradores",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -53,7 +73,16 @@
 								}
 							}
 						},
-						"url": "localhost:3333/administradores"
+						"url": {
+							"raw": "localhost:3333/administradores",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"administradores"
+							]
+						}
 					},
 					"response": []
 				},
@@ -71,7 +100,16 @@
 								}
 							}
 						},
-						"url": "localhost:3333/administradores"
+						"url": {
+							"raw": "localhost:3333/administradores",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"administradores"
+							]
+						}
 					},
 					"response": []
 				},
@@ -89,7 +127,17 @@
 								}
 							}
 						},
-						"url": "localhost:3333/administradores/2"
+						"url": {
+							"raw": "localhost:3333/administradores/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"administradores",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -98,7 +146,17 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "localhost:3333/administradores/3"
+						"url": {
+							"raw": "localhost:3333/administradores/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"administradores",
+								"3"
+							]
+						}
 					},
 					"response": []
 				}
@@ -112,7 +170,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "localhost:3333/clientes"
+						"url": {
+							"raw": "localhost:3333/clientes",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"clientes"
+							]
+						}
 					},
 					"response": []
 				},
@@ -121,7 +188,17 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "localhost:3333/clientes/2"
+						"url": {
+							"raw": "localhost:3333/clientes/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"clientes",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -139,7 +216,16 @@
 								}
 							}
 						},
-						"url": "localhost:3333/clientes"
+						"url": {
+							"raw": "localhost:3333/clientes",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"clientes"
+							]
+						}
 					},
 					"response": []
 				},
@@ -157,7 +243,16 @@
 								}
 							}
 						},
-						"url": "localhost:3333/clientes"
+						"url": {
+							"raw": "localhost:3333/clientes",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"clientes"
+							]
+						}
 					},
 					"response": []
 				},
@@ -175,7 +270,17 @@
 								}
 							}
 						},
-						"url": "localhost:3333/clientes/4"
+						"url": {
+							"raw": "localhost:3333/clientes/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"clientes",
+								"4"
+							]
+						}
 					},
 					"response": []
 				},
@@ -184,7 +289,17 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "localhost:3333/clientes/1"
+						"url": {
+							"raw": "localhost:3333/clientes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
 					},
 					"response": []
 				}
@@ -198,7 +313,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "localhost:3333/dietas"
+						"url": {
+							"raw": "localhost:3333/dietas",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"dietas"
+							]
+						}
 					},
 					"response": []
 				},
@@ -219,7 +343,17 @@
 								}
 							}
 						},
-						"url": "localhost:3333/dietas/1"
+						"url": {
+							"raw": "localhost:3333/dietas/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"dietas",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -237,7 +371,16 @@
 								}
 							}
 						},
-						"url": "localhost:3333/dietas"
+						"url": {
+							"raw": "localhost:3333/dietas",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"dietas"
+							]
+						}
 					},
 					"response": []
 				},
@@ -255,7 +398,16 @@
 								}
 							}
 						},
-						"url": "localhost:3333/dietas"
+						"url": {
+							"raw": "localhost:3333/dietas",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"dietas"
+							]
+						}
 					},
 					"response": []
 				},
@@ -273,7 +425,17 @@
 								}
 							}
 						},
-						"url": "localhost:3333/dietas/2"
+						"url": {
+							"raw": "localhost:3333/dietas/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"dietas",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -282,7 +444,17 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "localhost:3333/dietas/3"
+						"url": {
+							"raw": "localhost:3333/dietas/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"dietas",
+								"3"
+							]
+						}
 					},
 					"response": []
 				}
@@ -296,7 +468,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "localhost:3333/nutricionistas"
+						"url": {
+							"raw": "localhost:3333/nutricionistas",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"nutricionistas"
+							]
+						}
 					},
 					"response": []
 				},
@@ -317,7 +498,17 @@
 								}
 							}
 						},
-						"url": "localhost:3333/nutricionistas/2"
+						"url": {
+							"raw": "localhost:3333/nutricionistas/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"nutricionistas",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -335,7 +526,16 @@
 								}
 							}
 						},
-						"url": "localhost:3333/nutricionistas"
+						"url": {
+							"raw": "localhost:3333/nutricionistas",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"nutricionistas"
+							]
+						}
 					},
 					"response": []
 				},
@@ -353,7 +553,16 @@
 								}
 							}
 						},
-						"url": "localhost:3333/nutricionistas"
+						"url": {
+							"raw": "localhost:3333/nutricionistas",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"nutricionistas"
+							]
+						}
 					},
 					"response": []
 				},
@@ -371,7 +580,17 @@
 								}
 							}
 						},
-						"url": "localhost:3333/nutricionistas/2"
+						"url": {
+							"raw": "localhost:3333/nutricionistas/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"nutricionistas",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -380,7 +599,17 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "localhost:3333/nutricionistas/3"
+						"url": {
+							"raw": "localhost:3333/nutricionistas/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"nutricionistas",
+								"3"
+							]
+						}
 					},
 					"response": []
 				}
@@ -394,7 +623,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "localhost:3333/personaltrainers"
+						"url": {
+							"raw": "localhost:3333/personaltrainers",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"personaltrainers"
+							]
+						}
 					},
 					"response": []
 				},
@@ -415,7 +653,16 @@
 								}
 							}
 						},
-						"url": "localhost:3333/personaltrainers"
+						"url": {
+							"raw": "localhost:3333/personaltrainers",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"personaltrainers"
+							]
+						}
 					},
 					"response": []
 				},
@@ -433,7 +680,16 @@
 								}
 							}
 						},
-						"url": "localhost:3333/personaltrainers"
+						"url": {
+							"raw": "localhost:3333/personaltrainers",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"personaltrainers"
+							]
+						}
 					},
 					"response": []
 				},
@@ -451,7 +707,17 @@
 								}
 							}
 						},
-						"url": "localhost:3333/personaltrainers/2"
+						"url": {
+							"raw": "localhost:3333/personaltrainers/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"personaltrainers",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -469,7 +735,17 @@
 								}
 							}
 						},
-						"url": "localhost:3333/personaltrainers/2"
+						"url": {
+							"raw": "localhost:3333/personaltrainers/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"personaltrainers",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -478,7 +754,17 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "localhost:3333/personaltrainers/3"
+						"url": {
+							"raw": "localhost:3333/personaltrainers/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"personaltrainers",
+								"3"
+							]
+						}
 					},
 					"response": []
 				}
@@ -492,7 +778,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "localhost:3333/treinos"
+						"url": {
+							"raw": "localhost:3333/treinos",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"treinos"
+							]
+						}
 					},
 					"response": []
 				},
@@ -513,7 +808,17 @@
 								}
 							}
 						},
-						"url": "localhost:3333/treinos/3"
+						"url": {
+							"raw": "localhost:3333/treinos/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"treinos",
+								"3"
+							]
+						}
 					},
 					"response": []
 				},
@@ -531,7 +836,16 @@
 								}
 							}
 						},
-						"url": "localhost:3333/treinos"
+						"url": {
+							"raw": "localhost:3333/treinos",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"treinos"
+							]
+						}
 					},
 					"response": []
 				},
@@ -549,7 +863,16 @@
 								}
 							}
 						},
-						"url": "localhost:3333/treinos"
+						"url": {
+							"raw": "localhost:3333/treinos",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"treinos"
+							]
+						}
 					},
 					"response": []
 				},
@@ -567,7 +890,17 @@
 								}
 							}
 						},
-						"url": "localhost:3333/treinos/2"
+						"url": {
+							"raw": "localhost:3333/treinos/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"treinos",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -576,7 +909,17 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "localhost:3333/treinos/3"
+						"url": {
+							"raw": "localhost:3333/treinos/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"treinos",
+								"3"
+							]
+						}
 					},
 					"response": []
 				}
@@ -590,7 +933,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "localhost:3333/assinaturas"
+						"url": {
+							"raw": "localhost:3333/assinaturas",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"assinaturas"
+							]
+						}
 					},
 					"response": []
 				},
@@ -599,7 +951,17 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "localhost:3333/assinaturas/1"
+						"url": {
+							"raw": "localhost:3333/assinaturas/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"assinaturas",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -617,7 +979,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:3333/assinaturas"
+						"url": {
+							"raw": "http://localhost:3333/assinaturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"assinaturas"
+							]
+						}
 					},
 					"response": []
 				},
@@ -626,7 +998,16 @@
 					"request": {
 						"method": "POST",
 						"header": [],
-						"url": "localhost:3333/assinaturas"
+						"url": {
+							"raw": "localhost:3333/assinaturas",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"assinaturas"
+							]
+						}
 					},
 					"response": []
 				},
@@ -635,7 +1016,16 @@
 					"request": {
 						"method": "POST",
 						"header": [],
-						"url": "localhost:3333/assinaturas"
+						"url": {
+							"raw": "localhost:3333/assinaturas",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"assinaturas"
+							]
+						}
 					},
 					"response": []
 				},
@@ -644,7 +1034,16 @@
 					"request": {
 						"method": "POST",
 						"header": [],
-						"url": "localhost:3333/assinaturas"
+						"url": {
+							"raw": "localhost:3333/assinaturas",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"assinaturas"
+							]
+						}
 					},
 					"response": []
 				},
@@ -653,7 +1052,16 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
-						"url": "localhost:3333/assinaturas"
+						"url": {
+							"raw": "localhost:3333/assinaturas",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"assinaturas"
+							]
+						}
 					},
 					"response": []
 				},
@@ -662,7 +1070,18 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://localhost:3333/assinaturas/1"
+						"url": {
+							"raw": "http://localhost:3333/assinaturas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"assinaturas",
+								"1"
+							]
+						}
 					},
 					"response": []
 				}
@@ -672,11 +1091,235 @@
 			"name": "estado",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "GET ONE",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:3333/estados"
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/estados/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"estados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/estados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"estados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\": \"2023-07-10\",\r\n  \"peso\": 80.0,\r\n  \"altura\": 1.65, \r\n  \"taxaGordura\": 1.0,\r\n  \"circunferenciaCintura\": 180,\r\n  \"circunferenciaBraco\": 40,\r\n  \"comentarios\": \"Cliente apresenta medidas corporais impressionantes, nunca antes vistas!\",\r\n  \"clienteId\": 2,\r\n  \"nutricionistaId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/estados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"estados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST erros campos basicos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\": \"31/12/2023\", //formato errado de data\r\n  \"peso\": \"vinte\", //campos seguintes pedem valores numéricos\r\n  \"altura\": \"um e oitenta\", \r\n  \"taxaGordura\": \"alta\",\r\n  \"circunferenciaCintura\": \"100cm\",\r\n  \"circunferenciaBraco\": \"trinta\",\r\n  \"comentarios\": \"Teste\",\r\n  \"clienteId\": null, // campo de foreign key, mas testando apenas com valor null\r\n  \"nutricionistaId\": null // outra fk\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/estados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"estados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST RN1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\": \"2023-07-10\",\r\n  \"peso\": 80.0,\r\n  \"altura\": 1.65, \r\n  \"taxaGordura\": 1.0,\r\n  \"circunferenciaCintura\": 180,\r\n  \"circunferenciaBraco\": 40,\r\n  \"comentarios\": \"Cliente já fez atualização de estado nessa semana.\",\r\n  \"clienteId\": 3,\r\n  \"nutricionistaId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/estados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"estados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST RN2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\": \"2023-07-10\",\r\n  \"peso\": 80.0,\r\n  \"altura\": 1.65, \r\n  \"taxaGordura\": 1.0,\r\n  \"circunferenciaCintura\": 180,\r\n  \"circunferenciaBraco\": 40,\r\n  \"comentarios\": \"Cliente já fez 3 atualizações de estado nesse mês.\",\r\n  \"clienteId\": 4,\r\n  \"nutricionistaId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/estados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"estados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"data\": \"2025-05-16\",\r\n  \"peso\": 81.0,\r\n  \"altura\": 1.66, \r\n  \"taxaGordura\": 1.1,\r\n  \"circunferenciaCintura\": 179,\r\n  \"circunferenciaBraco\": 39,\r\n  \"comentarios\": \"Medidas corporais impressionantes.\",\r\n  \"clienteId\": 2,\r\n  \"nutricionistaId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/estados/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"estados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/estados/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"estados",
+								"6"
+							]
+						}
 					},
 					"response": []
 				}
