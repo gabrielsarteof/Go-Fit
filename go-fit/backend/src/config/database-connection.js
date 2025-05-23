@@ -89,8 +89,8 @@ const associateModels = (models) => {
 
     if (Fidelidade.associate) {
         Fidelidade.associate(models);
-      }
-      
+    }
+
 
     if (Nutricionista.associate) {
         Nutricionista.associate(models);
@@ -280,22 +280,22 @@ function databaseInserts() {
         for (let i = 10; i >= 0; i--) {
             const createdAt = new Date();
             createdAt.setMonth(createdAt.getMonth() - (i + 1));
-          
+
             const expiresAt = new Date(createdAt);
             expiresAt.setMonth(expiresAt.getMonth() + 1);
-          
+
             await Assinatura.create({
-              desconto: 0,
-              valor: 39.90,
-              metodoPagamento: "Cartão de Crédito",
-              clienteId: cliente1.id,
-              planoId: plano1.id,
-              createdAt: createdAt,
-              updatedAt: createdAt,
-              expiresAt: expiresAt
+                desconto: 0,
+                valor: 39.90,
+                metodoPagamento: "Cartão de Crédito",
+                clienteId: cliente1.id,
+                planoId: plano1.id,
+                createdAt: createdAt,
+                updatedAt: createdAt,
+                expiresAt: expiresAt
             });
-          }          
-          
+        }
+
 
         const assinatura2 = await Assinatura.create({
             desconto: 5,
@@ -395,7 +395,6 @@ function databaseInserts() {
             nutricionistaId: nutri4.id
         });
 
-
         const estado1 = await Estado.create({
             data: "2025-03-01",
             peso: 75.5,
@@ -404,12 +403,60 @@ function databaseInserts() {
             circunferenciaCintura: 85.0,
             circunferenciaBraco: 32.0,
             comentarios: "Boa condição física inicial",
-            clienteId: cliente1.id,
-            nutricionistaId: nutri1.id
+            clienteId: cliente2.id,
+            nutricionistaId: nutri2.id
         });
 
         const estado2 = await Estado.create({
-            data: "2025-03-05",
+            data: "2023-07-07",
+            peso: 68.2,
+            altura: 1.65,
+            taxaGordura: 22.0,
+            circunferenciaCintura: 78.0,
+            circunferenciaBraco: 28.5,
+            comentarios: "Necessita reduzir percentual de gordura",
+            clienteId: cliente3.id,
+            nutricionistaId: nutri2.id
+        });
+
+        const estado5 = await Estado.create({
+            data: "2023-06-18",
+            peso: 80.0,
+            altura: 1.65,
+            taxaGordura: 1.0,
+            circunferenciaCintura: 180,
+            circunferenciaBraco: 40,
+            comentarios: "Primeira atualização de estado do cliente nesse mês.",
+            clienteId: cliente4.id,
+            nutricionistaId: nutri2.id
+        });
+
+        const estado4 = await Estado.create({
+            data: "2023-06-25",
+            peso: 81.0,
+            altura: 1.65,
+            taxaGordura: 1.1,
+            circunferenciaCintura: 181,
+            circunferenciaBraco: 40,
+            comentarios: "Segunda atualização de estado do cliente nesse mês.",
+            clienteId: cliente4.id,
+            nutricionistaId: nutri2.id
+        });
+
+        const estado3 = await Estado.create({
+            data: "2023-07-02",
+            peso: 80.0,
+            altura: 1.65,
+            taxaGordura: 1.0,
+            circunferenciaCintura: 180,
+            circunferenciaBraco: 40,
+            comentarios: "Terceira atualização de estado do cliente nesse mês.",
+            clienteId: cliente4.id,
+            nutricionistaId: nutri2.id
+        });
+
+        const estado6 = await Estado.create({
+            data: "2025-03-15",
             peso: 68.2,
             altura: 1.65,
             taxaGordura: 22.0,
@@ -420,7 +467,8 @@ function databaseInserts() {
             nutricionistaId: nutri2.id
         });
 
-        const estado3 = await Estado.create({
+        /*
+        const estado7 = await Estado.create({
             data: "2025-03-10",
             peso: 82.0,
             altura: 1.82,
@@ -432,7 +480,7 @@ function databaseInserts() {
             nutricionistaId: nutri3.id
         });
 
-        const estado4 = await Estado.create({
+        const estado8 = await Estado.create({
             data: "2025-03-15",
             peso: 62.5,
             altura: 1.70,
@@ -442,8 +490,7 @@ function databaseInserts() {
             comentarios: "Necessita ganhar massa muscular",
             clienteId: cliente4.id,
             nutricionistaId: nutri4.id
-        });
-
+        });*/
 
         const treino1 = await Treino.create({
             nivel: "Iniciante",
