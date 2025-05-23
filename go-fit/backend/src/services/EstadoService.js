@@ -13,24 +13,24 @@ class EstadoService {
     }
 
     static async create(req) {
-        const { peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, cliente, nutricionista } = req.body;
+        const { data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, cliente, nutricionista } = req.body;
 
         if (cliente == null) throw 'Cliente invalido!';
 
         if (nutricionista == null) throw 'Nutricionista invalido!';
 
         if (await this.verificarRegrasDeNegocio(req)) {
-            const obj = await Estado.create({ peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, clienteId: cliente.id, nutricionistaId: nutricionista.id });
+            const obj = await Estado.create({ data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, clienteId: cliente.id, nutricionistaId: nutricionista.id });
             return await Estado.findByPk(obj.id, { include: { all: true, nested: true } });
         }
     }
 
     static async update(req) {
         const { id } = req.params;
-        const { peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, clienteId, nutricionistaId } = req.body;
+        const { data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, clienteId, nutricionistaId } = req.body;
         let obj = await Estado.findOne({ where: { id } });
 
-        Object.assign(obj, { peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, clienteId, nutricionistaId });
+        Object.assign(obj, { data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, clienteId, nutricionistaId });
         return await obj.save();
     }
 
@@ -46,7 +46,7 @@ class EstadoService {
     static async verificarRegrasDeNegocio(req) {
         const { cliente } = req.body;
 
-        const hoje = new Date();
+        const hoje = new Date(req.body.data);
 
         // RN1: Verificar se já existe uma atualização na mesma semana
         const ultimaSemana = new Date(hoje);
@@ -66,7 +66,7 @@ class EstadoService {
         }
 
         // RN2: Verificar se existem mais de 3 atualizações nos últimos 30 dias
-        const trintaDiasAtras = new Date();
+        const trintaDiasAtras = new Date(hoje);
         trintaDiasAtras.setDate(hoje.getDate() - 30);
 
         const atualizacoesUltimos30Dias = await Estado.count({
