@@ -467,31 +467,6 @@ function databaseInserts() {
             nutricionistaId: nutri2.id
         });
 
-        /*
-        const estado7 = await Estado.create({
-            data: "2025-03-10",
-            peso: 82.0,
-            altura: 1.82,
-            taxaGordura: 15.0,
-            circunferenciaCintura: 88.0,
-            circunferenciaBraco: 35.0,
-            comentarios: "Boa massa muscular, baixo percentual de gordura",
-            clienteId: cliente3.id,
-            nutricionistaId: nutri3.id
-        });
-
-        const estado8 = await Estado.create({
-            data: "2025-03-15",
-            peso: 62.5,
-            altura: 1.70,
-            taxaGordura: 20.0,
-            circunferenciaCintura: 75.0,
-            circunferenciaBraco: 27.0,
-            comentarios: "Necessita ganhar massa muscular",
-            clienteId: cliente4.id,
-            nutricionistaId: nutri4.id
-        });*/
-
         const treino1 = await Treino.create({
             nivel: "Iniciante",
             objetivo: "Ganho de massa muscular",
