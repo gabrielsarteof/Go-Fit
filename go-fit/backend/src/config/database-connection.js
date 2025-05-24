@@ -277,7 +277,7 @@ function databaseInserts() {
         });
 
 
-        for (let i = 10; i >= 0; i--) {
+        for (let i = 11; i >= 0; i--) {
             const createdAt = new Date();
             createdAt.setMonth(createdAt.getMonth() - (i + 1));
 
@@ -313,14 +313,6 @@ function databaseInserts() {
             planoId: plano3.id
         });
 
-        const assinatura4 = await Assinatura.create({
-            desconto: 15,
-            valor: 84.91,
-            metodoPagamento: "PIX",
-            clienteId: cliente4.id,
-            planoId: plano4.id
-        });
-
 
         const checkIn1 = await CheckIn.create({
             entrada: "2025-04-01 08:00:00",
@@ -354,7 +346,7 @@ function databaseInserts() {
             saida: null,
             acessoAutorizado: false,
             razaoBloqueio: "Assinatura vencida",
-            assinaturaId: assinatura4.id,
+            assinaturaId: assinatura3.id,
             administradorId: admin4.id
         });
 
