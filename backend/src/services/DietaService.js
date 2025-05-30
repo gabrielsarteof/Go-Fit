@@ -35,17 +35,17 @@ class DietaService {
   }
 
   static async create(req) {
-    const { descricao, dataCriacao, dataExpiracao, instrucoes, cliente_id, nutricionista_id } = req.body;
+    const { descricao, created_at, expires_at, instrucoes, cliente_id, nutricionista_id } = req.body;
     
-    if (!descricao || !instrucoes || !dataExpiracao || !cliente_id || !nutricionista_id) {
+    if (!descricao || !instrucoes || !expires_at || !cliente_id || !nutricionista_id) {
       throw new Error('Descrição, instruções, data de expiração, cliente e nutricionista são obrigatórios.');
     }
     
     try {
       const obj = await Dieta.create({ 
         descricao, 
-        dataCriacao: dataCriacao || new Date(),
-        dataExpiracao,
+        created_at: created_at || new Date(),
+        expires_at,
         instrucoes,
         cliente_id,
         nutricionista_id
@@ -58,7 +58,7 @@ class DietaService {
 
   static async update(req) {
     const { id } = req.params;
-    const { descricao, dataExpiracao, instrucoes, cliente_id, nutricionista_id } = req.body;
+    const { descricao, expires_at, instrucoes, cliente_id, nutricionista_id } = req.body;
     
     try {
       const obj = await Dieta.findByPk(id);
@@ -68,7 +68,7 @@ class DietaService {
       
       Object.assign(obj, {
         descricao: descricao !== undefined ? descricao : obj.descricao,
-        dataExpiracao: dataExpiracao !== undefined ? dataExpiracao : obj.dataExpiracao,
+        expires_at: expires_at !== undefined ? expires_at : obj.expires_at,
         instrucoes: instrucoes !== undefined ? instrucoes : obj.instrucoes,
         cliente_id: cliente_id !== undefined ? cliente_id : obj.cliente_id,
         nutricionista_id: nutricionista_id !== undefined ? nutricionista_id : obj.nutricionista_id

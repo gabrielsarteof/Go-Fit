@@ -277,28 +277,28 @@ function databaseInserts() {
             nome: "Mariana Alves",
             email: "mariana.nutri@gofit.com",
             telefone: "(28) 98888-7777",
-            horarioAtendimento: "Segunda a Sexta, 8h às 17h"
+            horario_atendimento: "Segunda a Sexta, 8h às 17h"
         });
 
         const nutri2 = await Nutricionista.create({
             nome: "Pedro Mendes",
             email: "pedro.nutri@gofit.com",
             telefone: "(28) 97777-8888",
-            horarioAtendimento: "Segunda a Sexta, 9h às 18h"
+            horario_atendimento: "Segunda a Sexta, 9h às 18h"
         });
 
         const nutri3 = await Nutricionista.create({
             nome: "Camila Rocha",
             email: "camila.nutri@gofit.com",
             telefone: "(28) 96666-5555",
-            horarioAtendimento: "Terça a Sábado, 8h às 17h"
+            horario_atendimento: "Terça a Sábado, 8h às 17h"
         });
 
         const nutri4 = await Nutricionista.create({
             nome: "Lucas Ferreira",
             email: "lucas.nutri@gofit.com",
             telefone: "(28) 95555-6666",
-            horarioAtendimento: "Segunda a Sexta, 10h às 19h"
+            horario_atendimento: "Segunda a Sexta, 10h às 19h"
         });
 
 
@@ -307,7 +307,7 @@ function databaseInserts() {
             certificacao: "CREF 12345-G/SP",
             email: "rafael.personal@gofit.com",
             telefone: "(28) 94444-3333",
-            horarioAtendimento: "Segunda a Sexta, 6h às 22h",
+            horario_atendimento: "Segunda a Sexta, 6h às 22h",
             especialidade: "Musculação"
         });
 
@@ -316,7 +316,7 @@ function databaseInserts() {
             certificacao: "CREF 54321-G/SP",
             email: "fernanda.personal@gofit.com",
             telefone: "(28) 93333-4444",
-            horarioAtendimento: "Segunda a Sábado, 7h às 21h",
+            horario_atendimento: "Segunda a Sábado, 7h às 21h",
             especialidade: "Funcional"
         });
 
@@ -325,7 +325,7 @@ function databaseInserts() {
             certificacao: "CREF 67890-G/SP",
             email: "gustavo.personal@gofit.com",
             telefone: "(28) 92222-1111",
-            horarioAtendimento: "Terça a Domingo, 8h às 20h",
+            horario_atendimento: "Terça a Domingo, 8h às 20h",
             especialidade: "CrossFit"
         });
 
@@ -334,7 +334,7 @@ function databaseInserts() {
             certificacao: "CREF 09876-G/SP",
             email: "patricia.personal@gofit.com",
             telefone: "(28) 91111-2222",
-            horarioAtendimento: "Segunda a Sexta, 6h às 15h",
+            horario_atendimento: "Segunda a Sexta, 6h às 15h",
             especialidade: "Pilates"
         });
 
@@ -368,28 +368,28 @@ function databaseInserts() {
             nome: "João da Silva",
             email: "joao.silva@email.com",
             telefone: "(11) 99999-8888",
-            dataNascimento: "1990-05-15"
+            data_nascimento: "1990-05-15"
         });
 
         const cliente2 = await Cliente.create({
             nome: "Maria de Oliveira",
             email: "maria.oliveira@email.com",
             telefone: "(11) 98888-9999",
-            dataNascimento: "1985-10-20"
+            data_nascimento: "1985-10-20"
         });
 
         const cliente3 = await Cliente.create({
             nome: "Pedro dos Santos",
             email: "pedro.santos@email.com",
             telefone: "(11) 97777-6666",
-            dataNascimento: "1995-03-25"
+            data_nascimento: "1995-03-25"
         });
 
         const cliente4 = await Cliente.create({
             nome: "Ana da Costa",
             email: "ana.costa@email.com",
             telefone: "(11) 96666-7777",
-            dataNascimento: "1988-12-10"
+            data_nascimento: "1988-12-10"
         });
 
 
@@ -397,18 +397,18 @@ function databaseInserts() {
             const createdAt = new Date();
             createdAt.setMonth(createdAt.getMonth() - (i + 1));
 
-            const expiresAt = new Date(createdAt);
-            expiresAt.setMonth(expiresAt.getMonth() + 1);
+            const expires_at = new Date(createdAt);
+            expires_at.setMonth(expires_at.getMonth() + 1);
 
             await Assinatura.create({
                 desconto: 0,
                 valor: 39.90,
-                metodoPagamento: "Cartão de Crédito",
+                metodo_pagamento: "Cartão de Crédito",
                 cliente_id: cliente1.id,
                 plano_id: plano1.id,
                 createdAt: createdAt,
                 updatedAt: createdAt,
-                expiresAt: expiresAt
+                expires_at: expires_at
             });
         }
 
@@ -416,7 +416,7 @@ function databaseInserts() {
         const assinatura2 = await Assinatura.create({
             desconto: 5,
             valor: 56.90,
-            metodoPagamento: "Débito Automático",
+            metodo_pagamento: "Débito Automático",
             cliente_id: cliente2.id,
             plano_id: plano2.id
         });
@@ -424,7 +424,7 @@ function databaseInserts() {
         const assinatura3 = await Assinatura.create({
             desconto: 10,
             valor: 71.91,
-            metodoPagamento: "Boleto Bancário",
+            metodo_pagamento: "Boleto Bancário",
             cliente_id: cliente3.id,
             plano_id: plano3.id
         });
@@ -433,8 +433,8 @@ function databaseInserts() {
         const checkIn1 = await CheckIn.create({
             entrada: "2025-04-01 08:00:00",
             saida: "2025-04-01 09:30:00",
-            acessoAutorizado: true,
-            razaoBloqueio: null,
+            acesso_autorizado: true,
+            razao_bloqueio: null,
             assinatura_id: assinatura2.id,
             administradorId: admin1.id
         });
@@ -442,8 +442,8 @@ function databaseInserts() {
         const checkIn2 = await CheckIn.create({
             entrada: "2025-04-01 17:00:00",
             saida: "2025-04-01 18:45:00",
-            acessoAutorizado: true,
-            razaoBloqueio: null,
+            acesso_autorizado: true,
+            razao_bloqueio: null,
             assinatura_id: assinatura2.id,
             administradorId: admin2.id
         });
@@ -451,8 +451,8 @@ function databaseInserts() {
         const checkIn3 = await CheckIn.create({
             entrada: "2025-04-02 10:00:00",
             saida: "2025-04-02 11:30:00",
-            acessoAutorizado: true,
-            razaoBloqueio: null,
+            acesso_autorizado: true,
+            razao_bloqueio: null,
             assinatura_id: assinatura3.id,
             administradorId: admin3.id
         });
@@ -460,8 +460,8 @@ function databaseInserts() {
         const checkIn4 = await CheckIn.create({
             entrada: "2025-04-02 19:00:00",
             saida: null,
-            acessoAutorizado: false,
-            razaoBloqueio: "Assinatura vencida",
+            acesso_autorizado: false,
+            razao_bloqueio: "Assinatura vencida",
             assinatura_id: assinatura3.id,
             administradorId: admin4.id
         });
@@ -469,8 +469,8 @@ function databaseInserts() {
 
         const dieta1 = await Dieta.create({
             descricao: "Dieta para ganho de massa",
-            dataCriacao: "2025-03-15",
-            dataExpiracao: "2025-06-15",
+            created_at: "2025-03-15",
+            expires_at: "2025-06-15",
             instrucoes: "Consumir 6 refeições diárias com alto teor proteico",
             cliente_id: cliente1.id,
             nutricionista_id: nutri1.id
@@ -478,8 +478,8 @@ function databaseInserts() {
 
         const dieta2 = await Dieta.create({
             descricao: "Dieta para emagrecimento",
-            dataCriacao: "2025-03-20",
-            dataExpiracao: "2025-06-20",
+            created_at: "2025-03-20",
+            expires_at: "2025-06-20",
             instrucoes: "Reduzir carboidratos e aumentar consumo de vegetais",
             cliente_id: cliente2.id,
             nutricionista_id: nutri2.id
@@ -487,8 +487,8 @@ function databaseInserts() {
 
         const dieta3 = await Dieta.create({
             descricao: "Dieta para definição muscular",
-            dataCriacao: "2025-03-25",
-            dataExpiracao: "2025-06-25",
+            created_at: "2025-03-25",
+            expires_at: "2025-06-25",
             instrucoes: "Ciclar carboidratos e manter alto consumo proteico",
             cliente_id: cliente3.id,
             nutricionista_id: nutri3.id
@@ -496,8 +496,8 @@ function databaseInserts() {
 
         const dieta4 = await Dieta.create({
             descricao: "Dieta para aumento de energia",
-            dataCriacao: "2025-03-30",
-            dataExpiracao: "2025-06-30",
+            created_at: "2025-03-30",
+            expires_at: "2025-06-30",
             instrucoes: "Consumir carboidratos complexos e proteínas magras",
             cliente_id: cliente4.id,
             nutricionista_id: nutri4.id
@@ -507,9 +507,9 @@ function databaseInserts() {
             data: "2025-03-01",
             peso: 75.5,
             altura: 1.78,
-            taxaGordura: 18.5,
-            circunferenciaCintura: 85.0,
-            circunferenciaBraco: 32.0,
+            taxa_gordura: 18.5,
+            circunferencia_cintura: 85.0,
+            circunferencia_braco: 32.0,
             comentarios: "Boa condição física inicial",
             cliente_id: cliente2.id,
             nutricionista_id: nutri2.id
@@ -519,9 +519,9 @@ function databaseInserts() {
             data: "2023-07-07",
             peso: 68.2,
             altura: 1.65,
-            taxaGordura: 22.0,
-            circunferenciaCintura: 78.0,
-            circunferenciaBraco: 28.5,
+            taxa_gordura: 22.0,
+            circunferencia_cintura: 78.0,
+            circunferencia_braco: 28.5,
             comentarios: "Necessita reduzir percentual de gordura",
             cliente_id: cliente3.id,
             nutricionista_id: nutri2.id
@@ -531,9 +531,9 @@ function databaseInserts() {
             data: "2023-06-18",
             peso: 80.0,
             altura: 1.65,
-            taxaGordura: 1.0,
-            circunferenciaCintura: 180,
-            circunferenciaBraco: 40,
+            taxa_gordura: 1.0,
+            circunferencia_cintura: 180,
+            circunferencia_braco: 40,
             comentarios: "Primeira atualização de estado do cliente nesse mês.",
             cliente_id: cliente4.id,
             nutricionista_id: nutri2.id
@@ -543,9 +543,9 @@ function databaseInserts() {
             data: "2023-06-25",
             peso: 81.0,
             altura: 1.65,
-            taxaGordura: 1.1,
-            circunferenciaCintura: 181,
-            circunferenciaBraco: 40,
+            taxa_gordura: 1.1,
+            circunferencia_cintura: 181,
+            circunferencia_braco: 40,
             comentarios: "Segunda atualização de estado do cliente nesse mês.",
             cliente_id: cliente4.id,
             nutricionista_id: nutri2.id
@@ -555,9 +555,9 @@ function databaseInserts() {
             data: "2023-07-02",
             peso: 80.0,
             altura: 1.65,
-            taxaGordura: 1.0,
-            circunferenciaCintura: 180,
-            circunferenciaBraco: 40,
+            taxa_gordura: 1.0,
+            circunferencia_cintura: 180,
+            circunferencia_braco: 40,
             comentarios: "Terceira atualização de estado do cliente nesse mês.",
             cliente_id: cliente4.id,
             nutricionista_id: nutri2.id
@@ -567,9 +567,9 @@ function databaseInserts() {
             data: "2025-03-15",
             peso: 68.2,
             altura: 1.65,
-            taxaGordura: 22.0,
-            circunferenciaCintura: 78.0,
-            circunferenciaBraco: 28.5,
+            taxa_gordura: 22.0,
+            circunferencia_cintura: 78.0,
+            circunferencia_braco: 28.5,
             comentarios: "Necessita reduzir percentual de gordura",
             cliente_id: cliente2.id,
             nutricionista_id: nutri2.id
@@ -578,8 +578,8 @@ function databaseInserts() {
         const treino1 = await Treino.create({
             nivel: "Iniciante",
             objetivo: "Ganho de massa muscular",
-            dataCriacao: "2025-03-15",
-            dataExpiracao: "2025-06-15",
+            created_at: "2025-03-15",
+            expires_at: "2025-06-15",
             exercicios: JSON.stringify([
                 { nome: "Supino reto", series: 3, repeticoes: 12, carga: 40 },
                 { nome: "Leg press", series: 3, repeticoes: 15, carga: 100 },
@@ -593,8 +593,8 @@ function databaseInserts() {
         const treino2 = await Treino.create({
             nivel: "Intermediário",
             objetivo: "Emagrecimento",
-            dataCriacao: "2025-03-20",
-            dataExpiracao: "2025-06-20",
+            created_at: "2025-03-20",
+            expires_at: "2025-06-20",
             exercicios: JSON.stringify([
                 { nome: "Esteira", series: 1, repeticoes: 1, carga: 0, tempo: "30 minutos" },
                 { nome: "Bicicleta", series: 1, repeticoes: 1, carga: 0, tempo: "20 minutos" },
@@ -608,8 +608,8 @@ function databaseInserts() {
         const treino3 = await Treino.create({
             nivel: "Avançado",
             objetivo: "Definição muscular",
-            dataCriacao: "2025-03-25",
-            dataExpiracao: "2025-06-25",
+            created_at: "2025-03-25",
+            expires_at: "2025-06-25",
             exercicios: JSON.stringify([
                 { nome: "Supino inclinado", series: 4, repeticoes: 10, carga: 60 },
                 { nome: "Agachamento livre", series: 4, repeticoes: 12, carga: 80 },
@@ -623,8 +623,8 @@ function databaseInserts() {
         const treino4 = await Treino.create({
             nivel: "Iniciante",
             objetivo: "Fortalecimento geral",
-            dataCriacao: "2025-03-30",
-            dataExpiracao: "2025-06-30",
+            created_at: "2025-03-30",
+            expires_at: "2025-06-30",
             exercicios: JSON.stringify([
                 { nome: "Prancha", series: 3, repeticoes: 1, carga: 0, tempo: "30 segundos" },
                 { nome: "Flexões de joelho", series: 3, repeticoes: 10, carga: 0 },
@@ -1193,14 +1193,14 @@ class Assinatura extends Model {
           min: { args: [0], msg: "Valor deve ser maior que zero!" }
         }
       },
-      metodoPagamento: {
+      metodo_pagamento: {
         type: DataTypes.STRING,
         validate: {
           notEmpty: { msg: "Método de Pagamento deve ser preenchido!" },
           len: { args: [2, 50], msg: "Método de Pagamento deve ter entre 3 e 50 caracteres!" }
         }
       },
-      expiresAt: {
+      expires_at: {
         type: DataTypes.DATE,
         validate: {
           notEmpty: { msg: "Data de Expiração deve ser preenchida!" },
@@ -1213,10 +1213,10 @@ class Assinatura extends Model {
       tableName: 'assinaturas',
       hooks: {
         beforeValidate: (assinatura) => {
-          if (!assinatura.expiresAt) {
+          if (!assinatura.expires_at) {
             const data = new Date();
             data.setMonth(data.getMonth() + 1);
-            assinatura.expiresAt = data;
+            assinatura.expires_at = data;
           }
         }
       }
@@ -1281,19 +1281,19 @@ class CheckIn extends Model {
           }
         }
       },
-      acessoAutorizado: {
+      acesso_autorizado: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: false,
         validate: {
           isBoolean(value) {
             if (typeof value !== 'boolean') {
-              throw new Error('O campo "acessoAutorizado" deve ser verdadeiro ou falso');
+              throw new Error('O campo "acesso_autorizado" deve ser verdadeiro ou falso');
             }
           }
         }
       },
-      razaoBloqueio: {
+      razao_bloqueio: {
         type: DataTypes.STRING,
         allowNull: true,
         validate: {
@@ -1373,7 +1373,7 @@ class Cliente extends Model {
           len: { args: [10, 15], msg: "Telefone do Administrador deve ter entre 10 e 15 caracteres!" }
         }
       },
-      dataNascimento: {
+      data_nascimento: {
         type: DataTypes.DATEONLY,
         allowNull: false,
         validate: {
@@ -1423,7 +1423,7 @@ class Dieta extends Model {
           }
         }
       },
-      dataCriacao: {
+      created_at: {
         type: DataTypes.DATE,
         allowNull: false,
         defaultValue: DataTypes.NOW,
@@ -1431,13 +1431,13 @@ class Dieta extends Model {
           isDate: { msg: 'Data de criação inválida' }
         }
       },
-      dataExpiracao: {
+      expires_at: {
         type: DataTypes.DATE,
         allowNull: false,
         validate: {
           isDate: { msg: 'Data de expiração inválida' },
-          isAfterDataCriacao(value) {
-            if (this.dataCriacao && value <= this.dataCriacao) {
+          isAftercreated_at(value) {
+            if (this.created_at && value <= this.created_at) {
               throw new Error('Data de expiração deve ser após a criação');
             }
           }
@@ -1513,19 +1513,19 @@ class Estado extends Model {
           isFloat: { msg: "Altura deve estar em metros, em um valor numérico decimal." }
         }
       },
-      taxaGordura: { 
+      taxa_gordura: { 
         type: DataTypes.FLOAT, 
         validate: {
           isFloat: { msg: "Taxa de gordura deve ser um valor numérico decimal." }
         }
       },
-      circunferenciaCintura: { 
+      circunferencia_cintura: { 
         type: DataTypes.FLOAT, 
         validate: {
           isFloat: { msg: "A circunferência da cintura deve estar em centímetros, em um valor numérico decimal." }
         }
       },
-      circunferenciaBraco: { 
+      circunferencia_braco: { 
         type: DataTypes.FLOAT, 
         validate: {
           isFloat: { msg: "A circunferência do braço deve estar em centímetros, em um valor numérico decimal." }
@@ -1566,26 +1566,26 @@ import { Model, DataTypes } from 'sequelize';
 class Fidelidade extends Model {
   static init(sequelize) {
     super.init({
-      periodoInicio: {
+      data_inicio: {
         type: DataTypes.DATE,
         allowNull: false,
         validate: {
           isDate: { args: true, msg: 'Data de início deve ser válida.' }
         }
       },
-      periodoFim: {
+      data_fim: {
         type: DataTypes.DATE,
         allowNull: false,
         validate: {
           isDate: { args: true, msg: 'Data de fim deve ser válida.' },
           isAfterInicio(value) {
-            if (this.periodoInicio && value <= this.periodoInicio) {
+            if (this.data_inicio && value <= this.data_inicio) {
               throw new Error('Data de fim deve ser após a data de início.');
             }
           }
         }
       },
-      beneficioAplicado: {
+      beneficio_aplicado: {
         type: DataTypes.FLOAT,
         allowNull: false,
         validate: {
@@ -1645,7 +1645,7 @@ class Nutricionista extends Model {
           is: {args: /^\([0-9]{2}\) [0-9]?[0-9]{4}-[0-9]{4}/, msg: "Telefone deve seguir o padrão (NN) NNNNN-NNNN" },
         }
       },
-      horarioAtendimento: {
+      horario_atendimento: {
         type: DataTypes.STRING,
         validate: {
           notEmpty: { msg: "Horário de atendimento não pode ficar vazio." },
@@ -1697,7 +1697,7 @@ class PersonalTrainer extends Model {
           is: { args: /^\([0-9]{2}\) [0-9]?[0-9]{4}-[0-9]{4}/, msg: "Telefone deve seguir o padrão (NN) NNNNN-NNNN" },
         }
       },
-      horarioAtendimento: {
+      horario_atendimento: {
         type: DataTypes.STRING,
         validate: {
           notEmpty: { msg: "Horário de atendimento não pode ficar vazio." },
@@ -1773,7 +1773,7 @@ class Treino extends Model {
           }
         }
       },
-      dataCriacao: {
+      created_at: {
         type: DataTypes.DATE,
         allowNull: false,
         defaultValue: DataTypes.NOW, 
@@ -1781,7 +1781,7 @@ class Treino extends Model {
           isDate: { msg: 'Data de criação inválida' } 
         }
       },
-      dataExpiracao: {
+      expires_at: {
         type: DataTypes.DATE,
         allowNull: false,
         validate: {
@@ -1791,8 +1791,8 @@ class Treino extends Model {
             args: new Date().toISOString(),
             msg: 'Data de expiração deve ser futura'
           },
-          isAfterDataCriacao(value) { 
-            if (this.dataCriacao && value <= this.dataCriacao) {
+          isAftercreated_at(value) { 
+            if (this.created_at && value <= this.created_at) {
               throw new Error('Data de expiração deve ser após a criação');
             }
           }
@@ -1813,8 +1813,8 @@ class Treino extends Model {
       timestamps: false,
       hooks: {
         beforeValidate: (treino) => {
-          if (!treino.dataCriacao) {
-            treino.dataCriacao = new Date();
+          if (!treino.created_at) {
+            treino.created_at = new Date();
           }
         }
       }
@@ -2072,7 +2072,7 @@ class AssinaturaService {
   const assinaturaAtiva = await Assinatura.findOne({
     where: {
       cliente_id,
-      expiresAt: { [Op.gt]: new Date() }
+      expires_at: { [Op.gt]: new Date() }
     }
   });
   if (assinaturaAtiva) {
@@ -2084,11 +2084,11 @@ class AssinaturaService {
   // Regra 2: Conceder 50% de desconto para clientes que tenham 12 meses consecutivos de fidelidade
   const ultimoCiclo = await Fidelidade.findOne({
     where: { cliente_id },
-    order: [['periodoFim', 'DESC']]
+    order: [['data_fim', 'DESC']]
   });
   const now = new Date();
   const inicioWindow = ultimoCiclo
-    ? new Date(ultimoCiclo.periodoFim)
+    ? new Date(ultimoCiclo.data_fim)
     : new Date(now.getFullYear(), now.getMonth() - 11, 1);
 
   // Busca todas as assinaturas do cliente dentro da janela de 12 meses
@@ -2143,7 +2143,7 @@ class AssinaturaService {
 
 
   static async create(req) {
-    const { metodoPagamento, cliente_id, plano_id, valor, desconto = 0 } = req.body;
+    const { metodo_pagamento, cliente_id, plano_id, valor, desconto = 0 } = req.body;
 
     const regras = await this.verificarRegrasDeNegocio({ cliente_id });
     if (!regras.valido) {
@@ -2155,7 +2155,7 @@ class AssinaturaService {
 
     const novaAssinatura = await Assinatura.create({
       desconto: descontoFinal,
-      metodoPagamento,
+      metodo_pagamento,
       cliente_id,
       plano_id,
       valor: valorFinal
@@ -2164,9 +2164,9 @@ class AssinaturaService {
     if (regras.aplicarCicloFidelidade && regras.periodoFidelidade) {
       await Fidelidade.create({
         cliente_id,
-        periodoInicio: regras.periodoFidelidade.inicio,
-        periodoFim: regras.periodoFidelidade.fim,
-        beneficioAplicado: regras.desconto
+        data_inicio: regras.periodoFidelidade.inicio,
+        data_fim: regras.periodoFidelidade.fim,
+        beneficio_aplicado: regras.desconto
       });
     }
 
@@ -2175,7 +2175,7 @@ class AssinaturaService {
 
   static async update(req) {
     const { id } = req.params;
-    const { createdAt, expiresAt, desconto, metodoPagamento, cliente_id, plano_id, valor } = req.body;
+    const { createdAt, expires_at, desconto, metodo_pagamento, cliente_id, plano_id, valor } = req.body;
 
     const assinatura = await Assinatura.findOne({ where: { id } });
     if (!assinatura) throw new Error('Assinatura não encontrada!');
@@ -2188,9 +2188,9 @@ class AssinaturaService {
 
     Object.assign(assinatura, {
       createdAt,
-      expiresAt,
+      expires_at,
       desconto,
-      metodoPagamento,
+      metodo_pagamento,
       cliente_id,
       plano_id,
       valor
@@ -2203,7 +2203,7 @@ class AssinaturaService {
     const { id } = req.params;
     const obj = await Assinatura.findByPk(id);
     if (!obj) throw new Error("Assinatura não encontrada.");
-    if (obj.expiresAt < new Date()) throw new Error("Não foi possivel deletar essa assinatura, pois ela esta expirada");
+    if (obj.expires_at < new Date()) throw new Error("Não foi possivel deletar essa assinatura, pois ela esta expirada");
     await CheckIn.destroy({ where: { assinatura_id: id } });
     return await obj.destroy();
   }
@@ -2239,7 +2239,7 @@ class CheckInService {
   }
 
   static async create(req) {
-    const { entrada, saida, acessoAutorizado, razaoBloqueio, cliente_id } = req.body;
+    const { entrada, saida, acesso_autorizado, razao_bloqueio, cliente_id } = req.body;
 
     if (!entrada || !cliente_id) {
       throw 'Horário de entrada e cliente_id são obrigatórios.';
@@ -2252,8 +2252,8 @@ class CheckInService {
           {
             entrada,
             saida: saida || null,
-            acessoAutorizado: acessoAutorizado !== undefined ? acessoAutorizado : true,
-            razaoBloqueio: razaoBloqueio || null,
+            acesso_autorizado: acesso_autorizado !== undefined ? acesso_autorizado : true,
+            razao_bloqueio: razao_bloqueio || null,
             cliente_id,
           },
           { transaction: t }
@@ -2270,7 +2270,7 @@ class CheckInService {
 
   static async update(req) {
     const { id } = req.params;
-    const { entrada, saida, acessoAutorizado, razaoBloqueio, cliente_id } = req.body;
+    const { entrada, saida, acesso_autorizado, razao_bloqueio, cliente_id } = req.body;
 
     const obj = await CheckIn.findByPk(id, { include: { all: true, nested: true } });
     if (obj == null) throw 'CheckIn não encontrado!';
@@ -2280,8 +2280,8 @@ class CheckInService {
       Object.assign(obj, {
         entrada: entrada || obj.entrada,
         saida: saida !== undefined ? saida : obj.saida,
-        acessoAutorizado: acessoAutorizado !== undefined ? acessoAutorizado : obj.acessoAutorizado,
-        razaoBloqueio: razaoBloqueio !== undefined ? razaoBloqueio : obj.razaoBloqueio,
+        acesso_autorizado: acesso_autorizado !== undefined ? acesso_autorizado : obj.acesso_autorizado,
+        razao_bloqueio: razao_bloqueio !== undefined ? razao_bloqueio : obj.razao_bloqueio,
         cliente_id: cliente_id || obj.cliente_id,
       });
 
@@ -2365,7 +2365,7 @@ class CheckInService {
   static async findAutorizados(req) {
     const { autorizado } = req.query;
     const objs = await CheckIn.findAll({
-      where: { acessoAutorizado: autorizado === 'true' },
+      where: { acesso_autorizado: autorizado === 'true' },
       include: { all: true, nested: true },
     });
     return objs;
@@ -2403,7 +2403,7 @@ class ClienteService {
   }
 
   static async create(req) {
-    const { nome, email, telefone, dataNascimento, dataCadastro } = req.body;
+    const { nome, email, telefone, data_nascimento, dataCadastro } = req.body;
 
     const emailExistente = await Cliente.findOne({ where: { email } });
     if (emailExistente) {
@@ -2416,7 +2416,7 @@ class ClienteService {
     }
 
     try {
-      return await Cliente.create({ nome, email, telefone, dataNascimento, dataCadastro });
+      return await Cliente.create({ nome, email, telefone, data_nascimento, dataCadastro });
     } catch (error) {
       if (error.name === 'SequelizeValidationError') {
         throw new Error(error.errors.map(e => e.message).join(', '));
@@ -2427,7 +2427,7 @@ class ClienteService {
 
   static async update(req) {
     const { id } = req.params;
-    const { nome, email, telefone, dataNascimento, dataCadastro } = req.body;
+    const { nome, email, telefone, data_nascimento, dataCadastro } = req.body;
 
 
     let obj = await Cliente.findOne({ where: { id } });
@@ -2451,7 +2451,7 @@ class ClienteService {
         nome: nome !== undefined ? nome : obj.nome,
         email: email !== undefined ? email : obj.email,
         telefone: telefone !== undefined ? telefone : obj.telefone,
-        dataNascimento: dataNascimento !== undefined ? dataNascimento : obj.dataNascimento,
+        data_nascimento: data_nascimento !== undefined ? data_nascimento : obj.data_nascimento,
         dataCadastro: dataCadastro !== undefined ? dataCadastro : obj.dataCadastro
     });
 
@@ -2516,17 +2516,17 @@ class DietaService {
   }
 
   static async create(req) {
-    const { descricao, dataCriacao, dataExpiracao, instrucoes, cliente_id, nutricionista_id } = req.body;
+    const { descricao, created_at, expires_at, instrucoes, cliente_id, nutricionista_id } = req.body;
     
-    if (!descricao || !instrucoes || !dataExpiracao || !cliente_id || !nutricionista_id) {
+    if (!descricao || !instrucoes || !expires_at || !cliente_id || !nutricionista_id) {
       throw new Error('Descrição, instruções, data de expiração, cliente e nutricionista são obrigatórios.');
     }
     
     try {
       const obj = await Dieta.create({ 
         descricao, 
-        dataCriacao: dataCriacao || new Date(),
-        dataExpiracao,
+        created_at: created_at || new Date(),
+        expires_at,
         instrucoes,
         cliente_id,
         nutricionista_id
@@ -2539,7 +2539,7 @@ class DietaService {
 
   static async update(req) {
     const { id } = req.params;
-    const { descricao, dataExpiracao, instrucoes, cliente_id, nutricionista_id } = req.body;
+    const { descricao, expires_at, instrucoes, cliente_id, nutricionista_id } = req.body;
     
     try {
       const obj = await Dieta.findByPk(id);
@@ -2549,7 +2549,7 @@ class DietaService {
       
       Object.assign(obj, {
         descricao: descricao !== undefined ? descricao : obj.descricao,
-        dataExpiracao: dataExpiracao !== undefined ? dataExpiracao : obj.dataExpiracao,
+        expires_at: expires_at !== undefined ? expires_at : obj.expires_at,
         instrucoes: instrucoes !== undefined ? instrucoes : obj.instrucoes,
         cliente_id: cliente_id !== undefined ? cliente_id : obj.cliente_id,
         nutricionista_id: nutricionista_id !== undefined ? nutricionista_id : obj.nutricionista_id
@@ -2628,24 +2628,24 @@ class EstadoService {
     }
 
     static async create(req) {
-        const { data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, cliente, nutricionista } = req.body;
+        const { data, peso, altura, taxa_gordura, circunferencia_cintura, circunferencia_braco, comentarios, cliente, nutricionista } = req.body;
 
         if (cliente == null) throw 'Cliente invalido!';
 
         if (nutricionista == null) throw 'Nutricionista invalido!';
 
         if (await this.verificarRegrasDeNegocio(req)) {
-            const obj = await Estado.create({ data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, cliente_id: cliente.id, nutricionista_id: nutricionista.id });
+            const obj = await Estado.create({ data, peso, altura, taxa_gordura, circunferencia_cintura, circunferencia_braco, comentarios, cliente_id: cliente.id, nutricionista_id: nutricionista.id });
             return await Estado.findByPk(obj.id, { include: { all: true, nested: true } });
         }
     }
 
     static async update(req) {
         const { id } = req.params;
-        const { data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, cliente_id, nutricionista_id } = req.body;
+        const { data, peso, altura, taxa_gordura, circunferencia_cintura, circunferencia_braco, comentarios, cliente_id, nutricionista_id } = req.body;
         let obj = await Estado.findOne({ where: { id } });
 
-        Object.assign(obj, { data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, cliente_id, nutricionista_id });
+        Object.assign(obj, { data, peso, altura, taxa_gordura, circunferencia_cintura, circunferencia_braco, comentarios, cliente_id, nutricionista_id });
         return await obj.save();
     }
 
@@ -2722,7 +2722,7 @@ class NutricionistaService {
   }
 
   static async create(req) {
-    const { nome, email, telefone, horarioAtendimento } = req.body;
+    const { nome, email, telefone, horario_atendimento } = req.body;
     
     // Verifica se já existe um Nutricionista com o mesmo email
     const existingEmail = await Nutricionista.findOne({ where: { email } });
@@ -2736,12 +2736,12 @@ class NutricionistaService {
       throw new Error("Já existe um nutricionista com este telefone");
     }
 
-    return await Nutricionista.create({ nome, email, telefone, horarioAtendimento });
+    return await Nutricionista.create({ nome, email, telefone, horario_atendimento });
   }
 
   static async update(req) {
     const { id } = req.params;
-    const { nome, email, telefone, horarioAtendimento } = req.body;
+    const { nome, email, telefone, horario_atendimento } = req.body;
     let obj = await Nutricionista.findOne({ where: { id } });
     
     // Verifica se o novo email já existe em outro Nutricionista
@@ -2766,7 +2766,7 @@ class NutricionistaService {
       throw new Error("Já existe um Nutricionista com este telefone");
     }
     
-    Object.assign(obj, { nome, email, telefone, horarioAtendimento });
+    Object.assign(obj, { nome, email, telefone, horario_atendimento });
     return await obj.save();
   }
 
@@ -2799,7 +2799,7 @@ class PersonalTrainerService {
   }
 
   static async create(req) {
-    const { nome, certificacao, email, telefone, horarioAtendimento, especialidade } = req.body;
+    const { nome, certificacao, email, telefone, horario_atendimento, especialidade } = req.body;
     
     // Verifica se já existe um PersonalTrainer com o mesmo email
     const existingEmail = await PersonalTrainer.findOne({ where: { email } });
@@ -2813,12 +2813,12 @@ class PersonalTrainerService {
       throw new Error("Já existe um PersonalTrainer com este telefone");
     }
 
-    return await PersonalTrainer.create({ nome, certificacao, email, telefone, horarioAtendimento, especialidade });
+    return await PersonalTrainer.create({ nome, certificacao, email, telefone, horario_atendimento, especialidade });
   }
 
   static async update(req) {
     const { id } = req.params;
-    const { nome, certificacao, email, telefone, horarioAtendimento, especialidade } = req.body;
+    const { nome, certificacao, email, telefone, horario_atendimento, especialidade } = req.body;
     let obj = await PersonalTrainer.findOne({ where: { id } });
     
     // Verifica se o novo email já existe em outro Personal Trainer
@@ -2843,7 +2843,7 @@ class PersonalTrainerService {
       throw new Error("Já existe um Personal Trainer com este telefone");
     }
     
-    Object.assign(obj, { nome, certificacao, email, telefone, horarioAtendimento, especialidade });
+    Object.assign(obj, { nome, certificacao, email, telefone, horario_atendimento, especialidade });
     return await obj.save();
   }
 
@@ -2981,13 +2981,13 @@ class TreinoService {
   }
 
   static async create(req) {
-    const { nivel, objetivo, dataExpiracao, exercicios, cliente_id, personal_trainer_id } = req.body;
+    const { nivel, objetivo, expires_at, exercicios, cliente_id, personal_trainer_id } = req.body;
     
     try {
       const obj = await Treino.create({ 
         nivel,
         objetivo,
-        dataExpiracao,
+        expires_at,
         exercicios,
         cliente_id,
         personal_trainer_id
@@ -3000,7 +3000,7 @@ class TreinoService {
 
   static async update(req) {
     const { id } = req.params;
-    const { nivel, objetivo, dataExpiracao, exercicios, cliente_id, personal_trainer_id } = req.body;
+    const { nivel, objetivo, expires_at, exercicios, cliente_id, personal_trainer_id } = req.body;
     
     try {
       const obj = await Treino.findByPk(id);
@@ -3011,7 +3011,7 @@ class TreinoService {
       Object.assign(obj, {
         nivel: nivel !== undefined ? nivel : obj.nivel,
         objetivo: objetivo !== undefined ? objetivo : obj.objetivo,
-        dataExpiracao: dataExpiracao !== undefined ? dataExpiracao : obj.dataExpiracao,
+        expires_at: expires_at !== undefined ? expires_at : obj.expires_at,
         exercicios: exercicios !== undefined ? exercicios : obj.exercicios,
         cliente_id: cliente_id !== undefined ? cliente_id : obj.cliente_id,
         personal_trainer_id: personal_trainer_id !== undefined ? personal_trainer_id : obj.personal_trainer_id
@@ -3046,7 +3046,7 @@ class TreinoService {
         include: [
           { association: 'personal', attributes: ['id', 'nome'] }
         ],
-        order: [['dataCriacao', 'DESC']]
+        order: [['created_at', 'DESC']]
       });
       return objs;
     } catch (err) {
@@ -3062,7 +3062,7 @@ class TreinoService {
         include: [
           { association: 'cliente', attributes: ['id', 'nome'] }
         ],
-        order: [['dataCriacao', 'DESC']]
+        order: [['created_at', 'DESC']]
       });
       return objs;
     } catch (err) {
@@ -3074,7 +3074,7 @@ class TreinoService {
     try {
       const objs = await Treino.findAll({
         where: {
-          dataExpiracao: { [Op.gte]: new Date() }
+          expires_at: { [Op.gte]: new Date() }
         },
         include: [
           { association: 'cliente', attributes: ['id', 'nome'] },

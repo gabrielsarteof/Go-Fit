@@ -39,7 +39,7 @@ class Cliente extends Model {
           len: { args: [10, 15], msg: "Telefone do Administrador deve ter entre 10 e 15 caracteres!" }
         }
       },
-      dataNascimento: {
+      data_nascimento: {
         type: DataTypes.DATEONLY,
         allowNull: false,
         validate: {

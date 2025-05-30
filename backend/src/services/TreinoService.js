@@ -36,13 +36,13 @@ class TreinoService {
   }
 
   static async create(req) {
-    const { nivel, objetivo, dataExpiracao, exercicios, cliente_id, personal_trainer_id } = req.body;
+    const { nivel, objetivo, expires_at, exercicios, cliente_id, personal_trainer_id } = req.body;
     
     try {
       const obj = await Treino.create({ 
         nivel,
         objetivo,
-        dataExpiracao,
+        expires_at,
         exercicios,
         cliente_id,
         personal_trainer_id
@@ -55,7 +55,7 @@ class TreinoService {
 
   static async update(req) {
     const { id } = req.params;
-    const { nivel, objetivo, dataExpiracao, exercicios, cliente_id, personal_trainer_id } = req.body;
+    const { nivel, objetivo, expires_at, exercicios, cliente_id, personal_trainer_id } = req.body;
     
     try {
       const obj = await Treino.findByPk(id);
@@ -66,7 +66,7 @@ class TreinoService {
       Object.assign(obj, {
         nivel: nivel !== undefined ? nivel : obj.nivel,
         objetivo: objetivo !== undefined ? objetivo : obj.objetivo,
-        dataExpiracao: dataExpiracao !== undefined ? dataExpiracao : obj.dataExpiracao,
+        expires_at: expires_at !== undefined ? expires_at : obj.expires_at,
         exercicios: exercicios !== undefined ? exercicios : obj.exercicios,
         cliente_id: cliente_id !== undefined ? cliente_id : obj.cliente_id,
         personal_trainer_id: personal_trainer_id !== undefined ? personal_trainer_id : obj.personal_trainer_id
@@ -101,7 +101,7 @@ class TreinoService {
         include: [
           { association: 'personal', attributes: ['id', 'nome'] }
         ],
-        order: [['dataCriacao', 'DESC']]
+        order: [['created_at', 'DESC']]
       });
       return objs;
     } catch (err) {
@@ -117,7 +117,7 @@ class TreinoService {
         include: [
           { association: 'cliente', attributes: ['id', 'nome'] }
         ],
-        order: [['dataCriacao', 'DESC']]
+        order: [['created_at', 'DESC']]
       });
       return objs;
     } catch (err) {
@@ -129,7 +129,7 @@ class TreinoService {
     try {
       const objs = await Treino.findAll({
         where: {
-          dataExpiracao: { [Op.gte]: new Date() }
+          expires_at: { [Op.gte]: new Date() }
         },
         include: [
           { association: 'cliente', attributes: ['id', 'nome'] },

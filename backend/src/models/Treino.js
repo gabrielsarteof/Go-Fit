@@ -28,7 +28,7 @@ class Treino extends Model {
           }
         }
       },
-      dataCriacao: {
+      created_at: {
         type: DataTypes.DATE,
         allowNull: false,
         defaultValue: DataTypes.NOW, 
@@ -36,7 +36,7 @@ class Treino extends Model {
           isDate: { msg: 'Data de criação inválida' } 
         }
       },
-      dataExpiracao: {
+      expires_at: {
         type: DataTypes.DATE,
         allowNull: false,
         validate: {
@@ -46,8 +46,8 @@ class Treino extends Model {
             args: new Date().toISOString(),
             msg: 'Data de expiração deve ser futura'
           },
-          isAfterDataCriacao(value) { 
-            if (this.dataCriacao && value <= this.dataCriacao) {
+          isAftercreated_at(value) { 
+            if (this.created_at && value <= this.created_at) {
               throw new Error('Data de expiração deve ser após a criação');
             }
           }
@@ -68,8 +68,8 @@ class Treino extends Model {
       timestamps: false,
       hooks: {
         beforeValidate: (treino) => {
-          if (!treino.dataCriacao) {
-            treino.dataCriacao = new Date();
+          if (!treino.created_at) {
+            treino.created_at = new Date();
           }
         }
       }

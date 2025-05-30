@@ -21,19 +21,19 @@ class Estado extends Model {
           isFloat: { msg: "Altura deve estar em metros, em um valor numérico decimal." }
         }
       },
-      taxaGordura: { 
+      taxa_gordura: { 
         type: DataTypes.FLOAT, 
         validate: {
           isFloat: { msg: "Taxa de gordura deve ser um valor numérico decimal." }
         }
       },
-      circunferenciaCintura: { 
+      circunferencia_cintura: { 
         type: DataTypes.FLOAT, 
         validate: {
           isFloat: { msg: "A circunferência da cintura deve estar em centímetros, em um valor numérico decimal." }
         }
       },
-      circunferenciaBraco: { 
+      circunferencia_braco: { 
         type: DataTypes.FLOAT, 
         validate: {
           isFloat: { msg: "A circunferência do braço deve estar em centímetros, em um valor numérico decimal." }

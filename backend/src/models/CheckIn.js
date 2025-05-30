@@ -27,19 +27,19 @@ class CheckIn extends Model {
           }
         }
       },
-      acessoAutorizado: {
+      acesso_autorizado: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: false,
         validate: {
           isBoolean(value) {
             if (typeof value !== 'boolean') {
-              throw new Error('O campo "acessoAutorizado" deve ser verdadeiro ou falso');
+              throw new Error('O campo "acesso_autorizado" deve ser verdadeiro ou falso');
             }
           }
         }
       },
-      razaoBloqueio: {
+      razao_bloqueio: {
         type: DataTypes.STRING,
         allowNull: true,
         validate: {

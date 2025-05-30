@@ -15,7 +15,7 @@ class ClienteService {
   }
 
   static async create(req) {
-    const { nome, email, telefone, dataNascimento, dataCadastro } = req.body;
+    const { nome, email, telefone, data_nascimento, dataCadastro } = req.body;
 
     const emailExistente = await Cliente.findOne({ where: { email } });
     if (emailExistente) {
@@ -28,7 +28,7 @@ class ClienteService {
     }
 
     try {
-      return await Cliente.create({ nome, email, telefone, dataNascimento, dataCadastro });
+      return await Cliente.create({ nome, email, telefone, data_nascimento, dataCadastro });
     } catch (error) {
       if (error.name === 'SequelizeValidationError') {
         throw new Error(error.errors.map(e => e.message).join(', '));
@@ -39,7 +39,7 @@ class ClienteService {
 
   static async update(req) {
     const { id } = req.params;
-    const { nome, email, telefone, dataNascimento, dataCadastro } = req.body;
+    const { nome, email, telefone, data_nascimento, dataCadastro } = req.body;
 
 
     let obj = await Cliente.findOne({ where: { id } });
@@ -63,7 +63,7 @@ class ClienteService {
         nome: nome !== undefined ? nome : obj.nome,
         email: email !== undefined ? email : obj.email,
         telefone: telefone !== undefined ? telefone : obj.telefone,
-        dataNascimento: dataNascimento !== undefined ? dataNascimento : obj.dataNascimento,
+        data_nascimento: data_nascimento !== undefined ? data_nascimento : obj.data_nascimento,
         dataCadastro: dataCadastro !== undefined ? dataCadastro : obj.dataCadastro
     });
 

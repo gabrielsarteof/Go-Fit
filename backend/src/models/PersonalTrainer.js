@@ -32,7 +32,7 @@ class PersonalTrainer extends Model {
           is: { args: /^\([0-9]{2}\) [0-9]?[0-9]{4}-[0-9]{4}/, msg: "Telefone deve seguir o padrão (NN) NNNNN-NNNN" },
         }
       },
-      horarioAtendimento: {
+      horario_atendimento: {
         type: DataTypes.STRING,
         validate: {
           notEmpty: { msg: "Horário de atendimento não pode ficar vazio." },

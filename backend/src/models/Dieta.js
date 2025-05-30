@@ -15,7 +15,7 @@ class Dieta extends Model {
           }
         }
       },
-      dataCriacao: {
+      created_at: {
         type: DataTypes.DATE,
         allowNull: false,
         defaultValue: DataTypes.NOW,
@@ -23,13 +23,13 @@ class Dieta extends Model {
           isDate: { msg: 'Data de criação inválida' }
         }
       },
-      dataExpiracao: {
+      expires_at: {
         type: DataTypes.DATE,
         allowNull: false,
         validate: {
           isDate: { msg: 'Data de expiração inválida' },
-          isAfterDataCriacao(value) {
-            if (this.dataCriacao && value <= this.dataCriacao) {
+          isAftercreated_at(value) {
+            if (this.created_at && value <= this.created_at) {
               throw new Error('Data de expiração deve ser após a criação');
             }
           }

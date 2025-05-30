@@ -21,7 +21,7 @@ class CheckInService {
   }
 
   static async create(req) {
-    const { entrada, saida, acessoAutorizado, razaoBloqueio, cliente_id } = req.body;
+    const { entrada, saida, acesso_autorizado, razao_bloqueio, cliente_id } = req.body;
 
     if (!entrada || !cliente_id) {
       throw 'Horário de entrada e cliente_id são obrigatórios.';
@@ -34,8 +34,8 @@ class CheckInService {
           {
             entrada,
             saida: saida || null,
-            acessoAutorizado: acessoAutorizado !== undefined ? acessoAutorizado : true,
-            razaoBloqueio: razaoBloqueio || null,
+            acesso_autorizado: acesso_autorizado !== undefined ? acesso_autorizado : true,
+            razao_bloqueio: razao_bloqueio || null,
             cliente_id,
           },
           { transaction: t }
@@ -52,7 +52,7 @@ class CheckInService {
 
   static async update(req) {
     const { id } = req.params;
-    const { entrada, saida, acessoAutorizado, razaoBloqueio, cliente_id } = req.body;
+    const { entrada, saida, acesso_autorizado, razao_bloqueio, cliente_id } = req.body;
 
     const obj = await CheckIn.findByPk(id, { include: { all: true, nested: true } });
     if (obj == null) throw 'CheckIn não encontrado!';
@@ -62,8 +62,8 @@ class CheckInService {
       Object.assign(obj, {
         entrada: entrada || obj.entrada,
         saida: saida !== undefined ? saida : obj.saida,
-        acessoAutorizado: acessoAutorizado !== undefined ? acessoAutorizado : obj.acessoAutorizado,
-        razaoBloqueio: razaoBloqueio !== undefined ? razaoBloqueio : obj.razaoBloqueio,
+        acesso_autorizado: acesso_autorizado !== undefined ? acesso_autorizado : obj.acesso_autorizado,
+        razao_bloqueio: razao_bloqueio !== undefined ? razao_bloqueio : obj.razao_bloqueio,
         cliente_id: cliente_id || obj.cliente_id,
       });
 
@@ -147,7 +147,7 @@ class CheckInService {
   static async findAutorizados(req) {
     const { autorizado } = req.query;
     const objs = await CheckIn.findAll({
-      where: { acessoAutorizado: autorizado === 'true' },
+      where: { acesso_autorizado: autorizado === 'true' },
       include: { all: true, nested: true },
     });
     return objs;

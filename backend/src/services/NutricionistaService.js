@@ -14,7 +14,7 @@ class NutricionistaService {
   }
 
   static async create(req) {
-    const { nome, email, telefone, horarioAtendimento } = req.body;
+    const { nome, email, telefone, horario_atendimento } = req.body;
     
     // Verifica se já existe um Nutricionista com o mesmo email
     const existingEmail = await Nutricionista.findOne({ where: { email } });
@@ -28,12 +28,12 @@ class NutricionistaService {
       throw new Error("Já existe um nutricionista com este telefone");
     }
 
-    return await Nutricionista.create({ nome, email, telefone, horarioAtendimento });
+    return await Nutricionista.create({ nome, email, telefone, horario_atendimento });
   }
 
   static async update(req) {
     const { id } = req.params;
-    const { nome, email, telefone, horarioAtendimento } = req.body;
+    const { nome, email, telefone, horario_atendimento } = req.body;
     let obj = await Nutricionista.findOne({ where: { id } });
     
     // Verifica se o novo email já existe em outro Nutricionista
@@ -58,7 +58,7 @@ class NutricionistaService {
       throw new Error("Já existe um Nutricionista com este telefone");
     }
     
-    Object.assign(obj, { nome, email, telefone, horarioAtendimento });
+    Object.assign(obj, { nome, email, telefone, horario_atendimento });
     return await obj.save();
   }
 

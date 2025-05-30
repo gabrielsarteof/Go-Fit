@@ -18,14 +18,14 @@ class Assinatura extends Model {
           min: { args: [0], msg: "Valor deve ser maior que zero!" }
         }
       },
-      metodoPagamento: {
+      metodo_pagamento: {
         type: DataTypes.STRING,
         validate: {
           notEmpty: { msg: "Método de Pagamento deve ser preenchido!" },
           len: { args: [2, 50], msg: "Método de Pagamento deve ter entre 3 e 50 caracteres!" }
         }
       },
-      expiresAt: {
+      expires_at: {
         type: DataTypes.DATE,
         validate: {
           notEmpty: { msg: "Data de Expiração deve ser preenchida!" },
@@ -38,10 +38,10 @@ class Assinatura extends Model {
       tableName: 'assinaturas',
       hooks: {
         beforeValidate: (assinatura) => {
-          if (!assinatura.expiresAt) {
+          if (!assinatura.expires_at) {
             const data = new Date();
             data.setMonth(data.getMonth() + 1);
-            assinatura.expiresAt = data;
+            assinatura.expires_at = data;
           }
         }
       }

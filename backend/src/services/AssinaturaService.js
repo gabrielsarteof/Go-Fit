@@ -26,7 +26,7 @@ class AssinaturaService {
   const assinaturaAtiva = await Assinatura.findOne({
     where: {
       cliente_id,
-      expiresAt: { [Op.gt]: new Date() }
+      expires_at: { [Op.gt]: new Date() }
     }
   });
   if (assinaturaAtiva) {
@@ -38,11 +38,11 @@ class AssinaturaService {
   // Regra 2: Conceder 50% de desconto para clientes que tenham 12 meses consecutivos de fidelidade
   const ultimoCiclo = await Fidelidade.findOne({
     where: { cliente_id },
-    order: [['periodoFim', 'DESC']]
+    order: [['data_fim', 'DESC']]
   });
   const now = new Date();
   const inicioWindow = ultimoCiclo
-    ? new Date(ultimoCiclo.periodoFim)
+    ? new Date(ultimoCiclo.data_fim)
     : new Date(now.getFullYear(), now.getMonth() - 11, 1);
 
   // Busca todas as assinaturas do cliente dentro da janela de 12 meses
@@ -97,7 +97,7 @@ class AssinaturaService {
 
 
   static async create(req) {
-    const { metodoPagamento, cliente_id, plano_id, valor, desconto = 0 } = req.body;
+    const { metodo_pagamento, cliente_id, plano_id, valor, desconto = 0 } = req.body;
 
     const regras = await this.verificarRegrasDeNegocio({ cliente_id });
     if (!regras.valido) {
@@ -109,7 +109,7 @@ class AssinaturaService {
 
     const novaAssinatura = await Assinatura.create({
       desconto: descontoFinal,
-      metodoPagamento,
+      metodo_pagamento,
       cliente_id,
       plano_id,
       valor: valorFinal
@@ -118,9 +118,9 @@ class AssinaturaService {
     if (regras.aplicarCicloFidelidade && regras.periodoFidelidade) {
       await Fidelidade.create({
         cliente_id,
-        periodoInicio: regras.periodoFidelidade.inicio,
-        periodoFim: regras.periodoFidelidade.fim,
-        beneficioAplicado: regras.desconto
+        data_inicio: regras.periodoFidelidade.inicio,
+        data_fim: regras.periodoFidelidade.fim,
+        beneficio_aplicado: regras.desconto
       });
     }
 
@@ -129,7 +129,7 @@ class AssinaturaService {
 
   static async update(req) {
     const { id } = req.params;
-    const { createdAt, expiresAt, desconto, metodoPagamento, cliente_id, plano_id, valor } = req.body;
+    const { createdAt, expires_at, desconto, metodo_pagamento, cliente_id, plano_id, valor } = req.body;
 
     const assinatura = await Assinatura.findOne({ where: { id } });
     if (!assinatura) throw new Error('Assinatura não encontrada!');
@@ -142,9 +142,9 @@ class AssinaturaService {
 
     Object.assign(assinatura, {
       createdAt,
-      expiresAt,
+      expires_at,
       desconto,
-      metodoPagamento,
+      metodo_pagamento,
       cliente_id,
       plano_id,
       valor
@@ -157,7 +157,7 @@ class AssinaturaService {
     const { id } = req.params;
     const obj = await Assinatura.findByPk(id);
     if (!obj) throw new Error("Assinatura não encontrada.");
-    if (obj.expiresAt < new Date()) throw new Error("Não foi possivel deletar essa assinatura, pois ela esta expirada");
+    if (obj.expires_at < new Date()) throw new Error("Não foi possivel deletar essa assinatura, pois ela esta expirada");
     await CheckIn.destroy({ where: { assinatura_id: id } });
     return await obj.destroy();
   }

@@ -14,7 +14,7 @@ class PersonalTrainerService {
   }
 
   static async create(req) {
-    const { nome, certificacao, email, telefone, horarioAtendimento, especialidade } = req.body;
+    const { nome, certificacao, email, telefone, horario_atendimento, especialidade } = req.body;
     
     // Verifica se já existe um PersonalTrainer com o mesmo email
     const existingEmail = await PersonalTrainer.findOne({ where: { email } });
@@ -28,12 +28,12 @@ class PersonalTrainerService {
       throw new Error("Já existe um PersonalTrainer com este telefone");
     }
 
-    return await PersonalTrainer.create({ nome, certificacao, email, telefone, horarioAtendimento, especialidade });
+    return await PersonalTrainer.create({ nome, certificacao, email, telefone, horario_atendimento, especialidade });
   }
 
   static async update(req) {
     const { id } = req.params;
-    const { nome, certificacao, email, telefone, horarioAtendimento, especialidade } = req.body;
+    const { nome, certificacao, email, telefone, horario_atendimento, especialidade } = req.body;
     let obj = await PersonalTrainer.findOne({ where: { id } });
     
     // Verifica se o novo email já existe em outro Personal Trainer
@@ -58,7 +58,7 @@ class PersonalTrainerService {
       throw new Error("Já existe um Personal Trainer com este telefone");
     }
     
-    Object.assign(obj, { nome, certificacao, email, telefone, horarioAtendimento, especialidade });
+    Object.assign(obj, { nome, certificacao, email, telefone, horario_atendimento, especialidade });
     return await obj.save();
   }
 

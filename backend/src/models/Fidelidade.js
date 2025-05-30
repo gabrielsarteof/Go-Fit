@@ -3,26 +3,26 @@ import { Model, DataTypes } from 'sequelize';
 class Fidelidade extends Model {
   static init(sequelize) {
     super.init({
-      periodoInicio: {
+      data_inicio: {
         type: DataTypes.DATE,
         allowNull: false,
         validate: {
           isDate: { args: true, msg: 'Data de início deve ser válida.' }
         }
       },
-      periodoFim: {
+      data_fim: {
         type: DataTypes.DATE,
         allowNull: false,
         validate: {
           isDate: { args: true, msg: 'Data de fim deve ser válida.' },
           isAfterInicio(value) {
-            if (this.periodoInicio && value <= this.periodoInicio) {
+            if (this.data_inicio && value <= this.data_inicio) {
               throw new Error('Data de fim deve ser após a data de início.');
             }
           }
         }
       },
-      beneficioAplicado: {
+      beneficio_aplicado: {
         type: DataTypes.FLOAT,
         allowNull: false,
         validate: {
