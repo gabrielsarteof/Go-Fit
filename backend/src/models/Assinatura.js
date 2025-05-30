@@ -52,7 +52,7 @@ class Assinatura extends Model {
     this.belongsTo(models.cliente, {
       as: 'cliente',
       foreignKey: {
-        name: 'clienteId',
+        name: 'cliente_id',
         allowNull: false,
         validate: { notNull: { msg: 'O campo Cliente deve ter um valor válido!' } }
       }
@@ -61,7 +61,7 @@ class Assinatura extends Model {
     this.belongsTo(models.plano, {
       as: 'plano',
       foreignKey: {
-        name: 'planoId',
+        name: 'plano_id',
         allowNull: false,
         validate: { notNull: { msg: 'O campo Plano deve ter um valor válido!' } }
       }

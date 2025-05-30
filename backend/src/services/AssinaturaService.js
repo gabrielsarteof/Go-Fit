@@ -5,6 +5,8 @@ import { Plano } from "../models/Plano.js";
 import { Op } from "sequelize";
 import { Fidelidade } from "../models/Fidelidade.js";
 import { CheckIn } from "../models/CheckIn.js";
+import sequelize from '../config/database-connection.js';
+import { QueryTypes } from 'sequelize';
 
 
 class AssinaturaService {
@@ -19,11 +21,11 @@ class AssinaturaService {
   }
 
 
-  static async verificarRegrasDeNegocio({ clienteId }) {
+  static async verificarRegrasDeNegocio({ cliente_id }) {
   // Regra 1: não pode haver mais de uma assinatura ativa para um mesmi cliente
   const assinaturaAtiva = await Assinatura.findOne({
     where: {
-      clienteId,
+      cliente_id,
       expiresAt: { [Op.gt]: new Date() }
     }
   });
@@ -35,7 +37,7 @@ class AssinaturaService {
   }
   // Regra 2: Conceder 50% de desconto para clientes que tenham 12 meses consecutivos de fidelidade
   const ultimoCiclo = await Fidelidade.findOne({
-    where: { clienteId },
+    where: { cliente_id },
     order: [['periodoFim', 'DESC']]
   });
   const now = new Date();
@@ -46,7 +48,7 @@ class AssinaturaService {
   // Busca todas as assinaturas do cliente dentro da janela de 12 meses
   const assinaturas = await Assinatura.findAll({
     where: {
-      clienteId,
+      cliente_id,
       createdAt: { [Op.gte]: inicioWindow }
     }
   });
@@ -95,9 +97,9 @@ class AssinaturaService {
 
 
   static async create(req) {
-    const { metodoPagamento, clienteId, planoId, valor, desconto = 0 } = req.body;
+    const { metodoPagamento, cliente_id, plano_id, valor, desconto = 0 } = req.body;
 
-    const regras = await this.verificarRegrasDeNegocio({ clienteId });
+    const regras = await this.verificarRegrasDeNegocio({ cliente_id });
     if (!regras.valido) {
       throw new Error(regras.mensagem);
     }
@@ -108,14 +110,14 @@ class AssinaturaService {
     const novaAssinatura = await Assinatura.create({
       desconto: descontoFinal,
       metodoPagamento,
-      clienteId,
-      planoId,
+      cliente_id,
+      plano_id,
       valor: valorFinal
     });
     console.log(regras.aplicarCicloFidelidade, regras.periodoFidelidade)
     if (regras.aplicarCicloFidelidade && regras.periodoFidelidade) {
       await Fidelidade.create({
-        clienteId,
+        cliente_id,
         periodoInicio: regras.periodoFidelidade.inicio,
         periodoFim: regras.periodoFidelidade.fim,
         beneficioAplicado: regras.desconto
@@ -127,15 +129,15 @@ class AssinaturaService {
 
   static async update(req) {
     const { id } = req.params;
-    const { createdAt, expiresAt, desconto, metodoPagamento, clienteId, planoId, valor } = req.body;
+    const { createdAt, expiresAt, desconto, metodoPagamento, cliente_id, plano_id, valor } = req.body;
 
     const assinatura = await Assinatura.findOne({ where: { id } });
     if (!assinatura) throw new Error('Assinatura não encontrada!');
 
-    const clienteExiste = await Cliente.findByPk(clienteId);
+    const clienteExiste = await Cliente.findByPk(cliente_id);
     if (!clienteExiste) throw new Error("Cliente referenciado não encontrado!");
 
-    const planoExiste = await Plano.findByPk(planoId);
+    const planoExiste = await Plano.findByPk(plano_id);
     if (!planoExiste) throw new Error("Plano referenciado não encontrado!");
 
     Object.assign(assinatura, {
@@ -143,8 +145,8 @@ class AssinaturaService {
       expiresAt,
       desconto,
       metodoPagamento,
-      clienteId,
-      planoId,
+      cliente_id,
+      plano_id,
       valor
     });
 
@@ -156,8 +158,58 @@ class AssinaturaService {
     const obj = await Assinatura.findByPk(id);
     if (!obj) throw new Error("Assinatura não encontrada.");
     if (obj.expiresAt < new Date()) throw new Error("Não foi possivel deletar essa assinatura, pois ela esta expirada");
-    await CheckIn.destroy({ where: { assinaturaId: id } });
+    await CheckIn.destroy({ where: { assinatura_id: id } });
     return await obj.destroy();
+  }
+
+  /* RF-38 | Assinaturas ativas (vencimento no futuro) */
+  static async relatorioAtivas() {
+    const hoje = new Date();
+
+    const sql = `
+      SELECT  c.nome       AS cliente,
+              p.nome       AS plano,
+              p.frequencia AS assinatura,
+              a.expires_at  AS vencimento
+      FROM    assinaturas a
+        JOIN  clientes    c ON c.id = a.cliente_id
+        JOIN  planos      p ON p.id = a.plano_id
+      WHERE   a.expires_at >= :hoje
+      ORDER BY a.expires_at;
+    `;
+
+    return sequelize.query(sql, {
+      replacements : { hoje },
+      type         : QueryTypes.SELECT,
+    });
+  }
+
+  /* RF-39 | Assinaturas a vencer nos próximos 10 dias */
+  static async relatorioVencimentoProximo(dias = 10) {
+    if (isNaN(dias) || dias <= 0) {
+      throw new Error('Parâmetro "dias" deve ser inteiro positivo.');
+    }
+
+    const hoje   = new Date();
+    const limite = new Date();
+    limite.setDate(limite.getDate() + dias);
+
+    const sql = `
+      SELECT  c.nome       AS cliente,
+              p.nome       AS plano,
+              p.frequencia AS assinatura,
+              a.expires_at  AS vencimento
+      FROM    assinaturas a
+        JOIN  clientes    c ON c.id = a.cliente_id
+        JOIN  planos      p ON p.id = a.plano_id
+      WHERE   a.expires_at BETWEEN :hoje AND :limite
+      ORDER BY a.expires_at;
+    `;
+
+    return sequelize.query(sql, {
+      replacements : { hoje, limite },
+      type         : QueryTypes.SELECT,
+    });
   }
 }
 

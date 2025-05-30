@@ -80,7 +80,7 @@ class Treino extends Model {
     this.belongsTo(models.cliente, {
       as: 'cliente',
       foreignKey: {
-        name: 'clienteId',
+        name: 'cliente_id',
         allowNull: false,
         validate: { 
           notNull: { msg: 'Cliente é obrigatório' } 
@@ -91,7 +91,7 @@ class Treino extends Model {
     this.belongsTo(models.personalTrainer, {
       as: 'personal',
       foreignKey: {
-        name: 'personalTrainerId',
+        name: 'personal_trainer_id',
         allowNull: false,
         validate: { 
           notNull: { msg: 'Personal Trainer é obrigatório' } 

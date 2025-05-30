@@ -36,7 +36,7 @@ class TreinoService {
   }
 
   static async create(req) {
-    const { nivel, objetivo, dataExpiracao, exercicios, clienteId, personalTrainerId } = req.body;
+    const { nivel, objetivo, dataExpiracao, exercicios, cliente_id, personal_trainer_id } = req.body;
     
     try {
       const obj = await Treino.create({ 
@@ -44,8 +44,8 @@ class TreinoService {
         objetivo,
         dataExpiracao,
         exercicios,
-        clienteId,
-        personalTrainerId
+        cliente_id,
+        personal_trainer_id
       });
       return obj;
     } catch (err) {
@@ -55,7 +55,7 @@ class TreinoService {
 
   static async update(req) {
     const { id } = req.params;
-    const { nivel, objetivo, dataExpiracao, exercicios, clienteId, personalTrainerId } = req.body;
+    const { nivel, objetivo, dataExpiracao, exercicios, cliente_id, personal_trainer_id } = req.body;
     
     try {
       const obj = await Treino.findByPk(id);
@@ -68,8 +68,8 @@ class TreinoService {
         objetivo: objetivo !== undefined ? objetivo : obj.objetivo,
         dataExpiracao: dataExpiracao !== undefined ? dataExpiracao : obj.dataExpiracao,
         exercicios: exercicios !== undefined ? exercicios : obj.exercicios,
-        clienteId: clienteId !== undefined ? clienteId : obj.clienteId,
-        personalTrainerId: personalTrainerId !== undefined ? personalTrainerId : obj.personalTrainerId
+        cliente_id: cliente_id !== undefined ? cliente_id : obj.cliente_id,
+        personal_trainer_id: personal_trainer_id !== undefined ? personal_trainer_id : obj.personal_trainer_id
       });
       
       await obj.save();
@@ -94,10 +94,10 @@ class TreinoService {
   }
 
   static async findByCliente(req) {
-    const { clienteId } = req.params;
+    const { cliente_id } = req.params;
     try {
       const objs = await Treino.findAll({
-        where: { clienteId },
+        where: { cliente_id },
         include: [
           { association: 'personal', attributes: ['id', 'nome'] }
         ],
@@ -110,10 +110,10 @@ class TreinoService {
   }
 
   static async findByPersonal(req) {
-    const { personalTrainerId } = req.params;
+    const { personal_trainer_id } = req.params;
     try {
       const objs = await Treino.findAll({
-        where: { personalTrainerId },
+        where: { personal_trainer_id },
         include: [
           { association: 'cliente', attributes: ['id', 'nome'] }
         ],

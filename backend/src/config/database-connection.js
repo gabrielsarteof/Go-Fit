@@ -288,8 +288,8 @@ function databaseInserts() {
                 desconto: 0,
                 valor: 39.90,
                 metodoPagamento: "Cartão de Crédito",
-                clienteId: cliente1.id,
-                planoId: plano1.id,
+                cliente_id: cliente1.id,
+                plano_id: plano1.id,
                 createdAt: createdAt,
                 updatedAt: createdAt,
                 expiresAt: expiresAt
@@ -301,16 +301,16 @@ function databaseInserts() {
             desconto: 5,
             valor: 56.90,
             metodoPagamento: "Débito Automático",
-            clienteId: cliente2.id,
-            planoId: plano2.id
+            cliente_id: cliente2.id,
+            plano_id: plano2.id
         });
 
         const assinatura3 = await Assinatura.create({
             desconto: 10,
             valor: 71.91,
             metodoPagamento: "Boleto Bancário",
-            clienteId: cliente3.id,
-            planoId: plano3.id
+            cliente_id: cliente3.id,
+            plano_id: plano3.id
         });
 
 
@@ -319,7 +319,7 @@ function databaseInserts() {
             saida: "2025-04-01 09:30:00",
             acessoAutorizado: true,
             razaoBloqueio: null,
-            assinaturaId: assinatura2.id,
+            assinatura_id: assinatura2.id,
             administradorId: admin1.id
         });
 
@@ -328,7 +328,7 @@ function databaseInserts() {
             saida: "2025-04-01 18:45:00",
             acessoAutorizado: true,
             razaoBloqueio: null,
-            assinaturaId: assinatura2.id,
+            assinatura_id: assinatura2.id,
             administradorId: admin2.id
         });
 
@@ -337,7 +337,7 @@ function databaseInserts() {
             saida: "2025-04-02 11:30:00",
             acessoAutorizado: true,
             razaoBloqueio: null,
-            assinaturaId: assinatura3.id,
+            assinatura_id: assinatura3.id,
             administradorId: admin3.id
         });
 
@@ -346,7 +346,7 @@ function databaseInserts() {
             saida: null,
             acessoAutorizado: false,
             razaoBloqueio: "Assinatura vencida",
-            assinaturaId: assinatura3.id,
+            assinatura_id: assinatura3.id,
             administradorId: admin4.id
         });
 
@@ -356,8 +356,8 @@ function databaseInserts() {
             dataCriacao: "2025-03-15",
             dataExpiracao: "2025-06-15",
             instrucoes: "Consumir 6 refeições diárias com alto teor proteico",
-            clienteId: cliente1.id,
-            nutricionistaId: nutri1.id
+            cliente_id: cliente1.id,
+            nutricionista_id: nutri1.id
         });
 
         const dieta2 = await Dieta.create({
@@ -365,8 +365,8 @@ function databaseInserts() {
             dataCriacao: "2025-03-20",
             dataExpiracao: "2025-06-20",
             instrucoes: "Reduzir carboidratos e aumentar consumo de vegetais",
-            clienteId: cliente2.id,
-            nutricionistaId: nutri2.id
+            cliente_id: cliente2.id,
+            nutricionista_id: nutri2.id
         });
 
         const dieta3 = await Dieta.create({
@@ -374,8 +374,8 @@ function databaseInserts() {
             dataCriacao: "2025-03-25",
             dataExpiracao: "2025-06-25",
             instrucoes: "Ciclar carboidratos e manter alto consumo proteico",
-            clienteId: cliente3.id,
-            nutricionistaId: nutri3.id
+            cliente_id: cliente3.id,
+            nutricionista_id: nutri3.id
         });
 
         const dieta4 = await Dieta.create({
@@ -383,8 +383,8 @@ function databaseInserts() {
             dataCriacao: "2025-03-30",
             dataExpiracao: "2025-06-30",
             instrucoes: "Consumir carboidratos complexos e proteínas magras",
-            clienteId: cliente4.id,
-            nutricionistaId: nutri4.id
+            cliente_id: cliente4.id,
+            nutricionista_id: nutri4.id
         });
 
         const estado1 = await Estado.create({
@@ -395,8 +395,8 @@ function databaseInserts() {
             circunferenciaCintura: 85.0,
             circunferenciaBraco: 32.0,
             comentarios: "Boa condição física inicial",
-            clienteId: cliente2.id,
-            nutricionistaId: nutri2.id
+            cliente_id: cliente2.id,
+            nutricionista_id: nutri2.id
         });
 
         const estado2 = await Estado.create({
@@ -407,8 +407,8 @@ function databaseInserts() {
             circunferenciaCintura: 78.0,
             circunferenciaBraco: 28.5,
             comentarios: "Necessita reduzir percentual de gordura",
-            clienteId: cliente3.id,
-            nutricionistaId: nutri2.id
+            cliente_id: cliente3.id,
+            nutricionista_id: nutri2.id
         });
 
         const estado5 = await Estado.create({
@@ -419,8 +419,8 @@ function databaseInserts() {
             circunferenciaCintura: 180,
             circunferenciaBraco: 40,
             comentarios: "Primeira atualização de estado do cliente nesse mês.",
-            clienteId: cliente4.id,
-            nutricionistaId: nutri2.id
+            cliente_id: cliente4.id,
+            nutricionista_id: nutri2.id
         });
 
         const estado4 = await Estado.create({
@@ -431,8 +431,8 @@ function databaseInserts() {
             circunferenciaCintura: 181,
             circunferenciaBraco: 40,
             comentarios: "Segunda atualização de estado do cliente nesse mês.",
-            clienteId: cliente4.id,
-            nutricionistaId: nutri2.id
+            cliente_id: cliente4.id,
+            nutricionista_id: nutri2.id
         });
 
         const estado3 = await Estado.create({
@@ -443,8 +443,8 @@ function databaseInserts() {
             circunferenciaCintura: 180,
             circunferenciaBraco: 40,
             comentarios: "Terceira atualização de estado do cliente nesse mês.",
-            clienteId: cliente4.id,
-            nutricionistaId: nutri2.id
+            cliente_id: cliente4.id,
+            nutricionista_id: nutri2.id
         });
 
         const estado6 = await Estado.create({
@@ -455,8 +455,8 @@ function databaseInserts() {
             circunferenciaCintura: 78.0,
             circunferenciaBraco: 28.5,
             comentarios: "Necessita reduzir percentual de gordura",
-            clienteId: cliente2.id,
-            nutricionistaId: nutri2.id
+            cliente_id: cliente2.id,
+            nutricionista_id: nutri2.id
         });
 
         const treino1 = await Treino.create({
@@ -470,8 +470,8 @@ function databaseInserts() {
                 { nome: "Puxada frontal", series: 3, repeticoes: 12, carga: 50 },
                 { nome: "Agachamento", series: 3, repeticoes: 12, carga: 30 }
             ]),
-            clienteId: cliente1.id,
-            personalTrainerId: personal1.id
+            cliente_id: cliente1.id,
+            personal_trainer_id: personal1.id
         });
 
         const treino2 = await Treino.create({
@@ -485,8 +485,8 @@ function databaseInserts() {
                 { nome: "Burpees", series: 4, repeticoes: 15, carga: 0 },
                 { nome: "Jumping jacks", series: 4, repeticoes: 30, carga: 0 }
             ]),
-            clienteId: cliente2.id,
-            personalTrainerId: personal2.id
+            cliente_id: cliente2.id,
+            personal_trainer_id: personal2.id
         });
 
         const treino3 = await Treino.create({
@@ -500,8 +500,8 @@ function databaseInserts() {
                 { nome: "Remada curvada", series: 4, repeticoes: 10, carga: 70 },
                 { nome: "Elevação lateral", series: 4, repeticoes: 12, carga: 10 }
             ]),
-            clienteId: cliente3.id,
-            personalTrainerId: personal3.id
+            cliente_id: cliente3.id,
+            personal_trainer_id: personal3.id
         });
 
         const treino4 = await Treino.create({
@@ -515,8 +515,8 @@ function databaseInserts() {
                 { nome: "Agachamento livre", series: 3, repeticoes: 15, carga: 0 },
                 { nome: "Ponte", series: 3, repeticoes: 15, carga: 0 }
             ]),
-            clienteId: cliente4.id,
-            personalTrainerId: personal4.id
+            cliente_id: cliente4.id,
+            personal_trainer_id: personal4.id
         });
     })();
 }

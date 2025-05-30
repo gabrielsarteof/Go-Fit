@@ -46,7 +46,7 @@ class Estado extends Model {
     this.belongsTo(models.cliente, {
       as: 'cliente',
       foreignKey: {
-        name: 'clienteId',
+        name: 'cliente_id',
         allowNull: false,
         validate: { notNull: { msg: 'O campo Cliente deve ter um valor válido!' } }
       }
@@ -54,7 +54,7 @@ class Estado extends Model {
     this.belongsTo(models.nutricionista, {
       as: 'nutricionista',
       foreignKey: {
-        name: 'nutricionistaId',
+        name: 'nutricionista_id',
         allowNull: false,
         validate: { notNull: { msg: 'O campo Nutricionista deve ter um valor válido!' } }
       }

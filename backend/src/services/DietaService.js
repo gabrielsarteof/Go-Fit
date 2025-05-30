@@ -35,9 +35,9 @@ class DietaService {
   }
 
   static async create(req) {
-    const { descricao, dataCriacao, dataExpiracao, instrucoes, clienteId, nutricionistaId } = req.body;
+    const { descricao, dataCriacao, dataExpiracao, instrucoes, cliente_id, nutricionista_id } = req.body;
     
-    if (!descricao || !instrucoes || !dataExpiracao || !clienteId || !nutricionistaId) {
+    if (!descricao || !instrucoes || !dataExpiracao || !cliente_id || !nutricionista_id) {
       throw new Error('Descrição, instruções, data de expiração, cliente e nutricionista são obrigatórios.');
     }
     
@@ -47,8 +47,8 @@ class DietaService {
         dataCriacao: dataCriacao || new Date(),
         dataExpiracao,
         instrucoes,
-        clienteId,
-        nutricionistaId
+        cliente_id,
+        nutricionista_id
       });
       return obj;
     } catch (err) {
@@ -58,7 +58,7 @@ class DietaService {
 
   static async update(req) {
     const { id } = req.params;
-    const { descricao, dataExpiracao, instrucoes, clienteId, nutricionistaId } = req.body;
+    const { descricao, dataExpiracao, instrucoes, cliente_id, nutricionista_id } = req.body;
     
     try {
       const obj = await Dieta.findByPk(id);
@@ -70,8 +70,8 @@ class DietaService {
         descricao: descricao !== undefined ? descricao : obj.descricao,
         dataExpiracao: dataExpiracao !== undefined ? dataExpiracao : obj.dataExpiracao,
         instrucoes: instrucoes !== undefined ? instrucoes : obj.instrucoes,
-        clienteId: clienteId !== undefined ? clienteId : obj.clienteId,
-        nutricionistaId: nutricionistaId !== undefined ? nutricionistaId : obj.nutricionistaId
+        cliente_id: cliente_id !== undefined ? cliente_id : obj.cliente_id,
+        nutricionista_id: nutricionista_id !== undefined ? nutricionista_id : obj.nutricionista_id
       });
       
       await obj.save();
@@ -96,10 +96,10 @@ class DietaService {
   }
 
   static async findByCliente(req) {
-    const { clienteId } = req.params;
+    const { cliente_id } = req.params;
     try {
       const objs = await Dieta.findAll({
-        where: { clienteId },
+        where: { cliente_id },
         include: [
           { association: 'nutricionista', attributes: ['id', 'nome'] }
         ]
@@ -111,10 +111,10 @@ class DietaService {
   }
 
   static async findByNutricionista(req) {
-    const { nutricionistaId } = req.params;
+    const { nutricionista_id } = req.params;
     try {
       const objs = await Dieta.findAll({
-        where: { nutricionistaId },
+        where: { nutricionista_id },
         include: [
           { association: 'cliente', attributes: ['id', 'nome'] }
         ]

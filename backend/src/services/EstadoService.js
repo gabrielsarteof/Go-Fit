@@ -20,17 +20,17 @@ class EstadoService {
         if (nutricionista == null) throw 'Nutricionista invalido!';
 
         if (await this.verificarRegrasDeNegocio(req)) {
-            const obj = await Estado.create({ data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, clienteId: cliente.id, nutricionistaId: nutricionista.id });
+            const obj = await Estado.create({ data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, cliente_id: cliente.id, nutricionista_id: nutricionista.id });
             return await Estado.findByPk(obj.id, { include: { all: true, nested: true } });
         }
     }
 
     static async update(req) {
         const { id } = req.params;
-        const { data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, clienteId, nutricionistaId } = req.body;
+        const { data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, cliente_id, nutricionista_id } = req.body;
         let obj = await Estado.findOne({ where: { id } });
 
-        Object.assign(obj, { data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, clienteId, nutricionistaId });
+        Object.assign(obj, { data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, cliente_id, nutricionista_id });
         return await obj.save();
     }
 

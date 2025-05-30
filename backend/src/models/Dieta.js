@@ -54,7 +54,7 @@ class Dieta extends Model {
     this.belongsTo(models.cliente, {
       as: 'cliente',
       foreignKey: {
-        name: 'clienteId',
+        name: 'cliente_id',
         allowNull: false,
         validate: {
           notNull: { msg: 'Cliente é obrigatório' }
@@ -65,7 +65,7 @@ class Dieta extends Model {
     this.belongsTo(models.nutricionista, {
       as: 'nutricionista',
       foreignKey: {
-        name: 'nutricionistaId',
+        name: 'nutricionista_id',
         allowNull: false,
         validate: {
           notNull: { msg: 'Nutricionista é obrigatório' }

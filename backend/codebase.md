@@ -404,8 +404,8 @@ function databaseInserts() {
                 desconto: 0,
                 valor: 39.90,
                 metodoPagamento: "Cartão de Crédito",
-                clienteId: cliente1.id,
-                planoId: plano1.id,
+                cliente_id: cliente1.id,
+                plano_id: plano1.id,
                 createdAt: createdAt,
                 updatedAt: createdAt,
                 expiresAt: expiresAt
@@ -417,16 +417,16 @@ function databaseInserts() {
             desconto: 5,
             valor: 56.90,
             metodoPagamento: "Débito Automático",
-            clienteId: cliente2.id,
-            planoId: plano2.id
+            cliente_id: cliente2.id,
+            plano_id: plano2.id
         });
 
         const assinatura3 = await Assinatura.create({
             desconto: 10,
             valor: 71.91,
             metodoPagamento: "Boleto Bancário",
-            clienteId: cliente3.id,
-            planoId: plano3.id
+            cliente_id: cliente3.id,
+            plano_id: plano3.id
         });
 
 
@@ -435,7 +435,7 @@ function databaseInserts() {
             saida: "2025-04-01 09:30:00",
             acessoAutorizado: true,
             razaoBloqueio: null,
-            assinaturaId: assinatura2.id,
+            assinatura_id: assinatura2.id,
             administradorId: admin1.id
         });
 
@@ -444,7 +444,7 @@ function databaseInserts() {
             saida: "2025-04-01 18:45:00",
             acessoAutorizado: true,
             razaoBloqueio: null,
-            assinaturaId: assinatura2.id,
+            assinatura_id: assinatura2.id,
             administradorId: admin2.id
         });
 
@@ -453,7 +453,7 @@ function databaseInserts() {
             saida: "2025-04-02 11:30:00",
             acessoAutorizado: true,
             razaoBloqueio: null,
-            assinaturaId: assinatura3.id,
+            assinatura_id: assinatura3.id,
             administradorId: admin3.id
         });
 
@@ -462,7 +462,7 @@ function databaseInserts() {
             saida: null,
             acessoAutorizado: false,
             razaoBloqueio: "Assinatura vencida",
-            assinaturaId: assinatura3.id,
+            assinatura_id: assinatura3.id,
             administradorId: admin4.id
         });
 
@@ -472,8 +472,8 @@ function databaseInserts() {
             dataCriacao: "2025-03-15",
             dataExpiracao: "2025-06-15",
             instrucoes: "Consumir 6 refeições diárias com alto teor proteico",
-            clienteId: cliente1.id,
-            nutricionistaId: nutri1.id
+            cliente_id: cliente1.id,
+            nutricionista_id: nutri1.id
         });
 
         const dieta2 = await Dieta.create({
@@ -481,8 +481,8 @@ function databaseInserts() {
             dataCriacao: "2025-03-20",
             dataExpiracao: "2025-06-20",
             instrucoes: "Reduzir carboidratos e aumentar consumo de vegetais",
-            clienteId: cliente2.id,
-            nutricionistaId: nutri2.id
+            cliente_id: cliente2.id,
+            nutricionista_id: nutri2.id
         });
 
         const dieta3 = await Dieta.create({
@@ -490,8 +490,8 @@ function databaseInserts() {
             dataCriacao: "2025-03-25",
             dataExpiracao: "2025-06-25",
             instrucoes: "Ciclar carboidratos e manter alto consumo proteico",
-            clienteId: cliente3.id,
-            nutricionistaId: nutri3.id
+            cliente_id: cliente3.id,
+            nutricionista_id: nutri3.id
         });
 
         const dieta4 = await Dieta.create({
@@ -499,8 +499,8 @@ function databaseInserts() {
             dataCriacao: "2025-03-30",
             dataExpiracao: "2025-06-30",
             instrucoes: "Consumir carboidratos complexos e proteínas magras",
-            clienteId: cliente4.id,
-            nutricionistaId: nutri4.id
+            cliente_id: cliente4.id,
+            nutricionista_id: nutri4.id
         });
 
         const estado1 = await Estado.create({
@@ -511,8 +511,8 @@ function databaseInserts() {
             circunferenciaCintura: 85.0,
             circunferenciaBraco: 32.0,
             comentarios: "Boa condição física inicial",
-            clienteId: cliente2.id,
-            nutricionistaId: nutri2.id
+            cliente_id: cliente2.id,
+            nutricionista_id: nutri2.id
         });
 
         const estado2 = await Estado.create({
@@ -523,8 +523,8 @@ function databaseInserts() {
             circunferenciaCintura: 78.0,
             circunferenciaBraco: 28.5,
             comentarios: "Necessita reduzir percentual de gordura",
-            clienteId: cliente3.id,
-            nutricionistaId: nutri2.id
+            cliente_id: cliente3.id,
+            nutricionista_id: nutri2.id
         });
 
         const estado5 = await Estado.create({
@@ -535,8 +535,8 @@ function databaseInserts() {
             circunferenciaCintura: 180,
             circunferenciaBraco: 40,
             comentarios: "Primeira atualização de estado do cliente nesse mês.",
-            clienteId: cliente4.id,
-            nutricionistaId: nutri2.id
+            cliente_id: cliente4.id,
+            nutricionista_id: nutri2.id
         });
 
         const estado4 = await Estado.create({
@@ -547,8 +547,8 @@ function databaseInserts() {
             circunferenciaCintura: 181,
             circunferenciaBraco: 40,
             comentarios: "Segunda atualização de estado do cliente nesse mês.",
-            clienteId: cliente4.id,
-            nutricionistaId: nutri2.id
+            cliente_id: cliente4.id,
+            nutricionista_id: nutri2.id
         });
 
         const estado3 = await Estado.create({
@@ -559,8 +559,8 @@ function databaseInserts() {
             circunferenciaCintura: 180,
             circunferenciaBraco: 40,
             comentarios: "Terceira atualização de estado do cliente nesse mês.",
-            clienteId: cliente4.id,
-            nutricionistaId: nutri2.id
+            cliente_id: cliente4.id,
+            nutricionista_id: nutri2.id
         });
 
         const estado6 = await Estado.create({
@@ -571,8 +571,8 @@ function databaseInserts() {
             circunferenciaCintura: 78.0,
             circunferenciaBraco: 28.5,
             comentarios: "Necessita reduzir percentual de gordura",
-            clienteId: cliente2.id,
-            nutricionistaId: nutri2.id
+            cliente_id: cliente2.id,
+            nutricionista_id: nutri2.id
         });
 
         const treino1 = await Treino.create({
@@ -586,8 +586,8 @@ function databaseInserts() {
                 { nome: "Puxada frontal", series: 3, repeticoes: 12, carga: 50 },
                 { nome: "Agachamento", series: 3, repeticoes: 12, carga: 30 }
             ]),
-            clienteId: cliente1.id,
-            personalTrainerId: personal1.id
+            cliente_id: cliente1.id,
+            personal_trainer_id: personal1.id
         });
 
         const treino2 = await Treino.create({
@@ -601,8 +601,8 @@ function databaseInserts() {
                 { nome: "Burpees", series: 4, repeticoes: 15, carga: 0 },
                 { nome: "Jumping jacks", series: 4, repeticoes: 30, carga: 0 }
             ]),
-            clienteId: cliente2.id,
-            personalTrainerId: personal2.id
+            cliente_id: cliente2.id,
+            personal_trainer_id: personal2.id
         });
 
         const treino3 = await Treino.create({
@@ -616,8 +616,8 @@ function databaseInserts() {
                 { nome: "Remada curvada", series: 4, repeticoes: 10, carga: 70 },
                 { nome: "Elevação lateral", series: 4, repeticoes: 12, carga: 10 }
             ]),
-            clienteId: cliente3.id,
-            personalTrainerId: personal3.id
+            cliente_id: cliente3.id,
+            personal_trainer_id: personal3.id
         });
 
         const treino4 = await Treino.create({
@@ -631,8 +631,8 @@ function databaseInserts() {
                 { nome: "Agachamento livre", series: 3, repeticoes: 15, carga: 0 },
                 { nome: "Ponte", series: 3, repeticoes: 15, carga: 0 }
             ]),
-            clienteId: cliente4.id,
-            personalTrainerId: personal4.id
+            cliente_id: cliente4.id,
+            personal_trainer_id: personal4.id
         });
     })();
 }
@@ -1227,7 +1227,7 @@ class Assinatura extends Model {
     this.belongsTo(models.cliente, {
       as: 'cliente',
       foreignKey: {
-        name: 'clienteId',
+        name: 'cliente_id',
         allowNull: false,
         validate: { notNull: { msg: 'O campo Cliente deve ter um valor válido!' } }
       }
@@ -1236,7 +1236,7 @@ class Assinatura extends Model {
     this.belongsTo(models.plano, {
       as: 'plano',
       foreignKey: {
-        name: 'planoId',
+        name: 'plano_id',
         allowNull: false,
         validate: { notNull: { msg: 'O campo Plano deve ter um valor válido!' } }
       }
@@ -1315,10 +1315,10 @@ class CheckIn extends Model {
     this.belongsTo(models.assinatura, {
       as: 'assinatura',
       foreignKey: {
-        name: 'assinaturaId',
+        name: 'assinatura_id',
         allowNull: false,
         validate: {
-          notNull: { msg: 'O campo assinaturaId deve ser preenchido com um valor válido!' }
+          notNull: { msg: 'O campo assinatura_id deve ser preenchido com um valor válido!' }
         }
       }
     });
@@ -1462,7 +1462,7 @@ class Dieta extends Model {
     this.belongsTo(models.cliente, {
       as: 'cliente',
       foreignKey: {
-        name: 'clienteId',
+        name: 'cliente_id',
         allowNull: false,
         validate: {
           notNull: { msg: 'Cliente é obrigatório' }
@@ -1473,7 +1473,7 @@ class Dieta extends Model {
     this.belongsTo(models.nutricionista, {
       as: 'nutricionista',
       foreignKey: {
-        name: 'nutricionistaId',
+        name: 'nutricionista_id',
         allowNull: false,
         validate: {
           notNull: { msg: 'Nutricionista é obrigatório' }
@@ -1538,7 +1538,7 @@ class Estado extends Model {
     this.belongsTo(models.cliente, {
       as: 'cliente',
       foreignKey: {
-        name: 'clienteId',
+        name: 'cliente_id',
         allowNull: false,
         validate: { notNull: { msg: 'O campo Cliente deve ter um valor válido!' } }
       }
@@ -1546,7 +1546,7 @@ class Estado extends Model {
     this.belongsTo(models.nutricionista, {
       as: 'nutricionista',
       foreignKey: {
-        name: 'nutricionistaId',
+        name: 'nutricionista_id',
         allowNull: false,
         validate: { notNull: { msg: 'O campo Nutricionista deve ter um valor válido!' } }
       }
@@ -1604,7 +1604,7 @@ class Fidelidade extends Model {
     this.belongsTo(models.cliente, {
       as: 'cliente',
       foreignKey: {
-        name: 'clienteId',
+        name: 'cliente_id',
         allowNull: false
       }
     });
@@ -1825,7 +1825,7 @@ class Treino extends Model {
     this.belongsTo(models.cliente, {
       as: 'cliente',
       foreignKey: {
-        name: 'clienteId',
+        name: 'cliente_id',
         allowNull: false,
         validate: { 
           notNull: { msg: 'Cliente é obrigatório' } 
@@ -1836,7 +1836,7 @@ class Treino extends Model {
     this.belongsTo(models.personalTrainer, {
       as: 'personal',
       foreignKey: {
-        name: 'personalTrainerId',
+        name: 'personal_trainer_id',
         allowNull: false,
         validate: { 
           notNull: { msg: 'Personal Trainer é obrigatório' } 
@@ -2067,11 +2067,11 @@ class AssinaturaService {
   }
 
 
-  static async verificarRegrasDeNegocio({ clienteId }) {
+  static async verificarRegrasDeNegocio({ cliente_id }) {
   // Regra 1: não pode haver mais de uma assinatura ativa para um mesmi cliente
   const assinaturaAtiva = await Assinatura.findOne({
     where: {
-      clienteId,
+      cliente_id,
       expiresAt: { [Op.gt]: new Date() }
     }
   });
@@ -2083,7 +2083,7 @@ class AssinaturaService {
   }
   // Regra 2: Conceder 50% de desconto para clientes que tenham 12 meses consecutivos de fidelidade
   const ultimoCiclo = await Fidelidade.findOne({
-    where: { clienteId },
+    where: { cliente_id },
     order: [['periodoFim', 'DESC']]
   });
   const now = new Date();
@@ -2094,7 +2094,7 @@ class AssinaturaService {
   // Busca todas as assinaturas do cliente dentro da janela de 12 meses
   const assinaturas = await Assinatura.findAll({
     where: {
-      clienteId,
+      cliente_id,
       createdAt: { [Op.gte]: inicioWindow }
     }
   });
@@ -2143,9 +2143,9 @@ class AssinaturaService {
 
 
   static async create(req) {
-    const { metodoPagamento, clienteId, planoId, valor, desconto = 0 } = req.body;
+    const { metodoPagamento, cliente_id, plano_id, valor, desconto = 0 } = req.body;
 
-    const regras = await this.verificarRegrasDeNegocio({ clienteId });
+    const regras = await this.verificarRegrasDeNegocio({ cliente_id });
     if (!regras.valido) {
       throw new Error(regras.mensagem);
     }
@@ -2156,14 +2156,14 @@ class AssinaturaService {
     const novaAssinatura = await Assinatura.create({
       desconto: descontoFinal,
       metodoPagamento,
-      clienteId,
-      planoId,
+      cliente_id,
+      plano_id,
       valor: valorFinal
     });
     console.log(regras.aplicarCicloFidelidade, regras.periodoFidelidade)
     if (regras.aplicarCicloFidelidade && regras.periodoFidelidade) {
       await Fidelidade.create({
-        clienteId,
+        cliente_id,
         periodoInicio: regras.periodoFidelidade.inicio,
         periodoFim: regras.periodoFidelidade.fim,
         beneficioAplicado: regras.desconto
@@ -2175,15 +2175,15 @@ class AssinaturaService {
 
   static async update(req) {
     const { id } = req.params;
-    const { createdAt, expiresAt, desconto, metodoPagamento, clienteId, planoId, valor } = req.body;
+    const { createdAt, expiresAt, desconto, metodoPagamento, cliente_id, plano_id, valor } = req.body;
 
     const assinatura = await Assinatura.findOne({ where: { id } });
     if (!assinatura) throw new Error('Assinatura não encontrada!');
 
-    const clienteExiste = await Cliente.findByPk(clienteId);
+    const clienteExiste = await Cliente.findByPk(cliente_id);
     if (!clienteExiste) throw new Error("Cliente referenciado não encontrado!");
 
-    const planoExiste = await Plano.findByPk(planoId);
+    const planoExiste = await Plano.findByPk(plano_id);
     if (!planoExiste) throw new Error("Plano referenciado não encontrado!");
 
     Object.assign(assinatura, {
@@ -2191,8 +2191,8 @@ class AssinaturaService {
       expiresAt,
       desconto,
       metodoPagamento,
-      clienteId,
-      planoId,
+      cliente_id,
+      plano_id,
       valor
     });
 
@@ -2204,7 +2204,7 @@ class AssinaturaService {
     const obj = await Assinatura.findByPk(id);
     if (!obj) throw new Error("Assinatura não encontrada.");
     if (obj.expiresAt < new Date()) throw new Error("Não foi possivel deletar essa assinatura, pois ela esta expirada");
-    await CheckIn.destroy({ where: { assinaturaId: id } });
+    await CheckIn.destroy({ where: { assinatura_id: id } });
     return await obj.destroy();
   }
 }
@@ -2239,10 +2239,10 @@ class CheckInService {
   }
 
   static async create(req) {
-    const { entrada, saida, acessoAutorizado, razaoBloqueio, clienteId } = req.body;
+    const { entrada, saida, acessoAutorizado, razaoBloqueio, cliente_id } = req.body;
 
-    if (!entrada || !clienteId) {
-      throw 'Horário de entrada e clienteId são obrigatórios.';
+    if (!entrada || !cliente_id) {
+      throw 'Horário de entrada e cliente_id são obrigatórios.';
     }
 
     if (await this.verificarRegrasDeNegocio(req)) {
@@ -2254,7 +2254,7 @@ class CheckInService {
             saida: saida || null,
             acessoAutorizado: acessoAutorizado !== undefined ? acessoAutorizado : true,
             razaoBloqueio: razaoBloqueio || null,
-            clienteId,
+            cliente_id,
           },
           { transaction: t }
         );
@@ -2270,7 +2270,7 @@ class CheckInService {
 
   static async update(req) {
     const { id } = req.params;
-    const { entrada, saida, acessoAutorizado, razaoBloqueio, clienteId } = req.body;
+    const { entrada, saida, acessoAutorizado, razaoBloqueio, cliente_id } = req.body;
 
     const obj = await CheckIn.findByPk(id, { include: { all: true, nested: true } });
     if (obj == null) throw 'CheckIn não encontrado!';
@@ -2282,7 +2282,7 @@ class CheckInService {
         saida: saida !== undefined ? saida : obj.saida,
         acessoAutorizado: acessoAutorizado !== undefined ? acessoAutorizado : obj.acessoAutorizado,
         razaoBloqueio: razaoBloqueio !== undefined ? razaoBloqueio : obj.razaoBloqueio,
-        clienteId: clienteId || obj.clienteId,
+        cliente_id: cliente_id || obj.cliente_id,
       });
 
       await obj.save({ transaction: t });
@@ -2310,7 +2310,7 @@ class CheckInService {
   // RN1: Cliente não pode fazer mais de um check-in por dia
   // RN2: Limite de 7 diárias semanais
   static async verificarRegrasDeNegocio(req) {
-    const { entrada, clienteId } = req.body;
+    const { entrada, cliente_id } = req.body;
 
     const dataEntrada = new Date(entrada);
     const umaSemanaAtras = new Date(dataEntrada);
@@ -2320,10 +2320,10 @@ class CheckInService {
     const checkInsDiarios = await sequelize.query(
       `SELECT entrada
        FROM CheckIns
-       WHERE clienteId = :clienteId
+       WHERE cliente_id = :cliente_id
        AND DATE(entrada) = DATE(:dataEntrada)`,
       {
-        replacements: { clienteId, dataEntrada },
+        replacements: { cliente_id, dataEntrada },
         type: QueryTypes.SELECT,
       }
     );
@@ -2336,11 +2336,11 @@ class CheckInService {
     const [countSemanal] = await sequelize.query(
       `SELECT COUNT(*) as total
        FROM CheckIns
-       WHERE clienteId = :clienteId
+       WHERE cliente_id = :cliente_id
        AND entrada >= :umaSemanaAtras
        AND entrada <= :dataEntrada`,
       {
-        replacements: { clienteId, umaSemanaAtras, dataEntrada },
+        replacements: { cliente_id, umaSemanaAtras, dataEntrada },
         type: QueryTypes.SELECT,
       }
     );
@@ -2353,9 +2353,9 @@ class CheckInService {
   }
 
   static async findByCliente(req) {
-    const { clienteId } = req.params;
+    const { cliente_id } = req.params;
     const objs = await CheckIn.findAll({
-      where: { clienteId },
+      where: { cliente_id },
       order: [['entrada', 'DESC']],
       include: { all: true, nested: true },
     });
@@ -2516,9 +2516,9 @@ class DietaService {
   }
 
   static async create(req) {
-    const { descricao, dataCriacao, dataExpiracao, instrucoes, clienteId, nutricionistaId } = req.body;
+    const { descricao, dataCriacao, dataExpiracao, instrucoes, cliente_id, nutricionista_id } = req.body;
     
-    if (!descricao || !instrucoes || !dataExpiracao || !clienteId || !nutricionistaId) {
+    if (!descricao || !instrucoes || !dataExpiracao || !cliente_id || !nutricionista_id) {
       throw new Error('Descrição, instruções, data de expiração, cliente e nutricionista são obrigatórios.');
     }
     
@@ -2528,8 +2528,8 @@ class DietaService {
         dataCriacao: dataCriacao || new Date(),
         dataExpiracao,
         instrucoes,
-        clienteId,
-        nutricionistaId
+        cliente_id,
+        nutricionista_id
       });
       return obj;
     } catch (err) {
@@ -2539,7 +2539,7 @@ class DietaService {
 
   static async update(req) {
     const { id } = req.params;
-    const { descricao, dataExpiracao, instrucoes, clienteId, nutricionistaId } = req.body;
+    const { descricao, dataExpiracao, instrucoes, cliente_id, nutricionista_id } = req.body;
     
     try {
       const obj = await Dieta.findByPk(id);
@@ -2551,8 +2551,8 @@ class DietaService {
         descricao: descricao !== undefined ? descricao : obj.descricao,
         dataExpiracao: dataExpiracao !== undefined ? dataExpiracao : obj.dataExpiracao,
         instrucoes: instrucoes !== undefined ? instrucoes : obj.instrucoes,
-        clienteId: clienteId !== undefined ? clienteId : obj.clienteId,
-        nutricionistaId: nutricionistaId !== undefined ? nutricionistaId : obj.nutricionistaId
+        cliente_id: cliente_id !== undefined ? cliente_id : obj.cliente_id,
+        nutricionista_id: nutricionista_id !== undefined ? nutricionista_id : obj.nutricionista_id
       });
       
       await obj.save();
@@ -2577,10 +2577,10 @@ class DietaService {
   }
 
   static async findByCliente(req) {
-    const { clienteId } = req.params;
+    const { cliente_id } = req.params;
     try {
       const objs = await Dieta.findAll({
-        where: { clienteId },
+        where: { cliente_id },
         include: [
           { association: 'nutricionista', attributes: ['id', 'nome'] }
         ]
@@ -2592,10 +2592,10 @@ class DietaService {
   }
 
   static async findByNutricionista(req) {
-    const { nutricionistaId } = req.params;
+    const { nutricionista_id } = req.params;
     try {
       const objs = await Dieta.findAll({
-        where: { nutricionistaId },
+        where: { nutricionista_id },
         include: [
           { association: 'cliente', attributes: ['id', 'nome'] }
         ]
@@ -2635,17 +2635,17 @@ class EstadoService {
         if (nutricionista == null) throw 'Nutricionista invalido!';
 
         if (await this.verificarRegrasDeNegocio(req)) {
-            const obj = await Estado.create({ data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, clienteId: cliente.id, nutricionistaId: nutricionista.id });
+            const obj = await Estado.create({ data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, cliente_id: cliente.id, nutricionista_id: nutricionista.id });
             return await Estado.findByPk(obj.id, { include: { all: true, nested: true } });
         }
     }
 
     static async update(req) {
         const { id } = req.params;
-        const { data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, clienteId, nutricionistaId } = req.body;
+        const { data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, cliente_id, nutricionista_id } = req.body;
         let obj = await Estado.findOne({ where: { id } });
 
-        Object.assign(obj, { data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, clienteId, nutricionistaId });
+        Object.assign(obj, { data, peso, altura, taxaGordura, circunferenciaCintura, circunferenciaBraco, comentarios, cliente_id, nutricionista_id });
         return await obj.save();
     }
 
@@ -2981,7 +2981,7 @@ class TreinoService {
   }
 
   static async create(req) {
-    const { nivel, objetivo, dataExpiracao, exercicios, clienteId, personalTrainerId } = req.body;
+    const { nivel, objetivo, dataExpiracao, exercicios, cliente_id, personal_trainer_id } = req.body;
     
     try {
       const obj = await Treino.create({ 
@@ -2989,8 +2989,8 @@ class TreinoService {
         objetivo,
         dataExpiracao,
         exercicios,
-        clienteId,
-        personalTrainerId
+        cliente_id,
+        personal_trainer_id
       });
       return obj;
     } catch (err) {
@@ -3000,7 +3000,7 @@ class TreinoService {
 
   static async update(req) {
     const { id } = req.params;
-    const { nivel, objetivo, dataExpiracao, exercicios, clienteId, personalTrainerId } = req.body;
+    const { nivel, objetivo, dataExpiracao, exercicios, cliente_id, personal_trainer_id } = req.body;
     
     try {
       const obj = await Treino.findByPk(id);
@@ -3013,8 +3013,8 @@ class TreinoService {
         objetivo: objetivo !== undefined ? objetivo : obj.objetivo,
         dataExpiracao: dataExpiracao !== undefined ? dataExpiracao : obj.dataExpiracao,
         exercicios: exercicios !== undefined ? exercicios : obj.exercicios,
-        clienteId: clienteId !== undefined ? clienteId : obj.clienteId,
-        personalTrainerId: personalTrainerId !== undefined ? personalTrainerId : obj.personalTrainerId
+        cliente_id: cliente_id !== undefined ? cliente_id : obj.cliente_id,
+        personal_trainer_id: personal_trainer_id !== undefined ? personal_trainer_id : obj.personal_trainer_id
       });
       
       await obj.save();
@@ -3039,10 +3039,10 @@ class TreinoService {
   }
 
   static async findByCliente(req) {
-    const { clienteId } = req.params;
+    const { cliente_id } = req.params;
     try {
       const objs = await Treino.findAll({
-        where: { clienteId },
+        where: { cliente_id },
         include: [
           { association: 'personal', attributes: ['id', 'nome'] }
         ],
@@ -3055,10 +3055,10 @@ class TreinoService {
   }
 
   static async findByPersonal(req) {
-    const { personalTrainerId } = req.params;
+    const { personal_trainer_id } = req.params;
     try {
       const objs = await Treino.findAll({
-        where: { personalTrainerId },
+        where: { personal_trainer_id },
         include: [
           { association: 'cliente', attributes: ['id', 'nome'] }
         ],

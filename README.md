@@ -16,8 +16,8 @@ Inserção de um estado dentro da margem de 7 dias, para testagem do 3º item:
     "circunferenciaCintura": 180,
     "circunferenciaBraco": 40,
     "comentarios": "Cliente já fez atualização de estado nessa semana.",
-    "clienteId": 3,
-    "nutricionistaId": 2
+    "cliente_id": 3,
+    "nutricionista_id": 2
     }
 
 Inserção de 3 estados dentro da margem de 30 dias, para testagem do 4º item:
@@ -29,8 +29,8 @@ Inserção de 3 estados dentro da margem de 30 dias, para testagem do 4º item:
     "circunferenciaCintura": 180,
     "circunferenciaBraco": 40,
     "comentarios": "Cliente já fez 3 atualizações de estado nesse mês.",
-    "clienteId": 4,
-    "nutricionistaId": 2
+    "cliente_id": 4,
+    "nutricionista_id": 2
     },
     {
     "data": "2023-06-25",
@@ -40,8 +40,8 @@ Inserção de 3 estados dentro da margem de 30 dias, para testagem do 4º item:
     "circunferenciaCintura": 181,
     "circunferenciaBraco": 40,
     "comentarios": "Cliente já fez 3 atualizações de estado nesse mês.",
-    "clienteId": 4,
-    "nutricionistaId": 2
+    "cliente_id": 4,
+    "nutricionista_id": 2
     },
     {
     "data": "2023-06-18",
@@ -51,6 +51,6 @@ Inserção de 3 estados dentro da margem de 30 dias, para testagem do 4º item:
     "circunferenciaCintura": 180,
     "circunferenciaBraco": 40,
     "comentarios": "Cliente já fez 3 atualizações de estado nesse mês.",
-    "clienteId": 4,
-    "nutricionistaId": 2
+    "cliente_id": 4,
+    "nutricionista_id": 2
     }

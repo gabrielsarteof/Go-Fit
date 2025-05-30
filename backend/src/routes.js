@@ -24,6 +24,8 @@ routes.get('/assinaturas/:id', AssinaturaController.findByPk);
 routes.post('/assinaturas', AssinaturaController.create);
 routes.put('/assinaturas/:id', AssinaturaController.update);
 routes.delete('/assinaturas/:id', AssinaturaController.delete);
+routes.get('/assinaturas/relatorios/ativas', AssinaturaController.relatorioAtivas);
+routes.get('/assinaturas/relatorios/vencimento-proximo', AssinaturaController.relatorioVencimentoProximo);
 
 routes.get('/checkins', CheckInController.findAll);
 routes.get('/checkins/:id', CheckInController.findByPk);

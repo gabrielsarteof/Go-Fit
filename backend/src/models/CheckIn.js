@@ -61,10 +61,10 @@ class CheckIn extends Model {
     this.belongsTo(models.assinatura, {
       as: 'assinatura',
       foreignKey: {
-        name: 'assinaturaId',
+        name: 'assinatura_id',
         allowNull: false,
         validate: {
-          notNull: { msg: 'O campo assinaturaId deve ser preenchido com um valor válido!' }
+          notNull: { msg: 'O campo assinatura_id deve ser preenchido com um valor válido!' }
         }
       }
     });
