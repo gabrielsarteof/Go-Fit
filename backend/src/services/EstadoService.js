@@ -89,6 +89,11 @@ class EstadoService {
         return objs;
     }
 
+    static async estadosMaisRecentes(req) {
+        const objs = await sequelize.query("SELECT DISTINCT ON (clienteId) * FROM estado ORDER BY clienteId, data DESC", { type: QueryTypes.SELECT });
+        return objs;
+    }
+
 }
 
 export { EstadoService };

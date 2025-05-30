@@ -51,6 +51,7 @@ routes.post('/estados', EstadoController.create);
 routes.put('/estados/:id', EstadoController.update);
 routes.delete('/estados/:id', EstadoController.delete);
 routes.get('/estados/relatorios/progresso/:id', EstadoController.evolucaoCliente);
+routes.get('/estados/relatorios/recentes', EstadoController.estadosMaisRecentes);
 
 routes.get('/nutricionistas', NutricionistaController.findAll);
 routes.get('/nutricionistas/:id', NutricionistaController.findByPk);

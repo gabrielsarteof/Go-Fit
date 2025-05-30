@@ -45,6 +45,20 @@ class EstadoController {
       return res.status(400).json({ error: err.message });
     }
   }
+
+  static async estadosMaisRecentes(_req, res) {
+    try {
+      const data = await EstadoService.estadosMaisRecentes();
+
+      if (!data || data.length === 0) {
+        return res.status(200).json({ message: `Erro ao buscar estados recentes.` });
+      }
+
+      return res.json(data);
+    } catch (err) {
+      return res.status(400).json({ error: err.message });
+    }
+  }
 }
 
 
