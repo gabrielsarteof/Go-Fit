@@ -1,0 +1,561 @@
+{
+  "administradores": [
+    {
+      "id": 1,
+      "nome": "Carlos Silva",
+      "senha": "Admin@123",
+      "email": "carlos.admin@gofit.com",
+      "telefone": "(28) 98765-4321",
+      "created_at": "2025-05-30 12:51:00.112 +00:00",
+      "updated_at": "2025-05-30 12:51:00.112 +00:00"
+    },
+    {
+      "id": 2,
+      "nome": "Ana Oliveira",
+      "senha": "Ana#4567",
+      "email": "ana.admin@gofit.com",
+      "telefone": "(28) 91234-5678",
+      "created_at": "2025-05-30 12:51:00.134 +00:00",
+      "updated_at": "2025-05-30 12:51:00.134 +00:00"
+    },
+    {
+      "id": 3,
+      "nome": "Roberto Santos",
+      "senha": "Roberto$789",
+      "email": "roberto.admin@gofit.com",
+      "telefone": "(28) 99876-5432",
+      "created_at": "2025-05-30 12:51:00.147 +00:00",
+      "updated_at": "2025-05-30 12:51:00.147 +00:00"
+    },
+    {
+      "id": 4,
+      "nome": "Juliana Costa",
+      "senha": "Costa!101",
+      "email": "juliana.admin@gofit.com",
+      "telefone": "(28) 95555-9999",
+      "created_at": "2025-05-30 12:51:00.157 +00:00",
+      "updated_at": "2025-05-30 12:51:00.157 +00:00"
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "João da Silva",
+      "email": "joao.silva@email.com",
+      "telefone": "(11) 99999-8888",
+      "data_nascimento": "1990-05-15",
+      "created_at": "2025-05-30 12:51:00.272 +00:00",
+      "updated_at": "2025-05-30 12:51:00.272 +00:00"
+    },
+    {
+      "id": 2,
+      "nome": "Maria de Oliveira",
+      "email": "maria.oliveira@email.com",
+      "telefone": "(11) 98888-9999",
+      "data_nascimento": "1985-10-20",
+      "created_at": "2025-05-30 12:51:00.281 +00:00",
+      "updated_at": "2025-05-30 12:51:00.281 +00:00"
+    },
+    {
+      "id": 3,
+      "nome": "Pedro dos Santos",
+      "email": "pedro.santos@email.com",
+      "telefone": "(11) 97777-6666",
+      "data_nascimento": "1995-03-25",
+      "created_at": "2025-05-30 12:51:00.291 +00:00",
+      "updated_at": "2025-05-30 12:51:00.291 +00:00"
+    },
+    {
+      "id": 4,
+      "nome": "Ana da Costa",
+      "email": "ana.costa@email.com",
+      "telefone": "(11) 96666-7777",
+      "data_nascimento": "1988-12-10",
+      "created_at": "2025-05-30 12:51:00.299 +00:00",
+      "updated_at": "2025-05-30 12:51:00.299 +00:00"
+    }
+  ],
+  "planos": [
+    {
+      "id": 1,
+      "nome": "Básico",
+      "frequencia": "2x por semana",
+      "valor": 39.9,
+      "created_at": "2025-05-30 12:51:00.239 +00:00",
+      "updated_at": "2025-05-30 12:51:00.239 +00:00"
+    },
+    {
+      "id": 2,
+      "nome": "Intermediário",
+      "frequencia": "3x por semana",
+      "valor": 59.9,
+      "created_at": "2025-05-30 12:51:00.247 +00:00",
+      "updated_at": "2025-05-30 12:51:00.247 +00:00"
+    },
+    {
+      "id": 3,
+      "nome": "Premium",
+      "frequencia": "5x por semana",
+      "valor": 79.9,
+      "created_at": "2025-05-30 12:51:00.255 +00:00",
+      "updated_at": "2025-05-30 12:51:00.255 +00:00"
+    },
+    {
+      "id": 4,
+      "nome": "VIP",
+      "frequencia": "Ilimitado",
+      "valor": 99.9,
+      "created_at": "2025-05-30 12:51:00.263 +00:00",
+      "updated_at": "2025-05-30 12:51:00.263 +00:00"
+    }
+  ],
+  "assinaturas": [
+    {
+      "id": 1,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2024-06-30 12:51:00.307 +00:00",
+      "created_at": "2024-05-30 12:51:00.307 +00:00",
+      "updated_at": "2025-05-30 12:51:00.307 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 2,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2024-07-30 12:51:00.317 +00:00",
+      "created_at": "2024-06-30 12:51:00.317 +00:00",
+      "updated_at": "2025-05-30 12:51:00.317 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 3,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2024-08-30 12:51:00.325 +00:00",
+      "created_at": "2024-07-30 12:51:00.325 +00:00",
+      "updated_at": "2025-05-30 12:51:00.325 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 4,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2024-09-30 12:51:00.333 +00:00",
+      "created_at": "2024-08-30 12:51:00.333 +00:00",
+      "updated_at": "2025-05-30 12:51:00.333 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 5,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2024-10-30 12:51:00.340 +00:00",
+      "created_at": "2024-09-30 12:51:00.340 +00:00",
+      "updated_at": "2025-05-30 12:51:00.340 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 6,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2024-11-30 12:51:00.348 +00:00",
+      "created_at": "2024-10-30 12:51:00.348 +00:00",
+      "updated_at": "2025-05-30 12:51:00.348 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 7,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2024-12-30 12:51:00.357 +00:00",
+      "created_at": "2024-11-30 12:51:00.357 +00:00",
+      "updated_at": "2025-05-30 12:51:00.357 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 8,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2025-01-30 12:51:00.365 +00:00",
+      "created_at": "2024-12-30 12:51:00.365 +00:00",
+      "updated_at": "2025-05-30 12:51:00.365 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 9,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2025-03-02 12:51:00.373 +00:00",
+      "created_at": "2025-01-30 12:51:00.373 +00:00",
+      "updated_at": "2025-05-30 12:51:00.373 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 10,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2025-04-02 12:51:00.381 +00:00",
+      "created_at": "2025-03-02 12:51:00.381 +00:00",
+      "updated_at": "2025-05-30 12:51:00.381 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 11,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2025-04-30 12:51:00.389 +00:00",
+      "created_at": "2025-03-30 12:51:00.389 +00:00",
+      "updated_at": "2025-05-30 12:51:00.389 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 12,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2025-05-30 12:51:00.397 +00:00",
+      "created_at": "2025-04-30 12:51:00.397 +00:00",
+      "updated_at": "2025-05-30 12:51:00.397 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 13,
+      "desconto": 5,
+      "valor": 56.9,
+      "metodo_pagamento": "Débito Automático",
+      "expires_at": "2025-06-30 12:51:00.405 +00:00",
+      "created_at": "2025-05-30 12:51:00.405 +00:00",
+      "updated_at": "2025-05-30 12:51:00.405 +00:00",
+      "cliente_id": 2,
+      "plano_id": 2
+    },
+    {
+      "id": 14,
+      "desconto": 10,
+      "valor": 71.91,
+      "metodo_pagamento": "Boleto Bancário",
+      "expires_at": "2025-06-30 12:51:00.413 +00:00",
+      "created_at": "2025-05-30 12:51:00.413 +00:00",
+      "updated_at": "2025-05-30 12:51:00.413 +00:00",
+      "cliente_id": 3,
+      "plano_id": 3
+    }
+  ],
+  "checkins": [
+    {
+      "id": 1,
+      "entrada": "2025-04-01 11:00:00.000 +00:00",
+      "saida": "2025-04-01 12:30:00.000 +00:00",
+      "acesso_autorizado": 1,
+      "razao_bloqueio": null,
+      "assinatura_id": 13
+    },
+    {
+      "id": 2,
+      "entrada": "2025-04-01 20:00:00.000 +00:00",
+      "saida": "2025-04-01 21:45:00.000 +00:00",
+      "acesso_autorizado": 1,
+      "razao_bloqueio": null,
+      "assinatura_id": 13
+    },
+    {
+      "id": 3,
+      "entrada": "2025-04-02 13:00:00.000 +00:00",
+      "saida": "2025-04-02 14:30:00.000 +00:00",
+      "acesso_autorizado": 1,
+      "razao_bloqueio": null,
+      "assinatura_id": 14
+    },
+    {
+      "id": 4,
+      "entrada": "2025-04-02 22:00:00.000 +00:00",
+      "saida": null,
+      "acesso_autorizado": 0,
+      "razao_bloqueio": "Assinatura vencida",
+      "assinatura_id": 14
+    }
+  ],
+  "nutricionistas": [
+    {
+      "id": 1,
+      "nome": "Mariana Alves",
+      "email": "mariana.nutri@gofit.com",
+      "telefone": "(28) 98888-7777",
+      "horario_atendimento": "Segunda a Sexta, 8h às 17h",
+      "created_at": "2025-05-30 12:51:00.167 +00:00",
+      "updated_at": "2025-05-30 12:51:00.167 +00:00"
+    },
+    {
+      "id": 2,
+      "nome": "Pedro Mendes",
+      "email": "pedro.nutri@gofit.com",
+      "telefone": "(28) 97777-8888",
+      "horario_atendimento": "Segunda a Sexta, 9h às 18h",
+      "created_at": "2025-05-30 12:51:00.178 +00:00",
+      "updated_at": "2025-05-30 12:51:00.178 +00:00"
+    },
+    {
+      "id": 3,
+      "nome": "Camila Rocha",
+      "email": "camila.nutri@gofit.com",
+      "telefone": "(28) 96666-5555",
+      "horario_atendimento": "Terça a Sábado, 8h às 17h",
+      "created_at": "2025-05-30 12:51:00.187 +00:00",
+      "updated_at": "2025-05-30 12:51:00.187 +00:00"
+    },
+    {
+      "id": 4,
+      "nome": "Lucas Ferreira",
+      "email": "lucas.nutri@gofit.com",
+      "telefone": "(28) 95555-6666",
+      "horario_atendimento": "Segunda a Sexta, 10h às 19h",
+      "created_at": "2025-05-30 12:51:00.195 +00:00",
+      "updated_at": "2025-05-30 12:51:00.195 +00:00"
+    }
+  ],
+  "dietas": [
+    {
+      "id": 1,
+      "descricao": "Dieta para ganho de massa",
+      "created_at": "2025-05-30 12:51:00.453 +00:00",
+      "expires_at": "2025-06-15 00:00:00.000 +00:00",
+      "instrucoes": "Consumir 6 refeições diárias com alto teor proteico",
+      "updated_at": "2025-05-30 12:51:00.453 +00:00",
+      "deleted_at": null,
+      "cliente_id": 1,
+      "nutricionista_id": 1
+    },
+    {
+      "id": 2,
+      "descricao": "Dieta para emagrecimento",
+      "created_at": "2025-05-30 12:51:00.461 +00:00",
+      "expires_at": "2025-06-20 00:00:00.000 +00:00",
+      "instrucoes": "Reduzir carboidratos e aumentar consumo de vegetais",
+      "updated_at": "2025-05-30 12:51:00.461 +00:00",
+      "deleted_at": null,
+      "cliente_id": 2,
+      "nutricionista_id": 2
+    },
+    {
+      "id": 3,
+      "descricao": "Dieta para definição muscular",
+      "created_at": "2025-05-30 12:51:00.469 +00:00",
+      "expires_at": "2025-06-25 00:00:00.000 +00:00",
+      "instrucoes": "Ciclar carboidratos e manter alto consumo proteico",
+      "updated_at": "2025-05-30 12:51:00.469 +00:00",
+      "deleted_at": null,
+      "cliente_id": 3,
+      "nutricionista_id": 3
+    },
+    {
+      "id": 4,
+      "descricao": "Dieta para aumento de energia",
+      "created_at": "2025-05-30 12:51:00.477 +00:00",
+      "expires_at": "2025-06-30 00:00:00.000 +00:00",
+      "instrucoes": "Consumir carboidratos complexos e proteínas magras",
+      "updated_at": "2025-05-30 12:51:00.477 +00:00",
+      "deleted_at": null,
+      "cliente_id": 4,
+      "nutricionista_id": 4
+    }
+  ],
+  "estados": [
+    {
+      "id": 1,
+      "data": "2025-03-01",
+      "peso": 75.5,
+      "altura": 1.78,
+      "taxa_gordura": 18.5,
+      "circunferencia_cintura": 85,
+      "circunferencia_braco": 32,
+      "comentarios": "Boa condição física inicial",
+      "created_at": "2025-05-30 12:51:00.485 +00:00",
+      "updated_at": "2025-05-30 12:51:00.485 +00:00",
+      "cliente_id": 2,
+      "nutricionista_id": 2
+    },
+    {
+      "id": 2,
+      "data": "2023-07-07",
+      "peso": 68.2,
+      "altura": 1.65,
+      "taxa_gordura": 22,
+      "circunferencia_cintura": 78,
+      "circunferencia_braco": 28.5,
+      "comentarios": "Necessita reduzir percentual de gordura",
+      "created_at": "2025-05-30 12:51:00.493 +00:00",
+      "updated_at": "2025-05-30 12:51:00.493 +00:00",
+      "cliente_id": 3,
+      "nutricionista_id": 2
+    },
+    {
+      "id": 3,
+      "data": "2023-06-18",
+      "peso": 80,
+      "altura": 1.65,
+      "taxa_gordura": 1,
+      "circunferencia_cintura": 180,
+      "circunferencia_braco": 40,
+      "comentarios": "Primeira atualização de estado do cliente nesse mês.",
+      "created_at": "2025-05-30 12:51:00.501 +00:00",
+      "updated_at": "2025-05-30 12:51:00.501 +00:00",
+      "cliente_id": 4,
+      "nutricionista_id": 2
+    },
+    {
+      "id": 4,
+      "data": "2023-06-25",
+      "peso": 81,
+      "altura": 1.65,
+      "taxa_gordura": 1.1,
+      "circunferencia_cintura": 181,
+      "circunferencia_braco": 40,
+      "comentarios": "Segunda atualização de estado do cliente nesse mês.",
+      "created_at": "2025-05-30 12:51:00.509 +00:00",
+      "updated_at": "2025-05-30 12:51:00.509 +00:00",
+      "cliente_id": 4,
+      "nutricionista_id": 2
+    },
+    {
+      "id": 5,
+      "data": "2023-07-02",
+      "peso": 80,
+      "altura": 1.65,
+      "taxa_gordura": 1,
+      "circunferencia_cintura": 180,
+      "circunferencia_braco": 40,
+      "comentarios": "Terceira atualização de estado do cliente nesse mês.",
+      "created_at": "2025-05-30 12:51:00.517 +00:00",
+      "updated_at": "2025-05-30 12:51:00.517 +00:00",
+      "cliente_id": 4,
+      "nutricionista_id": 2
+    },
+    {
+      "id": 6,
+      "data": "2025-03-15",
+      "peso": 68.2,
+      "altura": 1.65,
+      "taxa_gordura": 22,
+      "circunferencia_cintura": 78,
+      "circunferencia_braco": 28.5,
+      "comentarios": "Necessita reduzir percentual de gordura",
+      "created_at": "2025-05-30 12:51:00.525 +00:00",
+      "updated_at": "2025-05-30 12:51:00.525 +00:00",
+      "cliente_id": 2,
+      "nutricionista_id": 2
+    }
+  ],
+  "fidelidades": [],
+  "personais": [
+    {
+      "id": 1,
+      "nome": "Rafael Souza",
+      "certificacao": "CREF 12345-G/SP",
+      "email": "rafael.personal@gofit.com",
+      "telefone": "(28) 94444-3333",
+      "horario_atendimento": "Segunda a Sexta, 6h às 22h",
+      "especialidade": "Musculação",
+      "created_at": "2025-05-30 12:51:00.203 +00:00",
+      "updated_at": "2025-05-30 12:51:00.203 +00:00"
+    },
+    {
+      "id": 2,
+      "nome": "Fernanda Lima",
+      "certificacao": "CREF 54321-G/SP",
+      "email": "fernanda.personal@gofit.com",
+      "telefone": "(28) 93333-4444",
+      "horario_atendimento": "Segunda a Sábado, 7h às 21h",
+      "especialidade": "Funcional",
+      "created_at": "2025-05-30 12:51:00.211 +00:00",
+      "updated_at": "2025-05-30 12:51:00.211 +00:00"
+    },
+    {
+      "id": 3,
+      "nome": "Gustavo Martins",
+      "certificacao": "CREF 67890-G/SP",
+      "email": "gustavo.personal@gofit.com",
+      "telefone": "(28) 92222-1111",
+      "horario_atendimento": "Terça a Domingo, 8h às 20h",
+      "especialidade": "CrossFit",
+      "created_at": "2025-05-30 12:51:00.221 +00:00",
+      "updated_at": "2025-05-30 12:51:00.221 +00:00"
+    },
+    {
+      "id": 4,
+      "nome": "Patrícia Campos",
+      "certificacao": "CREF 09876-G/SP",
+      "email": "patricia.personal@gofit.com",
+      "telefone": "(28) 91111-2222",
+      "horario_atendimento": "Segunda a Sexta, 6h às 15h",
+      "especialidade": "Pilates",
+      "created_at": "2025-05-30 12:51:00.230 +00:00",
+      "updated_at": "2025-05-30 12:51:00.230 +00:00"
+    }
+  ],
+  "treinos": [
+    {
+      "id": 1,
+      "nivel": "Iniciante",
+      "objetivo": "Ganho de massa muscular",
+      "created_at": "2025-03-15 00:00:00.000 +00:00",
+      "expires_at": "2025-06-15 00:00:00.000 +00:00",
+      "exercicios": "[{\"nome\":\"Supino reto\",\"series\":3,\"repeticoes\":12,\"carga\":40},{\"nome\":\"Leg press\",\"series\":3,\"repeticoes\":15,\"carga\":100},{\"nome\":\"Puxada frontal\",\"series\":3,\"repeticoes\":12,\"carga\":50},{\"nome\":\"Agachamento\",\"series\":3,\"repeticoes\":12,\"carga\":30}]",
+      "cliente_id": 1,
+      "personal_trainer_id": 1
+    },
+    {
+      "id": 2,
+      "nivel": "Intermediário",
+      "objetivo": "Emagrecimento",
+      "created_at": "2025-03-20 00:00:00.000 +00:00",
+      "expires_at": "2025-06-20 00:00:00.000 +00:00",
+      "exercicios": "[{\"nome\":\"Esteira\",\"series\":1,\"repeticoes\":1,\"carga\":0,\"tempo\":\"30 minutos\"},{\"nome\":\"Bicicleta\",\"series\":1,\"repeticoes\":1,\"carga\":0,\"tempo\":\"20 minutos\"},{\"nome\":\"Burpees\",\"series\":4,\"repeticoes\":15,\"carga\":0},{\"nome\":\"Jumping jacks\",\"series\":4,\"repeticoes\":30,\"carga\":0}]",
+      "cliente_id": 2,
+      "personal_trainer_id": 2
+    },
+    {
+      "id": 3,
+      "nivel": "Avançado",
+      "objetivo": "Definição muscular",
+      "created_at": "2025-03-25 00:00:00.000 +00:00",
+      "expires_at": "2025-06-25 00:00:00.000 +00:00",
+      "exercicios": "[{\"nome\":\"Supino inclinado\",\"series\":4,\"repeticoes\":10,\"carga\":60},{\"nome\":\"Agachamento livre\",\"series\":4,\"repeticoes\":12,\"carga\":80},{\"nome\":\"Remada curvada\",\"series\":4,\"repeticoes\":10,\"carga\":70},{\"nome\":\"Elevação lateral\",\"series\":4,\"repeticoes\":12,\"carga\":10}]",
+      "cliente_id": 3,
+      "personal_trainer_id": 3
+    },
+    {
+      "id": 4,
+      "nivel": "Iniciante",
+      "objetivo": "Fortalecimento geral",
+      "created_at": "2025-03-30 00:00:00.000 +00:00",
+      "expires_at": "2025-06-30 00:00:00.000 +00:00",
+      "exercicios": "[{\"nome\":\"Prancha\",\"series\":3,\"repeticoes\":1,\"carga\":0,\"tempo\":\"30 segundos\"},{\"nome\":\"Flexões de joelho\",\"series\":3,\"repeticoes\":10,\"carga\":0},{\"nome\":\"Agachamento livre\",\"series\":3,\"repeticoes\":15,\"carga\":0},{\"nome\":\"Ponte\",\"series\":3,\"repeticoes\":15,\"carga\":0}]",
+      "cliente_id": 4,
+      "personal_trainer_id": 4
+    }
+  ]
+}

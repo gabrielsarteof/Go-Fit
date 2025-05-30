@@ -1,8 +1,6 @@
 import express from "express";
 import routes from './routes.js';
 import errorHandler from '../src/_middleware/error-handler.js';
-
-// Importando configuração e estabelecimento da conexão com o banco de dados
 import sequelize from './config/database-connection.js';
 
 const app = express();
@@ -19,4 +17,15 @@ app.use(express.json());
 app.use(routes);
 app.use(errorHandler);
 
-app.listen(3333);
+(async () => {
+  try {
+    await sequelize.sync({ force: true }); // Cria ou recria as tabelas no banco
+    console.log('Banco sincronizado com sucesso.');
+
+    app.listen(3333, () => {
+      console.log('Servidor rodando na porta 3333');
+    });
+  } catch (error) {
+    console.error('Erro ao sincronizar banco:', error);
+  }
+})();

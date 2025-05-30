@@ -1,9 +1,15 @@
 export const databaseConfig = {
-    dialect: 'sqlite',
-    storage: 'database.sqlite',
-    define: {
-      timestamps: true,
-      freezeTableName: true,
-      underscored: true
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: {
+      require: true,           
+      rejectUnauthorized: false 
     }
-  };
+  },
+  define: {
+    timestamps: true,       
+    freezeTableName: true,  
+    underscored: true       
+  },
+  logging: false            
+};
