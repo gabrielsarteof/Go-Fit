@@ -83,6 +83,12 @@ class EstadoService {
         }
     }
 
+    static async evolucaoCliente(req) {
+        const { cliente_id } = req.params;
+        const objs = await sequelize.query("SELECT * FROM estado WHERE cliente_id = :cliente_id ORDER BY data ASC", { replacements: { cliente_id: cliente_id }, type: QueryTypes.SELECT });
+        return objs;
+    }
+
 }
 
 export { EstadoService };

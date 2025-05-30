@@ -31,6 +31,22 @@ class EstadoController {
       .then(obj => res.json(obj))
       .catch(err => res.status(400).json({ err: err.message }));
   }
+
+  static async evolucaoCliente(_req, res) {
+    try {
+      const data = await EstadoService.evolucaoCliente();
+
+      if (!data || data.length === 0) {
+        return res.status(200).json({ message: `Nenhum registro de estado encontrado.` });
+      }
+
+      return res.json(data);
+    } catch (err) {
+      return res.status(400).json({ error: err.message });
+    }
+  }
 }
+
+
 
 export { EstadoController };
