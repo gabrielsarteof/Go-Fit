@@ -12,7 +12,15 @@ import { PersonalTrainer } from '../models/PersonalTrainer.js';
 import { Plano } from '../models/Plano.js';
 import { Treino } from '../models/Treino.js';
 
-const sequelize = new Sequelize(databaseConfig);
+const sequelize = new Sequelize(databaseConfig.url, databaseConfig);
+
+sequelize.authenticate()
+  .then(() => {
+    console.log('Conexão com o banco de dados bem-sucedida!');
+  })
+  .catch(err => {
+    console.error('Erro ao conectar com o banco de dados:', err);
+  });
 
 Administrador.init(sequelize);
 Assinatura.init(sequelize);

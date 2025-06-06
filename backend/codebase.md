@@ -2,6 +2,572 @@
 
 This is a binary file of the type: Binary
 
+# dump.json
+
+```json
+{
+  "administradores": [
+    {
+      "id": 1,
+      "nome": "Carlos Silva",
+      "senha": "Admin@123",
+      "email": "carlos.admin@gofit.com",
+      "telefone": "(28) 98765-4321",
+      "created_at": "2025-05-30 12:51:00.112 +00:00",
+      "updated_at": "2025-05-30 12:51:00.112 +00:00"
+    },
+    {
+      "id": 2,
+      "nome": "Ana Oliveira",
+      "senha": "Ana#4567",
+      "email": "ana.admin@gofit.com",
+      "telefone": "(28) 91234-5678",
+      "created_at": "2025-05-30 12:51:00.134 +00:00",
+      "updated_at": "2025-05-30 12:51:00.134 +00:00"
+    },
+    {
+      "id": 3,
+      "nome": "Roberto Santos",
+      "senha": "Roberto$789",
+      "email": "roberto.admin@gofit.com",
+      "telefone": "(28) 99876-5432",
+      "created_at": "2025-05-30 12:51:00.147 +00:00",
+      "updated_at": "2025-05-30 12:51:00.147 +00:00"
+    },
+    {
+      "id": 4,
+      "nome": "Juliana Costa",
+      "senha": "Costa!101",
+      "email": "juliana.admin@gofit.com",
+      "telefone": "(28) 95555-9999",
+      "created_at": "2025-05-30 12:51:00.157 +00:00",
+      "updated_at": "2025-05-30 12:51:00.157 +00:00"
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "João da Silva",
+      "email": "joao.silva@email.com",
+      "telefone": "(11) 99999-8888",
+      "data_nascimento": "1990-05-15",
+      "created_at": "2025-05-30 12:51:00.272 +00:00",
+      "updated_at": "2025-05-30 12:51:00.272 +00:00"
+    },
+    {
+      "id": 2,
+      "nome": "Maria de Oliveira",
+      "email": "maria.oliveira@email.com",
+      "telefone": "(11) 98888-9999",
+      "data_nascimento": "1985-10-20",
+      "created_at": "2025-05-30 12:51:00.281 +00:00",
+      "updated_at": "2025-05-30 12:51:00.281 +00:00"
+    },
+    {
+      "id": 3,
+      "nome": "Pedro dos Santos",
+      "email": "pedro.santos@email.com",
+      "telefone": "(11) 97777-6666",
+      "data_nascimento": "1995-03-25",
+      "created_at": "2025-05-30 12:51:00.291 +00:00",
+      "updated_at": "2025-05-30 12:51:00.291 +00:00"
+    },
+    {
+      "id": 4,
+      "nome": "Ana da Costa",
+      "email": "ana.costa@email.com",
+      "telefone": "(11) 96666-7777",
+      "data_nascimento": "1988-12-10",
+      "created_at": "2025-05-30 12:51:00.299 +00:00",
+      "updated_at": "2025-05-30 12:51:00.299 +00:00"
+    }
+  ],
+  "planos": [
+    {
+      "id": 1,
+      "nome": "Básico",
+      "frequencia": "2x por semana",
+      "valor": 39.9,
+      "created_at": "2025-05-30 12:51:00.239 +00:00",
+      "updated_at": "2025-05-30 12:51:00.239 +00:00"
+    },
+    {
+      "id": 2,
+      "nome": "Intermediário",
+      "frequencia": "3x por semana",
+      "valor": 59.9,
+      "created_at": "2025-05-30 12:51:00.247 +00:00",
+      "updated_at": "2025-05-30 12:51:00.247 +00:00"
+    },
+    {
+      "id": 3,
+      "nome": "Premium",
+      "frequencia": "5x por semana",
+      "valor": 79.9,
+      "created_at": "2025-05-30 12:51:00.255 +00:00",
+      "updated_at": "2025-05-30 12:51:00.255 +00:00"
+    },
+    {
+      "id": 4,
+      "nome": "VIP",
+      "frequencia": "Ilimitado",
+      "valor": 99.9,
+      "created_at": "2025-05-30 12:51:00.263 +00:00",
+      "updated_at": "2025-05-30 12:51:00.263 +00:00"
+    }
+  ],
+  "assinaturas": [
+    {
+      "id": 1,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2024-06-30 12:51:00.307 +00:00",
+      "created_at": "2024-05-30 12:51:00.307 +00:00",
+      "updated_at": "2025-05-30 12:51:00.307 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 2,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2024-07-30 12:51:00.317 +00:00",
+      "created_at": "2024-06-30 12:51:00.317 +00:00",
+      "updated_at": "2025-05-30 12:51:00.317 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 3,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2024-08-30 12:51:00.325 +00:00",
+      "created_at": "2024-07-30 12:51:00.325 +00:00",
+      "updated_at": "2025-05-30 12:51:00.325 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 4,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2024-09-30 12:51:00.333 +00:00",
+      "created_at": "2024-08-30 12:51:00.333 +00:00",
+      "updated_at": "2025-05-30 12:51:00.333 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 5,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2024-10-30 12:51:00.340 +00:00",
+      "created_at": "2024-09-30 12:51:00.340 +00:00",
+      "updated_at": "2025-05-30 12:51:00.340 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 6,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2024-11-30 12:51:00.348 +00:00",
+      "created_at": "2024-10-30 12:51:00.348 +00:00",
+      "updated_at": "2025-05-30 12:51:00.348 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 7,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2024-12-30 12:51:00.357 +00:00",
+      "created_at": "2024-11-30 12:51:00.357 +00:00",
+      "updated_at": "2025-05-30 12:51:00.357 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 8,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2025-01-30 12:51:00.365 +00:00",
+      "created_at": "2024-12-30 12:51:00.365 +00:00",
+      "updated_at": "2025-05-30 12:51:00.365 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 9,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2025-03-02 12:51:00.373 +00:00",
+      "created_at": "2025-01-30 12:51:00.373 +00:00",
+      "updated_at": "2025-05-30 12:51:00.373 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 10,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2025-04-02 12:51:00.381 +00:00",
+      "created_at": "2025-03-02 12:51:00.381 +00:00",
+      "updated_at": "2025-05-30 12:51:00.381 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 11,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2025-04-30 12:51:00.389 +00:00",
+      "created_at": "2025-03-30 12:51:00.389 +00:00",
+      "updated_at": "2025-05-30 12:51:00.389 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 12,
+      "desconto": 0,
+      "valor": 39.9,
+      "metodo_pagamento": "Cartão de Crédito",
+      "expires_at": "2025-05-30 12:51:00.397 +00:00",
+      "created_at": "2025-04-30 12:51:00.397 +00:00",
+      "updated_at": "2025-05-30 12:51:00.397 +00:00",
+      "cliente_id": 1,
+      "plano_id": 1
+    },
+    {
+      "id": 13,
+      "desconto": 5,
+      "valor": 56.9,
+      "metodo_pagamento": "Débito Automático",
+      "expires_at": "2025-06-30 12:51:00.405 +00:00",
+      "created_at": "2025-05-30 12:51:00.405 +00:00",
+      "updated_at": "2025-05-30 12:51:00.405 +00:00",
+      "cliente_id": 2,
+      "plano_id": 2
+    },
+    {
+      "id": 14,
+      "desconto": 10,
+      "valor": 71.91,
+      "metodo_pagamento": "Boleto Bancário",
+      "expires_at": "2025-06-30 12:51:00.413 +00:00",
+      "created_at": "2025-05-30 12:51:00.413 +00:00",
+      "updated_at": "2025-05-30 12:51:00.413 +00:00",
+      "cliente_id": 3,
+      "plano_id": 3
+    }
+  ],
+  "checkins": [
+    {
+      "id": 1,
+      "entrada": "2025-04-01 11:00:00.000 +00:00",
+      "saida": "2025-04-01 12:30:00.000 +00:00",
+      "acesso_autorizado": 1,
+      "razao_bloqueio": null,
+      "assinatura_id": 13
+    },
+    {
+      "id": 2,
+      "entrada": "2025-04-01 20:00:00.000 +00:00",
+      "saida": "2025-04-01 21:45:00.000 +00:00",
+      "acesso_autorizado": 1,
+      "razao_bloqueio": null,
+      "assinatura_id": 13
+    },
+    {
+      "id": 3,
+      "entrada": "2025-04-02 13:00:00.000 +00:00",
+      "saida": "2025-04-02 14:30:00.000 +00:00",
+      "acesso_autorizado": 1,
+      "razao_bloqueio": null,
+      "assinatura_id": 14
+    },
+    {
+      "id": 4,
+      "entrada": "2025-04-02 22:00:00.000 +00:00",
+      "saida": null,
+      "acesso_autorizado": 0,
+      "razao_bloqueio": "Assinatura vencida",
+      "assinatura_id": 14
+    }
+  ],
+  "nutricionistas": [
+    {
+      "id": 1,
+      "nome": "Mariana Alves",
+      "email": "mariana.nutri@gofit.com",
+      "telefone": "(28) 98888-7777",
+      "horario_atendimento": "Segunda a Sexta, 8h às 17h",
+      "created_at": "2025-05-30 12:51:00.167 +00:00",
+      "updated_at": "2025-05-30 12:51:00.167 +00:00"
+    },
+    {
+      "id": 2,
+      "nome": "Pedro Mendes",
+      "email": "pedro.nutri@gofit.com",
+      "telefone": "(28) 97777-8888",
+      "horario_atendimento": "Segunda a Sexta, 9h às 18h",
+      "created_at": "2025-05-30 12:51:00.178 +00:00",
+      "updated_at": "2025-05-30 12:51:00.178 +00:00"
+    },
+    {
+      "id": 3,
+      "nome": "Camila Rocha",
+      "email": "camila.nutri@gofit.com",
+      "telefone": "(28) 96666-5555",
+      "horario_atendimento": "Terça a Sábado, 8h às 17h",
+      "created_at": "2025-05-30 12:51:00.187 +00:00",
+      "updated_at": "2025-05-30 12:51:00.187 +00:00"
+    },
+    {
+      "id": 4,
+      "nome": "Lucas Ferreira",
+      "email": "lucas.nutri@gofit.com",
+      "telefone": "(28) 95555-6666",
+      "horario_atendimento": "Segunda a Sexta, 10h às 19h",
+      "created_at": "2025-05-30 12:51:00.195 +00:00",
+      "updated_at": "2025-05-30 12:51:00.195 +00:00"
+    }
+  ],
+  "dietas": [
+    {
+      "id": 1,
+      "descricao": "Dieta para ganho de massa",
+      "created_at": "2025-05-30 12:51:00.453 +00:00",
+      "expires_at": "2025-06-15 00:00:00.000 +00:00",
+      "instrucoes": "Consumir 6 refeições diárias com alto teor proteico",
+      "updated_at": "2025-05-30 12:51:00.453 +00:00",
+      "deleted_at": null,
+      "cliente_id": 1,
+      "nutricionista_id": 1
+    },
+    {
+      "id": 2,
+      "descricao": "Dieta para emagrecimento",
+      "created_at": "2025-05-30 12:51:00.461 +00:00",
+      "expires_at": "2025-06-20 00:00:00.000 +00:00",
+      "instrucoes": "Reduzir carboidratos e aumentar consumo de vegetais",
+      "updated_at": "2025-05-30 12:51:00.461 +00:00",
+      "deleted_at": null,
+      "cliente_id": 2,
+      "nutricionista_id": 2
+    },
+    {
+      "id": 3,
+      "descricao": "Dieta para definição muscular",
+      "created_at": "2025-05-30 12:51:00.469 +00:00",
+      "expires_at": "2025-06-25 00:00:00.000 +00:00",
+      "instrucoes": "Ciclar carboidratos e manter alto consumo proteico",
+      "updated_at": "2025-05-30 12:51:00.469 +00:00",
+      "deleted_at": null,
+      "cliente_id": 3,
+      "nutricionista_id": 3
+    },
+    {
+      "id": 4,
+      "descricao": "Dieta para aumento de energia",
+      "created_at": "2025-05-30 12:51:00.477 +00:00",
+      "expires_at": "2025-06-30 00:00:00.000 +00:00",
+      "instrucoes": "Consumir carboidratos complexos e proteínas magras",
+      "updated_at": "2025-05-30 12:51:00.477 +00:00",
+      "deleted_at": null,
+      "cliente_id": 4,
+      "nutricionista_id": 4
+    }
+  ],
+  "estados": [
+    {
+      "id": 1,
+      "data": "2025-03-01",
+      "peso": 75.5,
+      "altura": 1.78,
+      "taxa_gordura": 18.5,
+      "circunferencia_cintura": 85,
+      "circunferencia_braco": 32,
+      "comentarios": "Boa condição física inicial",
+      "created_at": "2025-05-30 12:51:00.485 +00:00",
+      "updated_at": "2025-05-30 12:51:00.485 +00:00",
+      "cliente_id": 2,
+      "nutricionista_id": 2
+    },
+    {
+      "id": 2,
+      "data": "2023-07-07",
+      "peso": 68.2,
+      "altura": 1.65,
+      "taxa_gordura": 22,
+      "circunferencia_cintura": 78,
+      "circunferencia_braco": 28.5,
+      "comentarios": "Necessita reduzir percentual de gordura",
+      "created_at": "2025-05-30 12:51:00.493 +00:00",
+      "updated_at": "2025-05-30 12:51:00.493 +00:00",
+      "cliente_id": 3,
+      "nutricionista_id": 2
+    },
+    {
+      "id": 3,
+      "data": "2023-06-18",
+      "peso": 80,
+      "altura": 1.65,
+      "taxa_gordura": 1,
+      "circunferencia_cintura": 180,
+      "circunferencia_braco": 40,
+      "comentarios": "Primeira atualização de estado do cliente nesse mês.",
+      "created_at": "2025-05-30 12:51:00.501 +00:00",
+      "updated_at": "2025-05-30 12:51:00.501 +00:00",
+      "cliente_id": 4,
+      "nutricionista_id": 2
+    },
+    {
+      "id": 4,
+      "data": "2023-06-25",
+      "peso": 81,
+      "altura": 1.65,
+      "taxa_gordura": 1.1,
+      "circunferencia_cintura": 181,
+      "circunferencia_braco": 40,
+      "comentarios": "Segunda atualização de estado do cliente nesse mês.",
+      "created_at": "2025-05-30 12:51:00.509 +00:00",
+      "updated_at": "2025-05-30 12:51:00.509 +00:00",
+      "cliente_id": 4,
+      "nutricionista_id": 2
+    },
+    {
+      "id": 5,
+      "data": "2023-07-02",
+      "peso": 80,
+      "altura": 1.65,
+      "taxa_gordura": 1,
+      "circunferencia_cintura": 180,
+      "circunferencia_braco": 40,
+      "comentarios": "Terceira atualização de estado do cliente nesse mês.",
+      "created_at": "2025-05-30 12:51:00.517 +00:00",
+      "updated_at": "2025-05-30 12:51:00.517 +00:00",
+      "cliente_id": 4,
+      "nutricionista_id": 2
+    },
+    {
+      "id": 6,
+      "data": "2025-03-15",
+      "peso": 68.2,
+      "altura": 1.65,
+      "taxa_gordura": 22,
+      "circunferencia_cintura": 78,
+      "circunferencia_braco": 28.5,
+      "comentarios": "Necessita reduzir percentual de gordura",
+      "created_at": "2025-05-30 12:51:00.525 +00:00",
+      "updated_at": "2025-05-30 12:51:00.525 +00:00",
+      "cliente_id": 2,
+      "nutricionista_id": 2
+    }
+  ],
+  "fidelidades": [],
+  "personais": [
+    {
+      "id": 1,
+      "nome": "Rafael Souza",
+      "certificacao": "CREF 12345-G/SP",
+      "email": "rafael.personal@gofit.com",
+      "telefone": "(28) 94444-3333",
+      "horario_atendimento": "Segunda a Sexta, 6h às 22h",
+      "especialidade": "Musculação",
+      "created_at": "2025-05-30 12:51:00.203 +00:00",
+      "updated_at": "2025-05-30 12:51:00.203 +00:00"
+    },
+    {
+      "id": 2,
+      "nome": "Fernanda Lima",
+      "certificacao": "CREF 54321-G/SP",
+      "email": "fernanda.personal@gofit.com",
+      "telefone": "(28) 93333-4444",
+      "horario_atendimento": "Segunda a Sábado, 7h às 21h",
+      "especialidade": "Funcional",
+      "created_at": "2025-05-30 12:51:00.211 +00:00",
+      "updated_at": "2025-05-30 12:51:00.211 +00:00"
+    },
+    {
+      "id": 3,
+      "nome": "Gustavo Martins",
+      "certificacao": "CREF 67890-G/SP",
+      "email": "gustavo.personal@gofit.com",
+      "telefone": "(28) 92222-1111",
+      "horario_atendimento": "Terça a Domingo, 8h às 20h",
+      "especialidade": "CrossFit",
+      "created_at": "2025-05-30 12:51:00.221 +00:00",
+      "updated_at": "2025-05-30 12:51:00.221 +00:00"
+    },
+    {
+      "id": 4,
+      "nome": "Patrícia Campos",
+      "certificacao": "CREF 09876-G/SP",
+      "email": "patricia.personal@gofit.com",
+      "telefone": "(28) 91111-2222",
+      "horario_atendimento": "Segunda a Sexta, 6h às 15h",
+      "especialidade": "Pilates",
+      "created_at": "2025-05-30 12:51:00.230 +00:00",
+      "updated_at": "2025-05-30 12:51:00.230 +00:00"
+    }
+  ],
+  "treinos": [
+    {
+      "id": 1,
+      "nivel": "Iniciante",
+      "objetivo": "Ganho de massa muscular",
+      "created_at": "2025-03-15 00:00:00.000 +00:00",
+      "expires_at": "2025-06-15 00:00:00.000 +00:00",
+      "exercicios": "[{\"nome\":\"Supino reto\",\"series\":3,\"repeticoes\":12,\"carga\":40},{\"nome\":\"Leg press\",\"series\":3,\"repeticoes\":15,\"carga\":100},{\"nome\":\"Puxada frontal\",\"series\":3,\"repeticoes\":12,\"carga\":50},{\"nome\":\"Agachamento\",\"series\":3,\"repeticoes\":12,\"carga\":30}]",
+      "cliente_id": 1,
+      "personal_trainer_id": 1
+    },
+    {
+      "id": 2,
+      "nivel": "Intermediário",
+      "objetivo": "Emagrecimento",
+      "created_at": "2025-03-20 00:00:00.000 +00:00",
+      "expires_at": "2025-06-20 00:00:00.000 +00:00",
+      "exercicios": "[{\"nome\":\"Esteira\",\"series\":1,\"repeticoes\":1,\"carga\":0,\"tempo\":\"30 minutos\"},{\"nome\":\"Bicicleta\",\"series\":1,\"repeticoes\":1,\"carga\":0,\"tempo\":\"20 minutos\"},{\"nome\":\"Burpees\",\"series\":4,\"repeticoes\":15,\"carga\":0},{\"nome\":\"Jumping jacks\",\"series\":4,\"repeticoes\":30,\"carga\":0}]",
+      "cliente_id": 2,
+      "personal_trainer_id": 2
+    },
+    {
+      "id": 3,
+      "nivel": "Avançado",
+      "objetivo": "Definição muscular",
+      "created_at": "2025-03-25 00:00:00.000 +00:00",
+      "expires_at": "2025-06-25 00:00:00.000 +00:00",
+      "exercicios": "[{\"nome\":\"Supino inclinado\",\"series\":4,\"repeticoes\":10,\"carga\":60},{\"nome\":\"Agachamento livre\",\"series\":4,\"repeticoes\":12,\"carga\":80},{\"nome\":\"Remada curvada\",\"series\":4,\"repeticoes\":10,\"carga\":70},{\"nome\":\"Elevação lateral\",\"series\":4,\"repeticoes\":12,\"carga\":10}]",
+      "cliente_id": 3,
+      "personal_trainer_id": 3
+    },
+    {
+      "id": 4,
+      "nivel": "Iniciante",
+      "objetivo": "Fortalecimento geral",
+      "created_at": "2025-03-30 00:00:00.000 +00:00",
+      "expires_at": "2025-06-30 00:00:00.000 +00:00",
+      "exercicios": "[{\"nome\":\"Prancha\",\"series\":3,\"repeticoes\":1,\"carga\":0,\"tempo\":\"30 segundos\"},{\"nome\":\"Flexões de joelho\",\"series\":3,\"repeticoes\":10,\"carga\":0},{\"nome\":\"Agachamento livre\",\"series\":3,\"repeticoes\":15,\"carga\":0},{\"nome\":\"Ponte\",\"series\":3,\"repeticoes\":15,\"carga\":0}]",
+      "cliente_id": 4,
+      "personal_trainer_id": 4
+    }
+  ]
+}
+```
+
 # eslint.config.js
 
 ```js
@@ -41,6 +607,59 @@ export default [
 
 ```
 
+# export-sqlite-to-json.js
+
+```js
+import sqlite3 from 'sqlite3';
+import fs from 'fs';
+
+const sqlite = sqlite3.verbose();
+
+const dbFile = './database.sqlite'; 
+const outputFile = './dump.json';
+
+const db = new sqlite.Database(dbFile);
+
+function getTables() {
+  return new Promise((resolve, reject) => {
+    db.all(`SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'`, (err, rows) => {
+      if (err) reject(err);
+      else resolve(rows.map(row => row.name));
+    });
+  });
+}
+
+function getTableData(table) {
+  return new Promise((resolve, reject) => {
+    db.all(`SELECT * FROM ${table}`, (err, rows) => {
+      if (err) reject(err);
+      else resolve(rows);
+    });
+  });
+}
+
+(async () => {
+  try {
+    const tables = await getTables();
+    const result = {};
+
+    for (const table of tables) {
+      console.log(`Exportando dados da tabela: ${table}`);
+      const data = await getTableData(table);
+      result[table] = data;
+    }
+
+    fs.writeFileSync(outputFile, JSON.stringify(result, null, 2));
+    console.log(`Dados exportados para ${outputFile}`);
+    db.close();
+  } catch (error) {
+    console.error('Erro ao exportar dados:', error);
+    db.close();
+  }
+})();
+
+```
+
 # package.json
 
 ```json
@@ -57,10 +676,11 @@ export default [
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
     "express": "^4.18.2",
     "pg": "^8.8.0",
     "sequelize": "^6.28.0",
-    "sqlite3": "^5.1.4"
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
@@ -100,14 +720,20 @@ export default errorHandler;
 
 ```js
 export const databaseConfig = {
-    dialect: 'sqlite',
-    storage: 'database.sqlite',
-    define: {
-      timestamps: true,
-      freezeTableName: true,
-      underscored: true
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: {
+      require: true,           
+      rejectUnauthorized: false 
     }
-  };
+  },
+  define: {
+    timestamps: true,       
+    freezeTableName: true,  
+    underscored: true       
+  },
+  logging: false            
+};
 
 ```
 
@@ -236,406 +862,406 @@ const associateModels = (models) => {
 
 associateModels(sequelize.models);
 
-databaseInserts();
+// databaseInserts();
 
-function databaseInserts() {
-    (async () => {
+// function databaseInserts() {
+//     (async () => {
 
-        await sequelize.sync({ force: true });
-
-
-        const admin1 = await Administrador.create({
-            nome: "Carlos Silva",
-            senha: "Admin@123",
-            email: "carlos.admin@gofit.com",
-            telefone: "(28) 98765-4321"
-        });
-
-        const admin2 = await Administrador.create({
-            nome: "Ana Oliveira",
-            senha: "Ana#4567",
-            email: "ana.admin@gofit.com",
-            telefone: "(28) 91234-5678"
-        });
-
-        const admin3 = await Administrador.create({
-            nome: "Roberto Santos",
-            senha: "Roberto$789",
-            email: "roberto.admin@gofit.com",
-            telefone: "(28) 99876-5432"
-        });
-
-        const admin4 = await Administrador.create({
-            nome: "Juliana Costa",
-            senha: "Costa!101",
-            email: "juliana.admin@gofit.com",
-            telefone: "(28) 95555-9999"
-        });
+//         await sequelize.sync({ force: true });
 
 
-        const nutri1 = await Nutricionista.create({
-            nome: "Mariana Alves",
-            email: "mariana.nutri@gofit.com",
-            telefone: "(28) 98888-7777",
-            horario_atendimento: "Segunda a Sexta, 8h às 17h"
-        });
+//         const admin1 = await Administrador.create({
+//             nome: "Carlos Silva",
+//             senha: "Admin@123",
+//             email: "carlos.admin@gofit.com",
+//             telefone: "(28) 98765-4321"
+//         });
 
-        const nutri2 = await Nutricionista.create({
-            nome: "Pedro Mendes",
-            email: "pedro.nutri@gofit.com",
-            telefone: "(28) 97777-8888",
-            horario_atendimento: "Segunda a Sexta, 9h às 18h"
-        });
+//         const admin2 = await Administrador.create({
+//             nome: "Ana Oliveira",
+//             senha: "Ana#4567",
+//             email: "ana.admin@gofit.com",
+//             telefone: "(28) 91234-5678"
+//         });
 
-        const nutri3 = await Nutricionista.create({
-            nome: "Camila Rocha",
-            email: "camila.nutri@gofit.com",
-            telefone: "(28) 96666-5555",
-            horario_atendimento: "Terça a Sábado, 8h às 17h"
-        });
+//         const admin3 = await Administrador.create({
+//             nome: "Roberto Santos",
+//             senha: "Roberto$789",
+//             email: "roberto.admin@gofit.com",
+//             telefone: "(28) 99876-5432"
+//         });
 
-        const nutri4 = await Nutricionista.create({
-            nome: "Lucas Ferreira",
-            email: "lucas.nutri@gofit.com",
-            telefone: "(28) 95555-6666",
-            horario_atendimento: "Segunda a Sexta, 10h às 19h"
-        });
-
-
-        const personal1 = await PersonalTrainer.create({
-            nome: "Rafael Souza",
-            certificacao: "CREF 12345-G/SP",
-            email: "rafael.personal@gofit.com",
-            telefone: "(28) 94444-3333",
-            horario_atendimento: "Segunda a Sexta, 6h às 22h",
-            especialidade: "Musculação"
-        });
-
-        const personal2 = await PersonalTrainer.create({
-            nome: "Fernanda Lima",
-            certificacao: "CREF 54321-G/SP",
-            email: "fernanda.personal@gofit.com",
-            telefone: "(28) 93333-4444",
-            horario_atendimento: "Segunda a Sábado, 7h às 21h",
-            especialidade: "Funcional"
-        });
-
-        const personal3 = await PersonalTrainer.create({
-            nome: "Gustavo Martins",
-            certificacao: "CREF 67890-G/SP",
-            email: "gustavo.personal@gofit.com",
-            telefone: "(28) 92222-1111",
-            horario_atendimento: "Terça a Domingo, 8h às 20h",
-            especialidade: "CrossFit"
-        });
-
-        const personal4 = await PersonalTrainer.create({
-            nome: "Patrícia Campos",
-            certificacao: "CREF 09876-G/SP",
-            email: "patricia.personal@gofit.com",
-            telefone: "(28) 91111-2222",
-            horario_atendimento: "Segunda a Sexta, 6h às 15h",
-            especialidade: "Pilates"
-        });
+//         const admin4 = await Administrador.create({
+//             nome: "Juliana Costa",
+//             senha: "Costa!101",
+//             email: "juliana.admin@gofit.com",
+//             telefone: "(28) 95555-9999"
+//         });
 
 
-        const plano1 = await Plano.create({
-            nome: "Básico",
-            frequencia: "2x por semana",
-            valor: 39.90
-        });
+//         const nutri1 = await Nutricionista.create({
+//             nome: "Mariana Alves",
+//             email: "mariana.nutri@gofit.com",
+//             telefone: "(28) 98888-7777",
+//             horario_atendimento: "Segunda a Sexta, 8h às 17h"
+//         });
 
-        const plano2 = await Plano.create({
-            nome: "Intermediário",
-            frequencia: "3x por semana",
-            valor: 59.90
-        });
+//         const nutri2 = await Nutricionista.create({
+//             nome: "Pedro Mendes",
+//             email: "pedro.nutri@gofit.com",
+//             telefone: "(28) 97777-8888",
+//             horario_atendimento: "Segunda a Sexta, 9h às 18h"
+//         });
 
-        const plano3 = await Plano.create({
-            nome: "Premium",
-            frequencia: "5x por semana",
-            valor: 79.90
-        });
+//         const nutri3 = await Nutricionista.create({
+//             nome: "Camila Rocha",
+//             email: "camila.nutri@gofit.com",
+//             telefone: "(28) 96666-5555",
+//             horario_atendimento: "Terça a Sábado, 8h às 17h"
+//         });
 
-        const plano4 = await Plano.create({
-            nome: "VIP",
-            frequencia: "Ilimitado",
-            valor: 99.90
-        });
-
-
-        const cliente1 = await Cliente.create({
-            nome: "João da Silva",
-            email: "joao.silva@email.com",
-            telefone: "(11) 99999-8888",
-            data_nascimento: "1990-05-15"
-        });
-
-        const cliente2 = await Cliente.create({
-            nome: "Maria de Oliveira",
-            email: "maria.oliveira@email.com",
-            telefone: "(11) 98888-9999",
-            data_nascimento: "1985-10-20"
-        });
-
-        const cliente3 = await Cliente.create({
-            nome: "Pedro dos Santos",
-            email: "pedro.santos@email.com",
-            telefone: "(11) 97777-6666",
-            data_nascimento: "1995-03-25"
-        });
-
-        const cliente4 = await Cliente.create({
-            nome: "Ana da Costa",
-            email: "ana.costa@email.com",
-            telefone: "(11) 96666-7777",
-            data_nascimento: "1988-12-10"
-        });
+//         const nutri4 = await Nutricionista.create({
+//             nome: "Lucas Ferreira",
+//             email: "lucas.nutri@gofit.com",
+//             telefone: "(28) 95555-6666",
+//             horario_atendimento: "Segunda a Sexta, 10h às 19h"
+//         });
 
 
-        for (let i = 11; i >= 0; i--) {
-            const createdAt = new Date();
-            createdAt.setMonth(createdAt.getMonth() - (i + 1));
+//         const personal1 = await PersonalTrainer.create({
+//             nome: "Rafael Souza",
+//             certificacao: "CREF 12345-G/SP",
+//             email: "rafael.personal@gofit.com",
+//             telefone: "(28) 94444-3333",
+//             horario_atendimento: "Segunda a Sexta, 6h às 22h",
+//             especialidade: "Musculação"
+//         });
 
-            const expires_at = new Date(createdAt);
-            expires_at.setMonth(expires_at.getMonth() + 1);
+//         const personal2 = await PersonalTrainer.create({
+//             nome: "Fernanda Lima",
+//             certificacao: "CREF 54321-G/SP",
+//             email: "fernanda.personal@gofit.com",
+//             telefone: "(28) 93333-4444",
+//             horario_atendimento: "Segunda a Sábado, 7h às 21h",
+//             especialidade: "Funcional"
+//         });
 
-            await Assinatura.create({
-                desconto: 0,
-                valor: 39.90,
-                metodo_pagamento: "Cartão de Crédito",
-                cliente_id: cliente1.id,
-                plano_id: plano1.id,
-                createdAt: createdAt,
-                updatedAt: createdAt,
-                expires_at: expires_at
-            });
-        }
+//         const personal3 = await PersonalTrainer.create({
+//             nome: "Gustavo Martins",
+//             certificacao: "CREF 67890-G/SP",
+//             email: "gustavo.personal@gofit.com",
+//             telefone: "(28) 92222-1111",
+//             horario_atendimento: "Terça a Domingo, 8h às 20h",
+//             especialidade: "CrossFit"
+//         });
 
-
-        const assinatura2 = await Assinatura.create({
-            desconto: 5,
-            valor: 56.90,
-            metodo_pagamento: "Débito Automático",
-            cliente_id: cliente2.id,
-            plano_id: plano2.id
-        });
-
-        const assinatura3 = await Assinatura.create({
-            desconto: 10,
-            valor: 71.91,
-            metodo_pagamento: "Boleto Bancário",
-            cliente_id: cliente3.id,
-            plano_id: plano3.id
-        });
-
-
-        const checkIn1 = await CheckIn.create({
-            entrada: "2025-04-01 08:00:00",
-            saida: "2025-04-01 09:30:00",
-            acesso_autorizado: true,
-            razao_bloqueio: null,
-            assinatura_id: assinatura2.id,
-            administradorId: admin1.id
-        });
-
-        const checkIn2 = await CheckIn.create({
-            entrada: "2025-04-01 17:00:00",
-            saida: "2025-04-01 18:45:00",
-            acesso_autorizado: true,
-            razao_bloqueio: null,
-            assinatura_id: assinatura2.id,
-            administradorId: admin2.id
-        });
-
-        const checkIn3 = await CheckIn.create({
-            entrada: "2025-04-02 10:00:00",
-            saida: "2025-04-02 11:30:00",
-            acesso_autorizado: true,
-            razao_bloqueio: null,
-            assinatura_id: assinatura3.id,
-            administradorId: admin3.id
-        });
-
-        const checkIn4 = await CheckIn.create({
-            entrada: "2025-04-02 19:00:00",
-            saida: null,
-            acesso_autorizado: false,
-            razao_bloqueio: "Assinatura vencida",
-            assinatura_id: assinatura3.id,
-            administradorId: admin4.id
-        });
+//         const personal4 = await PersonalTrainer.create({
+//             nome: "Patrícia Campos",
+//             certificacao: "CREF 09876-G/SP",
+//             email: "patricia.personal@gofit.com",
+//             telefone: "(28) 91111-2222",
+//             horario_atendimento: "Segunda a Sexta, 6h às 15h",
+//             especialidade: "Pilates"
+//         });
 
 
-        const dieta1 = await Dieta.create({
-            descricao: "Dieta para ganho de massa",
-            created_at: "2025-03-15",
-            expires_at: "2025-06-15",
-            instrucoes: "Consumir 6 refeições diárias com alto teor proteico",
-            cliente_id: cliente1.id,
-            nutricionista_id: nutri1.id
-        });
+//         const plano1 = await Plano.create({
+//             nome: "Básico",
+//             frequencia: "2x por semana",
+//             valor: 39.90
+//         });
 
-        const dieta2 = await Dieta.create({
-            descricao: "Dieta para emagrecimento",
-            created_at: "2025-03-20",
-            expires_at: "2025-06-20",
-            instrucoes: "Reduzir carboidratos e aumentar consumo de vegetais",
-            cliente_id: cliente2.id,
-            nutricionista_id: nutri2.id
-        });
+//         const plano2 = await Plano.create({
+//             nome: "Intermediário",
+//             frequencia: "3x por semana",
+//             valor: 59.90
+//         });
 
-        const dieta3 = await Dieta.create({
-            descricao: "Dieta para definição muscular",
-            created_at: "2025-03-25",
-            expires_at: "2025-06-25",
-            instrucoes: "Ciclar carboidratos e manter alto consumo proteico",
-            cliente_id: cliente3.id,
-            nutricionista_id: nutri3.id
-        });
+//         const plano3 = await Plano.create({
+//             nome: "Premium",
+//             frequencia: "5x por semana",
+//             valor: 79.90
+//         });
 
-        const dieta4 = await Dieta.create({
-            descricao: "Dieta para aumento de energia",
-            created_at: "2025-03-30",
-            expires_at: "2025-06-30",
-            instrucoes: "Consumir carboidratos complexos e proteínas magras",
-            cliente_id: cliente4.id,
-            nutricionista_id: nutri4.id
-        });
+//         const plano4 = await Plano.create({
+//             nome: "VIP",
+//             frequencia: "Ilimitado",
+//             valor: 99.90
+//         });
 
-        const estado1 = await Estado.create({
-            data: "2025-03-01",
-            peso: 75.5,
-            altura: 1.78,
-            taxa_gordura: 18.5,
-            circunferencia_cintura: 85.0,
-            circunferencia_braco: 32.0,
-            comentarios: "Boa condição física inicial",
-            cliente_id: cliente2.id,
-            nutricionista_id: nutri2.id
-        });
 
-        const estado2 = await Estado.create({
-            data: "2023-07-07",
-            peso: 68.2,
-            altura: 1.65,
-            taxa_gordura: 22.0,
-            circunferencia_cintura: 78.0,
-            circunferencia_braco: 28.5,
-            comentarios: "Necessita reduzir percentual de gordura",
-            cliente_id: cliente3.id,
-            nutricionista_id: nutri2.id
-        });
+//         const cliente1 = await Cliente.create({
+//             nome: "João da Silva",
+//             email: "joao.silva@email.com",
+//             telefone: "(11) 99999-8888",
+//             data_nascimento: "1990-05-15"
+//         });
 
-        const estado5 = await Estado.create({
-            data: "2023-06-18",
-            peso: 80.0,
-            altura: 1.65,
-            taxa_gordura: 1.0,
-            circunferencia_cintura: 180,
-            circunferencia_braco: 40,
-            comentarios: "Primeira atualização de estado do cliente nesse mês.",
-            cliente_id: cliente4.id,
-            nutricionista_id: nutri2.id
-        });
+//         const cliente2 = await Cliente.create({
+//             nome: "Maria de Oliveira",
+//             email: "maria.oliveira@email.com",
+//             telefone: "(11) 98888-9999",
+//             data_nascimento: "1985-10-20"
+//         });
 
-        const estado4 = await Estado.create({
-            data: "2023-06-25",
-            peso: 81.0,
-            altura: 1.65,
-            taxa_gordura: 1.1,
-            circunferencia_cintura: 181,
-            circunferencia_braco: 40,
-            comentarios: "Segunda atualização de estado do cliente nesse mês.",
-            cliente_id: cliente4.id,
-            nutricionista_id: nutri2.id
-        });
+//         const cliente3 = await Cliente.create({
+//             nome: "Pedro dos Santos",
+//             email: "pedro.santos@email.com",
+//             telefone: "(11) 97777-6666",
+//             data_nascimento: "1995-03-25"
+//         });
 
-        const estado3 = await Estado.create({
-            data: "2023-07-02",
-            peso: 80.0,
-            altura: 1.65,
-            taxa_gordura: 1.0,
-            circunferencia_cintura: 180,
-            circunferencia_braco: 40,
-            comentarios: "Terceira atualização de estado do cliente nesse mês.",
-            cliente_id: cliente4.id,
-            nutricionista_id: nutri2.id
-        });
+//         const cliente4 = await Cliente.create({
+//             nome: "Ana da Costa",
+//             email: "ana.costa@email.com",
+//             telefone: "(11) 96666-7777",
+//             data_nascimento: "1988-12-10"
+//         });
 
-        const estado6 = await Estado.create({
-            data: "2025-03-15",
-            peso: 68.2,
-            altura: 1.65,
-            taxa_gordura: 22.0,
-            circunferencia_cintura: 78.0,
-            circunferencia_braco: 28.5,
-            comentarios: "Necessita reduzir percentual de gordura",
-            cliente_id: cliente2.id,
-            nutricionista_id: nutri2.id
-        });
 
-        const treino1 = await Treino.create({
-            nivel: "Iniciante",
-            objetivo: "Ganho de massa muscular",
-            created_at: "2025-03-15",
-            expires_at: "2025-06-15",
-            exercicios: JSON.stringify([
-                { nome: "Supino reto", series: 3, repeticoes: 12, carga: 40 },
-                { nome: "Leg press", series: 3, repeticoes: 15, carga: 100 },
-                { nome: "Puxada frontal", series: 3, repeticoes: 12, carga: 50 },
-                { nome: "Agachamento", series: 3, repeticoes: 12, carga: 30 }
-            ]),
-            cliente_id: cliente1.id,
-            personal_trainer_id: personal1.id
-        });
+//         for (let i = 11; i >= 0; i--) {
+//             const createdAt = new Date();
+//             createdAt.setMonth(createdAt.getMonth() - (i + 1));
 
-        const treino2 = await Treino.create({
-            nivel: "Intermediário",
-            objetivo: "Emagrecimento",
-            created_at: "2025-03-20",
-            expires_at: "2025-06-20",
-            exercicios: JSON.stringify([
-                { nome: "Esteira", series: 1, repeticoes: 1, carga: 0, tempo: "30 minutos" },
-                { nome: "Bicicleta", series: 1, repeticoes: 1, carga: 0, tempo: "20 minutos" },
-                { nome: "Burpees", series: 4, repeticoes: 15, carga: 0 },
-                { nome: "Jumping jacks", series: 4, repeticoes: 30, carga: 0 }
-            ]),
-            cliente_id: cliente2.id,
-            personal_trainer_id: personal2.id
-        });
+//             const expires_at = new Date(createdAt);
+//             expires_at.setMonth(expires_at.getMonth() + 1);
 
-        const treino3 = await Treino.create({
-            nivel: "Avançado",
-            objetivo: "Definição muscular",
-            created_at: "2025-03-25",
-            expires_at: "2025-06-25",
-            exercicios: JSON.stringify([
-                { nome: "Supino inclinado", series: 4, repeticoes: 10, carga: 60 },
-                { nome: "Agachamento livre", series: 4, repeticoes: 12, carga: 80 },
-                { nome: "Remada curvada", series: 4, repeticoes: 10, carga: 70 },
-                { nome: "Elevação lateral", series: 4, repeticoes: 12, carga: 10 }
-            ]),
-            cliente_id: cliente3.id,
-            personal_trainer_id: personal3.id
-        });
+//             await Assinatura.create({
+//                 desconto: 0,
+//                 valor: 39.90,
+//                 metodo_pagamento: "Cartão de Crédito",
+//                 cliente_id: cliente1.id,
+//                 plano_id: plano1.id,
+//                 createdAt: createdAt,
+//                 updatedAt: createdAt,
+//                 expires_at: expires_at
+//             });
+//         }
 
-        const treino4 = await Treino.create({
-            nivel: "Iniciante",
-            objetivo: "Fortalecimento geral",
-            created_at: "2025-03-30",
-            expires_at: "2025-06-30",
-            exercicios: JSON.stringify([
-                { nome: "Prancha", series: 3, repeticoes: 1, carga: 0, tempo: "30 segundos" },
-                { nome: "Flexões de joelho", series: 3, repeticoes: 10, carga: 0 },
-                { nome: "Agachamento livre", series: 3, repeticoes: 15, carga: 0 },
-                { nome: "Ponte", series: 3, repeticoes: 15, carga: 0 }
-            ]),
-            cliente_id: cliente4.id,
-            personal_trainer_id: personal4.id
-        });
-    })();
-}
+
+//         const assinatura2 = await Assinatura.create({
+//             desconto: 5,
+//             valor: 56.90,
+//             metodo_pagamento: "Débito Automático",
+//             cliente_id: cliente2.id,
+//             plano_id: plano2.id
+//         });
+
+//         const assinatura3 = await Assinatura.create({
+//             desconto: 10,
+//             valor: 71.91,
+//             metodo_pagamento: "Boleto Bancário",
+//             cliente_id: cliente3.id,
+//             plano_id: plano3.id
+//         });
+
+
+//         const checkIn1 = await CheckIn.create({
+//             entrada: "2025-04-01 08:00:00",
+//             saida: "2025-04-01 09:30:00",
+//             acesso_autorizado: true,
+//             razao_bloqueio: null,
+//             assinatura_id: assinatura2.id,
+//             administradorId: admin1.id
+//         });
+
+//         const checkIn2 = await CheckIn.create({
+//             entrada: "2025-04-01 17:00:00",
+//             saida: "2025-04-01 18:45:00",
+//             acesso_autorizado: true,
+//             razao_bloqueio: null,
+//             assinatura_id: assinatura2.id,
+//             administradorId: admin2.id
+//         });
+
+//         const checkIn3 = await CheckIn.create({
+//             entrada: "2025-04-02 10:00:00",
+//             saida: "2025-04-02 11:30:00",
+//             acesso_autorizado: true,
+//             razao_bloqueio: null,
+//             assinatura_id: assinatura3.id,
+//             administradorId: admin3.id
+//         });
+
+//         const checkIn4 = await CheckIn.create({
+//             entrada: "2025-04-02 19:00:00",
+//             saida: null,
+//             acesso_autorizado: false,
+//             razao_bloqueio: "Assinatura vencida",
+//             assinatura_id: assinatura3.id,
+//             administradorId: admin4.id
+//         });
+
+
+//         const dieta1 = await Dieta.create({
+//             descricao: "Dieta para ganho de massa",
+//             created_at: "2025-03-15",
+//             expires_at: "2025-06-15",
+//             instrucoes: "Consumir 6 refeições diárias com alto teor proteico",
+//             cliente_id: cliente1.id,
+//             nutricionista_id: nutri1.id
+//         });
+
+//         const dieta2 = await Dieta.create({
+//             descricao: "Dieta para emagrecimento",
+//             created_at: "2025-03-20",
+//             expires_at: "2025-06-20",
+//             instrucoes: "Reduzir carboidratos e aumentar consumo de vegetais",
+//             cliente_id: cliente2.id,
+//             nutricionista_id: nutri2.id
+//         });
+
+//         const dieta3 = await Dieta.create({
+//             descricao: "Dieta para definição muscular",
+//             created_at: "2025-03-25",
+//             expires_at: "2025-06-25",
+//             instrucoes: "Ciclar carboidratos e manter alto consumo proteico",
+//             cliente_id: cliente3.id,
+//             nutricionista_id: nutri3.id
+//         });
+
+//         const dieta4 = await Dieta.create({
+//             descricao: "Dieta para aumento de energia",
+//             created_at: "2025-03-30",
+//             expires_at: "2025-06-30",
+//             instrucoes: "Consumir carboidratos complexos e proteínas magras",
+//             cliente_id: cliente4.id,
+//             nutricionista_id: nutri4.id
+//         });
+
+//         const estado1 = await Estado.create({
+//             data: "2025-03-01",
+//             peso: 75.5,
+//             altura: 1.78,
+//             taxa_gordura: 18.5,
+//             circunferencia_cintura: 85.0,
+//             circunferencia_braco: 32.0,
+//             comentarios: "Boa condição física inicial",
+//             cliente_id: cliente2.id,
+//             nutricionista_id: nutri2.id
+//         });
+
+//         const estado2 = await Estado.create({
+//             data: "2023-07-07",
+//             peso: 68.2,
+//             altura: 1.65,
+//             taxa_gordura: 22.0,
+//             circunferencia_cintura: 78.0,
+//             circunferencia_braco: 28.5,
+//             comentarios: "Necessita reduzir percentual de gordura",
+//             cliente_id: cliente3.id,
+//             nutricionista_id: nutri2.id
+//         });
+
+//         const estado5 = await Estado.create({
+//             data: "2023-06-18",
+//             peso: 80.0,
+//             altura: 1.65,
+//             taxa_gordura: 1.0,
+//             circunferencia_cintura: 180,
+//             circunferencia_braco: 40,
+//             comentarios: "Primeira atualização de estado do cliente nesse mês.",
+//             cliente_id: cliente4.id,
+//             nutricionista_id: nutri2.id
+//         });
+
+//         const estado4 = await Estado.create({
+//             data: "2023-06-25",
+//             peso: 81.0,
+//             altura: 1.65,
+//             taxa_gordura: 1.1,
+//             circunferencia_cintura: 181,
+//             circunferencia_braco: 40,
+//             comentarios: "Segunda atualização de estado do cliente nesse mês.",
+//             cliente_id: cliente4.id,
+//             nutricionista_id: nutri2.id
+//         });
+
+//         const estado3 = await Estado.create({
+//             data: "2023-07-02",
+//             peso: 80.0,
+//             altura: 1.65,
+//             taxa_gordura: 1.0,
+//             circunferencia_cintura: 180,
+//             circunferencia_braco: 40,
+//             comentarios: "Terceira atualização de estado do cliente nesse mês.",
+//             cliente_id: cliente4.id,
+//             nutricionista_id: nutri2.id
+//         });
+
+//         const estado6 = await Estado.create({
+//             data: "2025-03-15",
+//             peso: 68.2,
+//             altura: 1.65,
+//             taxa_gordura: 22.0,
+//             circunferencia_cintura: 78.0,
+//             circunferencia_braco: 28.5,
+//             comentarios: "Necessita reduzir percentual de gordura",
+//             cliente_id: cliente2.id,
+//             nutricionista_id: nutri2.id
+//         });
+
+//         const treino1 = await Treino.create({
+//             nivel: "Iniciante",
+//             objetivo: "Ganho de massa muscular",
+//             created_at: "2025-03-15",
+//             expires_at: "2025-06-15",
+//             exercicios: JSON.stringify([
+//                 { nome: "Supino reto", series: 3, repeticoes: 12, carga: 40 },
+//                 { nome: "Leg press", series: 3, repeticoes: 15, carga: 100 },
+//                 { nome: "Puxada frontal", series: 3, repeticoes: 12, carga: 50 },
+//                 { nome: "Agachamento", series: 3, repeticoes: 12, carga: 30 }
+//             ]),
+//             cliente_id: cliente1.id,
+//             personal_trainer_id: personal1.id
+//         });
+
+//         const treino2 = await Treino.create({
+//             nivel: "Intermediário",
+//             objetivo: "Emagrecimento",
+//             created_at: "2025-03-20",
+//             expires_at: "2025-06-20",
+//             exercicios: JSON.stringify([
+//                 { nome: "Esteira", series: 1, repeticoes: 1, carga: 0, tempo: "30 minutos" },
+//                 { nome: "Bicicleta", series: 1, repeticoes: 1, carga: 0, tempo: "20 minutos" },
+//                 { nome: "Burpees", series: 4, repeticoes: 15, carga: 0 },
+//                 { nome: "Jumping jacks", series: 4, repeticoes: 30, carga: 0 }
+//             ]),
+//             cliente_id: cliente2.id,
+//             personal_trainer_id: personal2.id
+//         });
+
+//         const treino3 = await Treino.create({
+//             nivel: "Avançado",
+//             objetivo: "Definição muscular",
+//             created_at: "2025-03-25",
+//             expires_at: "2025-06-25",
+//             exercicios: JSON.stringify([
+//                 { nome: "Supino inclinado", series: 4, repeticoes: 10, carga: 60 },
+//                 { nome: "Agachamento livre", series: 4, repeticoes: 12, carga: 80 },
+//                 { nome: "Remada curvada", series: 4, repeticoes: 10, carga: 70 },
+//                 { nome: "Elevação lateral", series: 4, repeticoes: 12, carga: 10 }
+//             ]),
+//             cliente_id: cliente3.id,
+//             personal_trainer_id: personal3.id
+//         });
+
+//         const treino4 = await Treino.create({
+//             nivel: "Iniciante",
+//             objetivo: "Fortalecimento geral",
+//             created_at: "2025-03-30",
+//             expires_at: "2025-06-30",
+//             exercicios: JSON.stringify([
+//                 { nome: "Prancha", series: 3, repeticoes: 1, carga: 0, tempo: "30 segundos" },
+//                 { nome: "Flexões de joelho", series: 3, repeticoes: 10, carga: 0 },
+//                 { nome: "Agachamento livre", series: 3, repeticoes: 15, carga: 0 },
+//                 { nome: "Ponte", series: 3, repeticoes: 15, carga: 0 }
+//             ]),
+//             cliente_id: cliente4.id,
+//             personal_trainer_id: personal4.id
+//         });
+//     })();
+// }
 
 export default sequelize;
 
@@ -690,7 +1316,7 @@ export { AdministradorController };
 import { AssinaturaService } from "../services/AssinaturaService.js";
 
 class AssinaturaController {
-  
+
   static async findAll(req, res) {
     AssinaturaService.findAll()
       .then(objs => res.json(objs))
@@ -719,6 +1345,35 @@ class AssinaturaController {
     AssinaturaService.delete(req)
       .then(obj => res.json(obj))
       .catch(err => res.status(400).json({ err: err.message }));
+  }
+
+  static async relatorioAtivas(_req, res) {
+    try {
+      const data = await AssinaturaService.relatorioAtivas();
+
+      if (!data || data.length === 0) {
+        return res.status(200).json({ message: "Nenhuma assinatura ativa encontrada." });
+      }
+
+      return res.json(data);
+    } catch (err) {
+      return res.status(400).json({ error: err.message });
+    }
+  }
+
+  static async relatorioVencimentoProximo(req, res) {
+    try {
+      const dias = parseInt(req.query.dias ?? '10', 10);
+      const data = await AssinaturaService.relatorioVencimentoProximo(dias);
+
+      if (!data || data.length === 0) {
+        return res.status(200).json({ message: `Nenhuma assinatura com vencimento nos próximos ${dias} dias.` });
+      }
+
+      return res.json(data);
+    } catch (err) {
+      return res.status(400).json({ error: err.message });
+    }
   }
 }
 
@@ -913,7 +1568,37 @@ class EstadoController {
       .then(obj => res.json(obj))
       .catch(err => res.status(400).json({ err: err.message }));
   }
+
+  static async evolucaoCliente(_req, res) {
+    try {
+      const data = await EstadoService.evolucaoCliente();
+
+      if (!data || data.length === 0) {
+        return res.status(200).json({ message: `Nenhum registro de estado encontrado.` });
+      }
+
+      return res.json(data);
+    } catch (err) {
+      return res.status(400).json({ error: err.message });
+    }
+  }
+
+  static async estadosMaisRecentes(_req, res) {
+    try {
+      const data = await EstadoService.estadosMaisRecentes();
+
+      if (!data || data.length === 0) {
+        return res.status(200).json({ message: `Erro ao buscar estados recentes.` });
+      }
+
+      return res.json(data);
+    } catch (err) {
+      return res.status(400).json({ error: err.message });
+    }
+  }
 }
+
+
 
 export { EstadoController };
 
@@ -1878,6 +2563,8 @@ routes.get('/assinaturas/:id', AssinaturaController.findByPk);
 routes.post('/assinaturas', AssinaturaController.create);
 routes.put('/assinaturas/:id', AssinaturaController.update);
 routes.delete('/assinaturas/:id', AssinaturaController.delete);
+routes.get('/assinaturas/relatorios/ativas', AssinaturaController.relatorioAtivas);
+routes.get('/assinaturas/relatorios/vencimento-proximo', AssinaturaController.relatorioVencimentoProximo);
 
 routes.get('/checkins', CheckInController.findAll);
 routes.get('/checkins/:id', CheckInController.findByPk);
@@ -1902,6 +2589,8 @@ routes.get('/estados/:id', EstadoController.findByPk);
 routes.post('/estados', EstadoController.create);
 routes.put('/estados/:id', EstadoController.update);
 routes.delete('/estados/:id', EstadoController.delete);
+routes.get('/estados/relatorios/progresso/:id', EstadoController.evolucaoCliente);
+routes.get('/estados/relatorios/recentes', EstadoController.estadosMaisRecentes);
 
 routes.get('/nutricionistas', NutricionistaController.findAll);
 routes.get('/nutricionistas/:id', NutricionistaController.findByPk);
@@ -1937,16 +2626,35 @@ export default routes;
 import express from "express";
 import routes from './routes.js';
 import errorHandler from '../src/_middleware/error-handler.js';
-
-// Importando configuração e estabelecimento da conexão com o banco de dados
 import sequelize from './config/database-connection.js';
 
 const app = express();
+
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
+
 app.use(express.json());
 app.use(routes);
 app.use(errorHandler);
 
-app.listen(3333);
+(async () => {
+  try {
+    await sequelize.sync({ force: true }); // Cria ou recria as tabelas no banco
+    console.log('Banco sincronizado com sucesso.');
+
+    app.listen(3333, () => {
+      console.log('Servidor rodando na porta 3333');
+    });
+  } catch (error) {
+    console.error('Erro ao sincronizar banco:', error);
+  }
+})();
+
 ```
 
 # src\services\AdministradorService.js
@@ -2053,6 +2761,8 @@ import { Plano } from "../models/Plano.js";
 import { Op } from "sequelize";
 import { Fidelidade } from "../models/Fidelidade.js";
 import { CheckIn } from "../models/CheckIn.js";
+import sequelize from '../config/database-connection.js';
+import { QueryTypes } from 'sequelize';
 
 
 class AssinaturaService {
@@ -2206,6 +2916,56 @@ class AssinaturaService {
     if (obj.expires_at < new Date()) throw new Error("Não foi possivel deletar essa assinatura, pois ela esta expirada");
     await CheckIn.destroy({ where: { assinatura_id: id } });
     return await obj.destroy();
+  }
+
+  /* RF-38 | Assinaturas ativas (vencimento no futuro) */
+  static async relatorioAtivas() {
+    const hoje = new Date();
+
+    const sql = `
+      SELECT  c.nome       AS cliente,
+              p.nome       AS plano,
+              p.frequencia AS assinatura,
+              a.expires_at  AS vencimento
+      FROM    assinaturas a
+        JOIN  clientes    c ON c.id = a.cliente_id
+        JOIN  planos      p ON p.id = a.plano_id
+      WHERE   a.expires_at >= :hoje
+      ORDER BY a.expires_at;
+    `;
+
+    return sequelize.query(sql, {
+      replacements : { hoje },
+      type         : QueryTypes.SELECT,
+    });
+  }
+
+  /* RF-39 | Assinaturas a vencer nos próximos 10 dias */
+  static async relatorioVencimentoProximo(dias = 10) {
+    if (isNaN(dias) || dias <= 0) {
+      throw new Error('Parâmetro "dias" deve ser inteiro positivo.');
+    }
+
+    const hoje   = new Date();
+    const limite = new Date();
+    limite.setDate(limite.getDate() + dias);
+
+    const sql = `
+      SELECT  c.nome       AS cliente,
+              p.nome       AS plano,
+              p.frequencia AS assinatura,
+              a.expires_at  AS vencimento
+      FROM    assinaturas a
+        JOIN  clientes    c ON c.id = a.cliente_id
+        JOIN  planos      p ON p.id = a.plano_id
+      WHERE   a.expires_at BETWEEN :hoje AND :limite
+      ORDER BY a.expires_at;
+    `;
+
+    return sequelize.query(sql, {
+      replacements : { hoje, limite },
+      type         : QueryTypes.SELECT,
+    });
   }
 }
 
@@ -2698,6 +3458,17 @@ class EstadoService {
         }
     }
 
+    static async evolucaoCliente(req) {
+        const { cliente_id } = req.params;
+        const objs = await sequelize.query("SELECT * FROM estado WHERE cliente_id = :cliente_id ORDER BY data ASC", { replacements: { cliente_id: cliente_id }, type: QueryTypes.SELECT });
+        return objs;
+    }
+
+    static async estadosMaisRecentes(req) {
+        const objs = await sequelize.query("SELECT DISTINCT ON (cliente_id) * FROM estado ORDER BY cliente_id, data DESC", { type: QueryTypes.SELECT });
+        return objs;
+    }
+
 }
 
 export { EstadoService };
@@ -3089,5 +3860,44 @@ class TreinoService {
 }
 
 export { TreinoService };
+```
+
+# test-connection.js
+
+```js
+import dotenv from 'dotenv';
+import { Sequelize } from 'sequelize';
+
+dotenv.config(); 
+
+const connectionString = process.env.DATABASE_URL;
+
+if (!connectionString) {
+  console.error('ERRO: variável DATABASE_URL não está definida!');
+  process.exit(1);
+}
+
+const sequelize = new Sequelize(connectionString, {
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false
+    }
+  },
+  logging: false
+});
+
+async function test() {
+  try {
+    await sequelize.authenticate();
+    console.log('Conexão com o banco bem sucedida!');
+  } catch (error) {
+    console.error('Erro ao conectar:', error);
+  }
+}
+
+test();
+
 ```
 
