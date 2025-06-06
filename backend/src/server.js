@@ -19,8 +19,8 @@ app.use(errorHandler);
 
 (async () => {
   try {
-    await sequelize.sync({ alter: true }); 
-    console.log('Banco sincronizado com sucesso.');
+    // await sequelize.sync({ force: true }); 
+    // console.log('Banco sincronizado com sucesso.');
 
     app.listen(3333, () => {
       console.log('Servidor rodando na porta 3333');
