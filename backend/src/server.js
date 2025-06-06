@@ -19,7 +19,7 @@ app.use(errorHandler);
 
 (async () => {
   try {
-    await sequelize.sync({ force: true }); // Cria ou recria as tabelas no banco
+    await sequelize.sync({ alter: true }); 
     console.log('Banco sincronizado com sucesso.');
 
     app.listen(3333, () => {

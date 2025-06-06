@@ -51,7 +51,7 @@ class Administrador extends Model {
           len: { args: [10, 15], msg: "Telefone do Administrador deve ter entre 10 e 15 caracteres!" }
         }
       }
-    }, { sequelize, modelName: 'administrador', tableName: 'administradores' });
+    }, { sequelize, modelName: 'administrador', tableName: 'administradores'});
   }
 }
 
